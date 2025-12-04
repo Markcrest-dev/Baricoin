@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pay Cable Bills | Baricoin</title>
+    <title>Sell Crypto | Baricoin</title>
     <link rel="icon" type="image/png" href="images/favicon-new.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,6 +30,7 @@
 <body class="dashboard-body">
 
     <div class="dashboard-layout">
+        <!-- Sidebar (same as transactions.html) -->
         <aside class="dashboard-sidebar">
             <div class="sidebar-logo">
                 <img src="images/baricoin-logo-new.png" alt="Baricoin" style="height: 35px;">
@@ -49,7 +50,7 @@
                     </svg>
                     <span>Giftcards</span>
                 </a>
-                <a href="crypto.html" class="menu-item">
+                <a href="crypto.html" class="menu-item active">
                     <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                         <line x1="12" y1="1" x2="12" y2="23"></line>
                         <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
@@ -78,28 +79,10 @@
                 <div class="bari-services-section">
                     <p class="services-label">Bari services</p>
                     <div class="services-submenu">
-                        <a href="airtime.html" class="submenu-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                            </svg>
-                            <span>Airtime</span>
-                        </a>
-                        <a href="data.html" class="submenu-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
-                                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
-                                <line x1="6" y1="6" x2="6.01" y2="6"></line>
-                                <line x1="6" y1="18" x2="6.01" y2="18"></line>
-                            </svg>
-                            <span>Data</span>
-                        </a>
-                        <a href="cable.html" class="submenu-item active">Cable</a>
-                        <a href="electricity.html" class="submenu-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-                            </svg>
-                            <span>Electricity</span>
-                        </a>
+                        <a href="airtime.html" class="submenu-item">Airtime</a>
+                        <a href="data.html" class="submenu-item">Data</a>
+                        <a href="cable.html" class="submenu-item">Cable</a>
+                        <a href="electricity.html" class="submenu-item">Electricity</a>
                     </div>
                 </div>
                 <a href="#" id="logoutBtn" class="menu-item logout-item">
@@ -113,11 +96,12 @@
             </div>
         </aside>
 
+        <!-- Main Content -->
         <main class="dashboard-content">
             <header class="dashboard-header">
                 <div class="header-left">
-                    <h1 class="greeting">Bills Payment</h1>
-                    <p class="username">Pay your cable and electricity bills</p>
+                    <h1 class="greeting">Sell Crypto</h1>
+                    <p class="username">Convert your cryptocurrency to Naira</p>
                 </div>
                 <div class="header-right">
                     <div class="user-avatar-btn">
@@ -126,44 +110,38 @@
                 </div>
             </header>
 
+            <!-- Crypto Form -->
             <div class="service-page-container">
                 <div class="service-card">
-                    <div class="service-tabs">
-                        <button class="service-tab active">Cable</button>
-                        <a href="electricity.html" class="service-tab" style="text-decoration: none;">Electricity</a>
-                    </div>
+                    <h2>Sell Crypto</h2>
 
                     <form class="service-form">
                         <div class="form-field">
-                            <label for="biller">Select Biller</label>
-                            <select id="biller" required>
-                                <option value="">Choose provider</option>
-                                <option value="dstv">DSTV</option>
-                                <option value="gotv">GOTV</option>
-                                <option value="startimes">Startimes</option>
-                                <option value="showmax">Showmax</option>
+                            <label for="coin">Select Coin</label>
+                            <select id="coin" required>
+                                <option value="">Choose cryptocurrency</option>
+                                <option value="btc">Bitcoin (BTC)</option>
+                                <option value="eth">Ethereum (ETH)</option>
+                                <option value="usdt">Tether (USDT)</option>
+                                <option value="bnb">Binance Coin (BNB)</option>
+                                <option value="usdc">USD Coin (USDC)</option>
                             </select>
                         </div>
 
                         <div class="form-field">
-                            <label for="package">Select Package</label>
-                            <select id="package" required>
-                                <option value="">Choose package</option>
-                                <option value="compact">Compact - ₦7,900</option>
-                                <option value="compact-plus">Compact Plus - ₦11,400</option>
-                                <option value="premium">Premium - ₦18,400</option>
-                                <option value="premium-asia">Premium Asia - ₦23,000</option>
-                            </select>
+                            <label for="amount">Enter Amount (USD)</label>
+                            <input type="number" id="amount" placeholder="0.00" step="0.01" required>
                         </div>
 
-                        <div class="form-field">
-                            <label for="smartcard">Smart Card Number</label>
-                            <input type="text" id="smartcard" placeholder="10xxxxxxxxxx" required>
+                        <div class="rate-display">
+                            <div>
+                                <div class="label">You Get (NGN)</div>
+                                <div class="value" id="youGet">₦ 0.00</div>
+                            </div>
                         </div>
 
                         <div class="form-actions">
-                            <button type="button" class="btn-service btn-secondary-service">Verify</button>
-                            <button type="submit" class="btn-service btn-primary-service">Pay</button>
+                            <button type="submit" class="btn-service btn-primary-service">Proceed</button>
                         </div>
                     </form>
                 </div>
@@ -171,6 +149,7 @@
         </main>
     </div>
 
+    <!-- Chat Widget -->
     <div class="chat-widget" id="chatWidget">
         <button class="chat-toggle-btn" id="chatToggleBtn">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -182,6 +161,7 @@
     <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
     <script src="js/auth.js"></script>
+    <script src="js/crypto.js"></script>
     <script src="js/chat.js"></script>
     <script src="/js/pwa.js"></script>
 </body>

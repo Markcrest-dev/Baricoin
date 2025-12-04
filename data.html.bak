@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pay Cable Bills | Baricoin</title>
+    <title>Buy Data | Baricoin</title>
     <link rel="icon" type="image/png" href="images/favicon-new.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -78,28 +78,10 @@
                 <div class="bari-services-section">
                     <p class="services-label">Bari services</p>
                     <div class="services-submenu">
-                        <a href="airtime.html" class="submenu-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                            </svg>
-                            <span>Airtime</span>
-                        </a>
-                        <a href="data.html" class="submenu-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
-                                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
-                                <line x1="6" y1="6" x2="6.01" y2="6"></line>
-                                <line x1="6" y1="18" x2="6.01" y2="18"></line>
-                            </svg>
-                            <span>Data</span>
-                        </a>
-                        <a href="cable.html" class="submenu-item active">Cable</a>
-                        <a href="electricity.html" class="submenu-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-                            </svg>
-                            <span>Electricity</span>
-                        </a>
+                        <a href="airtime.html" class="submenu-item">Airtime</a>
+                        <a href="data.html" class="submenu-item active">Data</a>
+                        <a href="cable.html" class="submenu-item">Cable</a>
+                        <a href="electricity.html" class="submenu-item">Electricity</a>
                     </div>
                 </div>
                 <a href="#" id="logoutBtn" class="menu-item logout-item">
@@ -116,8 +98,8 @@
         <main class="dashboard-content">
             <header class="dashboard-header">
                 <div class="header-left">
-                    <h1 class="greeting">Bills Payment</h1>
-                    <p class="username">Pay your cable and electricity bills</p>
+                    <h1 class="greeting">Airtime & Data</h1>
+                    <p class="username">Buy airtime and data bundles</p>
                 </div>
                 <div class="header-right">
                     <div class="user-avatar-btn">
@@ -129,40 +111,40 @@
             <div class="service-page-container">
                 <div class="service-card">
                     <div class="service-tabs">
-                        <button class="service-tab active">Cable</button>
-                        <a href="electricity.html" class="service-tab" style="text-decoration: none;">Electricity</a>
+                        <a href="airtime.html" class="service-tab" style="text-decoration: none;">Airtime</a>
+                        <button class="service-tab active">Data</button>
                     </div>
 
                     <form class="service-form">
                         <div class="form-field">
-                            <label for="biller">Select Biller</label>
-                            <select id="biller" required>
-                                <option value="">Choose provider</option>
-                                <option value="dstv">DSTV</option>
-                                <option value="gotv">GOTV</option>
-                                <option value="startimes">Startimes</option>
-                                <option value="showmax">Showmax</option>
+                            <label for="network">Select Network</label>
+                            <select id="network" required>
+                                <option value="">Choose network</option>
+                                <option value="mtn">MTN</option>
+                                <option value="glo">Glo</option>
+                                <option value="airtel">Airtel</option>
+                                <option value="9mobile">9Mobile</option>
                             </select>
                         </div>
 
                         <div class="form-field">
-                            <label for="package">Select Package</label>
-                            <select id="package" required>
-                                <option value="">Choose package</option>
-                                <option value="compact">Compact - ₦7,900</option>
-                                <option value="compact-plus">Compact Plus - ₦11,400</option>
-                                <option value="premium">Premium - ₦18,400</option>
-                                <option value="premium-asia">Premium Asia - ₦23,000</option>
-                            </select>
+                            <label for="phone">Enter Phone Number</label>
+                            <input type="tel" id="phone" placeholder="080xxxxxxxx" required>
                         </div>
 
                         <div class="form-field">
-                            <label for="smartcard">Smart Card Number</label>
-                            <input type="text" id="smartcard" placeholder="10xxxxxxxxxx" required>
+                            <label for="plan">Select Data Plan</label>
+                            <select id="plan" required>
+                                <option value="">Choose data plan</option>
+                                <option value="500mb">500MB - ₦150</option>
+                                <option value="1gb">1GB - ₦300</option>
+                                <option value="2gb">2GB - ₦600</option>
+                                <option value="5gb">5GB - ₦1,500</option>
+                                <option value="10gb">10GB - ₦3,000</option>
+                            </select>
                         </div>
 
                         <div class="form-actions">
-                            <button type="button" class="btn-service btn-secondary-service">Verify</button>
                             <button type="submit" class="btn-service btn-primary-service">Pay</button>
                         </div>
                     </form>

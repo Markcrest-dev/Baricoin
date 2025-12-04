@@ -46,6 +46,7 @@
 .sidebar-menu {
     flex: 1;
     padding: 1rem 0.5rem;
+    overflow-y: auto;
 }
 
 .menu-item {
@@ -630,7 +631,8 @@
     }
 
     .menu-item span,
-    .services-label {
+    .services-label,
+    .submenu-item span {
         display: none;
     }
 
@@ -639,9 +641,15 @@
         padding: 0.75rem;
     }
 
+    .submenu-item {
+        justify-content: center;
+        padding: 0.5rem;
+    }
+
     .dashboard-content,
     .dashboard-main {
         margin-left: 70px;
+        width: calc(100% - 70px);
         padding-top: 40px;
         /* Keep ticker space */
     }
@@ -1225,13 +1233,6 @@
     .ticker-symbol {
         font-size: 0.875rem;
     }
-
-    .dashboard-content,
-    .dashboard-main {
-        margin-left: 0;
-        padding-top: 36px;
-        width: 100%;
-    }
 }
 
 /* ============================================
@@ -1454,6 +1455,40 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 1rem;
+    }
+
+    .service-page-form .form-actions {
+        flex-direction: column;
+    }
+}
+
+/* ============================================
+   MOBILE - HIDE SIDEBAR ON VERY SMALL SCREENS
+   ============================================ */
+@media (max-width: 480px) {
+    .dashboard-sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .dashboard-sidebar.mobile-open {
+        transform: translateX(0);
+    }
+
+    .dashboard-content,
+    .dashboard-main {
+        margin-left: 0;
+        width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .wallets-container,
+    .transactions-container,
+    .quick-actions-container,
+    .settings-container {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
     }
 }
 
@@ -2400,14 +2435,22 @@
 }
 
 .submenu-item {
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
     padding: 0.5rem 1rem;
     color: rgba(255, 255, 255, 0.6);
     text-decoration: none;
     border-radius: 6px;
     font-size: 0.875rem;
     transition: all 0.2s;
-    padding-left: 2.5rem;
+}
+
+.submenu-item svg {
+    width: 18px;
+    height: 18px;
+    stroke-width: 2;
+    flex-shrink: 0;
 }
 
 .submenu-item:hover {

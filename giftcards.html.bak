@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pay Cable Bills | Baricoin</title>
+    <title>Sell Giftcard | Baricoin</title>
     <link rel="icon" type="image/png" href="images/favicon-new.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,7 +42,7 @@
                     </svg>
                     <span>Dashboard</span>
                 </a>
-                <a href="giftcards.html" class="menu-item">
+                <a href="giftcards.html" class="menu-item active">
                     <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                         <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
                         <line x1="1" y1="10" x2="23" y2="10"></line>
@@ -78,28 +78,10 @@
                 <div class="bari-services-section">
                     <p class="services-label">Bari services</p>
                     <div class="services-submenu">
-                        <a href="airtime.html" class="submenu-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                            </svg>
-                            <span>Airtime</span>
-                        </a>
-                        <a href="data.html" class="submenu-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
-                                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
-                                <line x1="6" y1="6" x2="6.01" y2="6"></line>
-                                <line x1="6" y1="18" x2="6.01" y2="18"></line>
-                            </svg>
-                            <span>Data</span>
-                        </a>
-                        <a href="cable.html" class="submenu-item active">Cable</a>
-                        <a href="electricity.html" class="submenu-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-                            </svg>
-                            <span>Electricity</span>
-                        </a>
+                        <a href="airtime.html" class="submenu-item">Airtime</a>
+                        <a href="data.html" class="submenu-item">Data</a>
+                        <a href="cable.html" class="submenu-item">Cable</a>
+                        <a href="electricity.html" class="submenu-item">Electricity</a>
                     </div>
                 </div>
                 <a href="#" id="logoutBtn" class="menu-item logout-item">
@@ -116,8 +98,8 @@
         <main class="dashboard-content">
             <header class="dashboard-header">
                 <div class="header-left">
-                    <h1 class="greeting">Bills Payment</h1>
-                    <p class="username">Pay your cable and electricity bills</p>
+                    <h1 class="greeting">Sell Giftcard</h1>
+                    <p class="username">Convert your giftcards to Naira instantly</p>
                 </div>
                 <div class="header-right">
                     <div class="user-avatar-btn">
@@ -128,42 +110,77 @@
 
             <div class="service-page-container">
                 <div class="service-card">
-                    <div class="service-tabs">
-                        <button class="service-tab active">Cable</button>
-                        <a href="electricity.html" class="service-tab" style="text-decoration: none;">Electricity</a>
-                    </div>
+                    <h2>Sell Giftcard</h2>
 
                     <form class="service-form">
                         <div class="form-field">
-                            <label for="biller">Select Biller</label>
-                            <select id="biller" required>
-                                <option value="">Choose provider</option>
-                                <option value="dstv">DSTV</option>
-                                <option value="gotv">GOTV</option>
-                                <option value="startimes">Startimes</option>
-                                <option value="showmax">Showmax</option>
+                            <label for="category">Select Giftcard Category</label>
+                            <select id="category" required>
+                                <option value="">Choose category</option>
+                                <option value="ecommerce">E-commerce</option>
+                                <option value="gaming">Gaming</option>
+                                <option value="entertainment">Entertainment</option>
+                                <option value="retail">Retail</option>
                             </select>
                         </div>
 
                         <div class="form-field">
-                            <label for="package">Select Package</label>
-                            <select id="package" required>
-                                <option value="">Choose package</option>
-                                <option value="compact">Compact - ₦7,900</option>
-                                <option value="compact-plus">Compact Plus - ₦11,400</option>
-                                <option value="premium">Premium - ₦18,400</option>
-                                <option value="premium-asia">Premium Asia - ₦23,000</option>
+                            <label for="type">Select Giftcard Type</label>
+                            <select id="type" required>
+                                <option value="">Choose giftcard</option>
+                                <option value="amazon">Amazon</option>
+                                <option value="apple">Apple/iTunes</option>
+                                <option value="google">Google Play</option>
+                                <option value="steam">Steam</option>
+                                <option value="ebay">eBay</option>
+                                <option value="walmart">Walmart</option>
                             </select>
                         </div>
 
                         <div class="form-field">
-                            <label for="smartcard">Smart Card Number</label>
-                            <input type="text" id="smartcard" placeholder="10xxxxxxxxxx" required>
+                            <label for="currency">Select Card Currency</label>
+                            <select id="currency" required>
+                                <option value="">Choose currency</option>
+                                <option value="usd">USD</option>
+                                <option value="gbp">GBP</option>
+                                <option value="eur">EUR</option>
+                                <option value="cad">CAD</option>
+                                <option value="aud">AUD</option>
+                            </select>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="cardAmount">Enter Amount</label>
+                            <input type="number" id="cardAmount" placeholder="0.00" step="0.01" required>
+                        </div>
+
+                        <div class="form-field">
+                            <label>Upload Card</label>
+                            <div class="upload-zone">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="17 8 12 3 7 8"></polyline>
+                                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                                </svg>
+                                <p>Drag & drop your card image here</p>
+                                <span>or <strong style="color: #667eea;">browse</strong> to upload</span>
+                                <input type="file" style="display: none;" accept="image/*">
+                            </div>
+                        </div>
+
+                        <div class="rate-display">
+                            <div>
+                                <div class="label">Rate</div>
+                                <div class="value" id="giftcardRate">₦ 0.00/$</div>
+                            </div>
+                            <div style="text-align: right;">
+                                <div class="label">You Get</div>
+                                <div class="value" id="giftcardYouGet">₦ 0.00</div>
+                            </div>
                         </div>
 
                         <div class="form-actions">
-                            <button type="button" class="btn-service btn-secondary-service">Verify</button>
-                            <button type="submit" class="btn-service btn-primary-service">Pay</button>
+                            <button type="submit" class="btn-service btn-primary-service">Proceed</button>
                         </div>
                     </form>
                 </div>
