@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Baricoin Referral Program - Earn rewards by referring friends">
+    <title>Referral Program | Baricoin</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon-new.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/additional.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/referral.css">
+    <!-- PWA Meta Tags -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#d4a574">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f5f5f5">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Baricoin">
+    <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/icons/icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/images/icons/icon-512.png">
+</head>
+
+<body class="dashboard-body">
+
+    <!-- Dashboard Layout -->
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-logo">
+                <img src="images/baricoin-logo-new.png" alt="Baricoin" style="height: 35px;">
+            </div>
+
+            <nav class="sidebar-menu">
+                <a href="dashboard.html" class="menu-item">
+                    <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    </svg>
+                    <span>Dashboard</span>
+                </a>
+                <a href="giftcards.html" class="menu-item">
+                    <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                        <line x1="1" y1="10" x2="23" y2="10"></line>
+                    </svg>
+                    <span>Giftcards</span>
+                </a>
+                <a href="crypto.html" class="menu-item">
+                    <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <line x1="12" y1="1" x2="12" y2="23"></line>
+                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                    </svg>
+                    <span>Crypto</span>
+                </a>
+                <a href="transactions.html" class="menu-item">
+                    <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <line x1="12" y1="1" x2="12" y2="23"></line>
+                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                    </svg>
+                    <span>Transactions</span>
+                </a>
+                <a href="referral.html" class="menu-item active">
+                    <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                    <span>Referrals</span>
+                </a>
+                <a href="settings.html" class="menu-item">
+                    <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path
+                            d="M12 1v6m0 6v6m5.66-13.66l-4.25 4.25m0 6l-4.25 4.25M23 12h-6m-6 0H1m18.66 5.66l-4.25-4.25m0-6l-4.25-4.25">
+                        </path>
+                    </svg>
+                    <span>Settings</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <div class="bari-services-section">
+                    <p class="services-label">Bari services</p>
+                    <div class="services-submenu">
+                        <a href="airtime.html" class="submenu-item">Airtime</a>
+                        <a href="data.html" class="submenu-item">Data</a>
+                        <a href="cable.html" class="submenu-item">Cable</a>
+                        <a href="electricity.html" class="submenu-item">Electricity</a>
+                    </div>
+                </div>
+                <a href="#" id="logoutBtn" class="menu-item logout-item">
+                    <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                        <polyline points="16 17 21 12 16 7"></polyline>
+                        <line x1="21" y1="12" x2="9" y2="12"></line>
+                    </svg>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-content">
+            <!-- Top Header -->
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <h1 class="greeting">Referral Program</h1>
+                    <p class="username">Invite friends and earn rewards</p>
+                </div>
+                <div class="header-right">
+                    <div class="search-bar">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                        <input type="text" placeholder="Search...">
+                    </div>
+                    <button class="notification-btn" id="notificationBtn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <span class="notification-badge" id="notificationBadge" style="display: none;"></span>
+                    </button>
+                    <div class="user-avatar-btn">
+                        <span id="userInitial">U</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Referral Stats -->
+            <div class="referral-stats-container">
+                <div class="stat-card">
+                    <div class="stat-icon users-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <p class="stat-label">Total Referrals</p>
+                        <h3 class="stat-value" id="totalReferrals">0</h3>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon earnings-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <line x1="12" y1="1" x2="12" y2="23"></line>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <p class="stat-label">Total Earnings</p>
+                        <h3 class="stat-value" id="totalEarnings">₦ 0.00</h3>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon pending-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <p class="stat-label">Pending Rewards</p>
+                        <h3 class="stat-value" id="pendingRewards">₦ 0.00</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Referral Code Section -->
+            <div class="referral-code-container">
+                <h2>Your Referral Code</h2>
+                <div class="referral-code-box">
+                    <div class="code-display">
+                        <span class="code-label">CODE:</span>
+                        <span class="code-value" id="referralCode">LOADING...</span>
+                    </div>
+                    <button class="copy-btn" id="copyCodeBtn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                        Copy Code
+                    </button>
+                </div>
+
+                <div class="referral-link-box">
+                    <div class="link-display">
+                        <span class="link-label">LINK:</span>
+                        <input type="text" class="link-input" id="referralLink" readonly
+                            value="https://baricoin.com/ref/BARI2024">
+                    </div>
+                    <button class="copy-btn" id="copyLinkBtn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                        Copy Link
+                    </button>
+                </div>
+
+                <!-- Social Share Buttons -->
+                <div class="social-share">
+                    <p class="share-label">Share via:</p>
+                    <div class="social-buttons">
+                        <button class="social-btn whatsapp-btn" id="shareWhatsapp">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                            </svg>
+                            WhatsApp
+                        </button>
+                        <button class="social-btn twitter-btn" id="shareTwitter">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+                                </path>
+                            </svg>
+                            Twitter
+                        </button>
+                        <button class="social-btn telegram-btn" id="shareTelegram">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                            Telegram
+                        </button>
+                        <button class="social-btn facebook-btn" id="shareFacebook">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                            </svg>
+                            Facebook
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Referral Rewards Tiers -->
+            <div class="rewards-tiers-container">
+                <h2>Rewards Tiers</h2>
+                <div class="tiers-grid">
+                    <div class="tier-card bronze-tier">
+                        <div class="tier-header">
+                            <div class="tier-badge">🥉</div>
+                            <h3>Bronze</h3>
+                        </div>
+                        <div class="tier-details">
+                            <p class="tier-range">1-5 Referrals</p>
+                            <p class="tier-reward">₦500 per referral</p>
+                        </div>
+                    </div>
+
+                    <div class="tier-card silver-tier">
+                        <div class="tier-header">
+                            <div class="tier-badge">🥈</div>
+                            <h3>Silver</h3>
+                        </div>
+                        <div class="tier-details">
+                            <p class="tier-range">6-15 Referrals</p>
+                            <p class="tier-reward">₦750 per referral</p>
+                        </div>
+                    </div>
+
+                    <div class="tier-card gold-tier">
+                        <div class="tier-header">
+                            <div class="tier-badge">🥇</div>
+                            <h3>Gold</h3>
+                        </div>
+                        <div class="tier-details">
+                            <p class="tier-range">16+ Referrals</p>
+                            <p class="tier-reward">₦1,000 per referral</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Referral History -->
+            <div class="referral-history-container">
+                <h2>Referral History</h2>
+                <div class="history-table-container">
+                    <table class="history-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Referred User</th>
+                                <th>Reward</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="referralHistoryBody">
+                            <tr class="empty-state">
+                                <td colspan="4">
+                                    <div class="empty-history">
+                                        <p>No referrals yet</p>
+                                        <span>Start sharing your referral code to earn rewards</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <button class="chat-toggle-btn" id="chatToggleBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+        </button>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/i18n.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/referral.js"></script>
+    <script src="js/chat.js"></script>
+    <script src="/js/pwa.js"></script>
+</body>
+
+</html>

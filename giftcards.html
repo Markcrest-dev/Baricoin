@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell Giftcard | Baricoin</title>
+    <link rel="icon" type="image/png" href="images/favicon-new.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/additional.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <!-- PWA Meta Tags -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#d4a574">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f5f5f5">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Baricoin">
+    <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/icons/icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/images/icons/icon-512.png">
+</head>
+
+<body class="dashboard-body">
+
+    <div class="dashboard-layout">
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-logo">
+                <img src="images/baricoin-logo-new.png" alt="Baricoin" style="height: 35px;">
+            </div>
+
+            <nav class="sidebar-menu">
+                <a href="dashboard.html" class="menu-item">
+                    <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    </svg>
+                    <span>Dashboard</span>
+                </a>
+                <a href="giftcards.html" class="menu-item active">
+                    <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                        <line x1="1" y1="10" x2="23" y2="10"></line>
+                    </svg>
+                    <span>Giftcards</span>
+                </a>
+                <a href="crypto.html" class="menu-item">
+                    <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <line x1="12" y1="1" x2="12" y2="23"></line>
+                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                    </svg>
+                    <span>Crypto</span>
+                </a>
+                <a href="transactions.html" class="menu-item">
+                    <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <line x1="12" y1="1" x2="12" y2="23"></line>
+                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                    </svg>
+                    <span>Transactions</span>
+                </a>
+                <a href="settings.html" class="menu-item">
+                    <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path
+                            d="M12 1v6m0 6v6m5.66-13.66l-4.25 4.25m0 6l-4.25 4.25M23 12h-6m-6 0H1m18.66 5.66l-4.25-4.25m0-6l-4.25-4.25">
+                        </path>
+                    </svg>
+                    <span>Settings</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <div class="bari-services-section">
+                    <p class="services-label">Bari services</p>
+                    <div class="services-submenu">
+                        <a href="airtime.html" class="submenu-item">Airtime</a>
+                        <a href="data.html" class="submenu-item">Data</a>
+                        <a href="cable.html" class="submenu-item">Cable</a>
+                        <a href="electricity.html" class="submenu-item">Electricity</a>
+                    </div>
+                </div>
+                <a href="#" id="logoutBtn" class="menu-item logout-item">
+                    <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                        <polyline points="16 17 21 12 16 7"></polyline>
+                        <line x1="21" y1="12" x2="9" y2="12"></line>
+                    </svg>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <main class="dashboard-content">
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <h1 class="greeting">Sell Giftcard</h1>
+                    <p class="username">Convert your giftcards to Naira instantly</p>
+                </div>
+                <div class="header-right">
+                    <div class="user-avatar-btn">
+                        <span id="userInitial">U</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="service-page-container">
+                <div class="service-card">
+                    <h2>Sell Giftcard</h2>
+
+                    <form class="service-form">
+                        <div class="form-field">
+                            <label for="category">Select Giftcard Category</label>
+                            <select id="category" required>
+                                <option value="">Choose category</option>
+                                <option value="ecommerce">E-commerce</option>
+                                <option value="gaming">Gaming</option>
+                                <option value="entertainment">Entertainment</option>
+                                <option value="retail">Retail</option>
+                            </select>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="type">Select Giftcard Type</label>
+                            <select id="type" required>
+                                <option value="">Choose giftcard</option>
+                                <option value="amazon">Amazon</option>
+                                <option value="apple">Apple/iTunes</option>
+                                <option value="google">Google Play</option>
+                                <option value="steam">Steam</option>
+                                <option value="ebay">eBay</option>
+                                <option value="walmart">Walmart</option>
+                            </select>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="currency">Select Card Currency</label>
+                            <select id="currency" required>
+                                <option value="">Choose currency</option>
+                                <option value="usd">USD</option>
+                                <option value="gbp">GBP</option>
+                                <option value="eur">EUR</option>
+                                <option value="cad">CAD</option>
+                                <option value="aud">AUD</option>
+                            </select>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="cardAmount">Enter Amount</label>
+                            <input type="number" id="cardAmount" placeholder="0.00" step="0.01" required>
+                        </div>
+
+                        <div class="form-field">
+                            <label>Upload Card</label>
+                            <div class="upload-zone">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="17 8 12 3 7 8"></polyline>
+                                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                                </svg>
+                                <p>Drag & drop your card image here</p>
+                                <span>or <strong style="color: #667eea;">browse</strong> to upload</span>
+                                <input type="file" style="display: none;" accept="image/*">
+                            </div>
+                        </div>
+
+                        <div class="rate-display">
+                            <div>
+                                <div class="label">Rate</div>
+                                <div class="value" id="giftcardRate">₦ 0.00/$</div>
+                            </div>
+                            <div style="text-align: right;">
+                                <div class="label">You Get</div>
+                                <div class="value" id="giftcardYouGet">₦ 0.00</div>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn-service btn-primary-service">Proceed</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div class="chat-widget" id="chatWidget">
+        <button class="chat-toggle-btn" id="chatToggleBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+        </button>
+    </div>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/chat.js"></script>
+    <script src="/js/pwa.js"></script>
+</body>
+
+</html>

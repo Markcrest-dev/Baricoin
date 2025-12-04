@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Baricoin is your one stop platform for all digital transactions - Bill payments, Gift cards, and Crypto trade.">
+    <title>Baricoin | Sell Gift Cards to Naira | Convert Crypto to Naira| Bill Payments</title>
+
+    <!-- Google Fonts -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon-new.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/additional.css">
+    <!-- PWA Meta Tags -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#d4a574">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f5f5f5">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Baricoin">
+    <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/icons/icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/images/icons/icon-512.png">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                <img src="images/baricoin-logo-new.png" alt="Baricoin" style="height: 40px; margin-right: 10px;">
+            </a>
+
+            <div class="navbar-menu" id="navbarMenu">
+                <div class="navbar-links">
+                    <a href="about.html">About</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="products.html">Products</a>
+                    <a href="ambassador.html">Ambassador</a>
+                    <a href="rate-calculator.html">Rate Calculator</a>
+                    <a href="support.html">Support</a>
+                </div>
+
+                <div class="navbar-actions">
+                    <a href="login.html" class="btn btn-secondary btn-sm">Log In</a>
+                    <a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a>
+                </div>
+            </div>
+
+            <button class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 60vh;">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Baricoin Blog</h1>
+                <p>Stay updated with the latest insights, tips, and news about gift card trading
+                    and cryptocurrency</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section>
+        <div class="container">
+            <!-- Search and Filter -->
+            <div class="blog-controls">
+                <div class="blog-search-container">
+                    <input type="text" id="blog-search" class="blog-search-input" placeholder="Search blog posts...">
+                    <span class="search-icon">🔍</span>
+                </div>
+
+                <div class="blog-categories">
+                    <button class="category-btn active" data-category="all">All Posts</button>
+                    <button class="category-btn" data-category="gift cards">Gift Cards</button>
+                    <button class="category-btn" data-category="crypto news">Crypto News</button>
+                    <button class="category-btn" data-category="tips">Tips</button>
+                    <button class="category-btn" data-category="updates">Updates</button>
+                </div>
+            </div>
+
+            <!-- Blog Posts Grid -->
+            <div class="blog-grid" id="blog-posts-container">
+                <!-- Posts will be dynamically loaded here -->
+                <div style="grid-column: 1 / -1; text-align: center; padding: 3rem;">
+                    <p style="font-size: 1.25rem; color: var(--color-gray-600);">Loading posts...</p>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div id="blog-pagination"></div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Get Started On Baricoin Today.</h2>
+            <p style="font-size: 1.125rem; margin-bottom: 2rem;">Join our Newsletter for special perks & updates</p>
+
+            <form class="newsletter-form" id="newsletterForm">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Baricoin</h4>
+                    <p>The Best Site and App to Trade Giftcards & Convert Crypto to Naira at the Highest Rates.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="support.html">Support</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="terms.html">Terms & Agreement</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="ambassador.html">Ambassador</a></li>
+                        <li><a href="rate-calculator.html">Rate Calculator</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>2025, Baricoin. All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/i18n.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/blog.js"></script>
+    <script src="/js/pwa.js"></script>
+</body>
+
+</html>

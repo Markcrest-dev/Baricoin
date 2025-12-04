@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sign up for Baricoin and get ₦2,000 bonus">
+    <title>Sign Up | Baricoin</title>
+
+    <!-- Google Fonts -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon-new.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/additional.css">
+    <!-- PWA Meta Tags -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#d4a574">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f5f5f5">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Baricoin">
+    <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/icons/icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/images/icons/icon-512.png">
+</head>
+
+<body>
+
+    <!-- Auth Page Split -->
+    <div class="auth-page">
+        <div class="auth-page-split">
+            <!-- Left Section - 3D Animation -->
+            <div class="auth-animation-section">
+                <div class="cube-container">
+                    <div class="cube">
+                        <div class="cube-face front">
+                            <div class="icon">🎁</div>
+                            <h3>Trade Gift Cards</h3>
+                            <p>Sell gift cards at the best rates instantly</p>
+                        </div>
+                        <div class="cube-face back">
+                            <div class="icon">₿</div>
+                            <h3>Convert Crypto</h3>
+                            <p>Exchange crypto to Naira securely</p>
+                        </div>
+                        <div class="cube-face right">
+                            <div class="icon">⚡</div>
+                            <h3>Instant Payments</h3>
+                            <p>Get paid immediately to your account</p>
+                        </div>
+                        <div class="cube-face left">
+                            <div class="icon">💳</div>
+                            <h3>Bill Payments</h3>
+                            <p>Pay for airtime, data, and utilities</p>
+                        </div>
+                        <div class="cube-face top">
+                            <div class="icon">🔒</div>
+                            <h3>Secure Platform</h3>
+                            <p>Your transactions are safe with us</p>
+                        </div>
+                        <div class="cube-face bottom">
+                            <div class="icon">💰</div>
+                            <h3>₦2,000 Bonus</h3>
+                            <p>Get rewarded when you sign up today</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Section - Form -->
+            <div class="auth-form-section">
+                <div class="auth-card">
+                    <h2>Create an Account</h2>
+
+                    <form class="auth-form" id="signupForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" placeholder="Enter your full name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" placeholder="Choose a username" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="your.email@example.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" placeholder="+234 xxx xxx xxxx" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" placeholder="Create a strong password" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="referral">Referral Code (Optional)</label>
+                            <input type="text" id="referral" placeholder="Enter referral code if you have one">
+                        </div>
+
+                        <div class="form-group" style="display: flex; align-items: start; gap: 0.5rem;">
+                            <input type="checkbox" id="terms" required style="width: auto; margin-top: 0.25rem;">
+                            <label for="terms" style="font-size: 0.875rem; line-height: 1.5;">
+                                I have read the <a href="privacy-policy.html">Privacy Policy</a> and the <a
+                                    href="terms.html">Terms of Use</a> and I agree to them
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Create Account</button>
+                    </form>
+
+                    <p class="auth-link">
+                        Have an account with us? <a href="login.html">Sign in here</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/i18n.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="/js/pwa.js"></script>
+</body>
+
+</html>

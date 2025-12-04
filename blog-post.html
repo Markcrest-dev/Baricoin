@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Read the latest blog post from Baricoin">
+    <title id="page-title">Blog Post | Baricoin</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon-new.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/additional.css">
+    <!-- PWA Meta Tags -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#d4a574">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f5f5f5">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Baricoin">
+    <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/icons/icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/images/icons/icon-512.png">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                <img src="images/baricoin-logo-new.png" alt="Baricoin" style="height: 40px; margin-right: 10px;">
+            </a>
+
+            <div class="navbar-menu" id="navbarMenu">
+                <div class="navbar-links">
+                    <a href="about.html">About</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="products.html">Products</a>
+                    <a href="ambassador.html">Ambassador</a>
+                    <a href="rate-calculator.html">Rate Calculator</a>
+                    <a href="support.html">Support</a>
+                </div>
+
+                <div class="navbar-actions">
+                    <a href="login.html" class="btn btn-secondary btn-sm">Log In</a>
+                    <a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a>
+                </div>
+            </div>
+
+            <button class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <section style="background: var(--color-gray-100); padding: 8rem 0 2rem; margin-top: 0;">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>→</span>
+                <a href="blog.html">Blog</a>
+                <span>→</span>
+                <span id="breadcrumb-title">Article</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Post Content -->
+    <article class="blog-post-article">
+        <div class="container">
+            <div class="blog-post-container">
+                <!-- Category Badge -->
+                <div class="blog-post-meta-top">
+                    <span class="blog-category-badge" id="post-category">Crypto News</span>
+                    <span class="blog-reading-time" id="post-reading-time">5 min read</span>
+                </div>
+
+                <!-- Title -->
+                <h1 class="blog-post-title" id="post-title">Blog Post Title</h1>
+
+                <!-- Author & Date -->
+                <div class="blog-post-author-info">
+                    <div class="author-avatar">B</div>
+                    <div>
+                        <p class="author-name" id="post-author">Baricoin Team</p>
+                        <p class="post-date" id="post-date">December 3, 2025</p>
+                    </div>
+                </div>
+
+                <!-- Featured Image -->
+                <div class="blog-post-image">
+                    <div id="post-image" class="blog-post-image-placeholder">📱</div>
+                </div>
+
+                <!-- Article Content -->
+                <div class="blog-post-content" id="post-content">
+                    <p>Loading article content...</p>
+                </div>
+
+                <!-- Tags -->
+                <div class="blog-post-tags">
+                    <h4>Tags:</h4>
+                    <div id="post-tags" class="tags-container">
+                        <!-- Tags will be inserted here -->
+                    </div>
+                </div>
+
+                <!-- Share Buttons -->
+                <div class="blog-share-section">
+                    <h4>Share this article:</h4>
+                    <div class="share-buttons">
+                        <a href="#" class="share-btn share-facebook" onclick="shareOnFacebook(); return false;">
+                            <span>📘</span> Facebook
+                        </a>
+                        <a href="#" class="share-btn share-twitter" onclick="shareOnTwitter(); return false;">
+                            <span>🐦</span> Twitter
+                        </a>
+                        <a href="#" class="share-btn share-linkedin" onclick="shareOnLinkedIn(); return false;">
+                            <span>💼</span> LinkedIn
+                        </a>
+                        <a href="#" class="share-btn share-whatsapp" onclick="shareOnWhatsApp(); return false;">
+                            <span>💬</span> WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Related Posts -->
+                <div class="related-posts-section">
+                    <h2 class="section-title">Related Articles</h2>
+                    <div class="related-posts-grid" id="related-posts">
+                        <!-- Related posts will be inserted here -->
+                    </div>
+                </div>
+
+                <!-- Back to Blog Button -->
+                <div style="text-align: center; margin-top: 3rem;">
+                    <a href="blog.html" class="btn btn-primary">← Back to All Posts</a>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Get Started On Baricoin Today.</h2>
+            <p style="font-size: 1.125rem; margin-bottom: 2rem;">Join our Newsletter for special perks & updates</p>
+
+            <form class="newsletter-form" id="newsletterForm">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Baricoin</h4>
+                    <p>The Best Site and App to Trade Giftcards & Convert Crypto to Naira at the Highest Rates.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="support.html">Support</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="terms.html">Terms & Agreement</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="ambassador.html">Ambassador</a></li>
+                        <li><a href="rate-calculator.html">Rate Calculator</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>2025, Baricoin. All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/i18n.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/blog.js"></script>
+    <script>
+        // Load blog post on page load
+        document.addEventListener('DOMContentLoaded', function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const postSlug = urlParams.get('post');
+            if (postSlug && window.BlogSystem) {
+                window.BlogSystem.loadPost(postSlug);
+            } else {
+                document.getElementById('post-content').innerHTML = '<p style="color: var(--color-warning);">Post not found. <a href="blog.html">Return to blog</a></p>';
+            }
+        });
+
+        // Share functions
+        function shareOnFacebook() {
+            const url = encodeURIComponent(window.location.href);
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+        }
+
+        function shareOnTwitter() {
+            const url = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent(document.getElementById('post-title').textContent);
+            window.open(`https://twitter.com/intent/tweet?url=${url}&text=${title}`, '_blank');
+        }
+
+        function shareOnLinkedIn() {
+            const url = encodeURIComponent(window.location.href);
+            window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, '_blank');
+        }
+
+        function shareOnWhatsApp() {
+            const url = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent(document.getElementById('post-title').textContent);
+            window.open(`https://wa.me/?text=${title} ${url}`, '_blank');
+        }
+    </script>
+    <script src="/js/pwa.js"></script>
+</body>
+
+</html>

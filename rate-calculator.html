@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Get the Best and Highest Gift Card & Crypto Rates in Naira Updated Multiple Times Daily">
+    <title>Highest Gift Card and Crypto Rates Calculator in Naira</title>
+
+    <!-- Google Fonts -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon-new.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/additional.css">
+    <!-- PWA Meta Tags -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#d4a574">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f5f5f5">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Baricoin">
+    <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/icons/icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/images/icons/icon-512.png">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                <img src="images/baricoin-logo-new.png" alt="Baricoin" style="height: 40px; margin-right: 10px;">
+            </a>
+
+            <div class="navbar-menu" id="navbarMenu">
+                <div class="navbar-links">
+                    <a href="about.html">About</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="products.html">Products</a>
+                    <a href="ambassador.html">Ambassador</a>
+                    <a href="rate-calculator.html">Rate Calculator</a>
+                    <a href="support.html">Support</a>
+                </div>
+
+                <div class="navbar-actions">
+                    <a href="login.html" class="btn btn-secondary btn-sm">Log In</a>
+                    <a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a>
+                </div>
+            </div>
+
+            <button class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Check out our Highest Gift Card and Crypto Rates</h1>
+                <p>Get real-time rates for your cryptocurrencies and gift cards. Updated hourly
+                    for maximum accuracy.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rate Calculator -->
+    <section>
+        <div class="container">
+            <div class="calculator-widget">
+                <h3 style="text-align: center; margin-bottom: 1.5rem; font-family: var(--font-heading);">Enhanced Rate
+                    Calculator
+                </h3>
+
+                <div class="calculator-tabs">
+                    <button class="calculator-tab active" data-tab="crypto">Crypto</button>
+                    <button class="calculator-tab" data-tab="giftcard">Giftcard</button>
+                </div>
+
+                <div class="calculator-form">
+                    <!-- Asset Selection -->
+                    <div class="form-group">
+                        <label for="assetSelect">Select Asset</label>
+                        <select id="assetSelect">
+                            <!-- Crypto options -->
+                            <optgroup label="Cryptocurrencies" id="cryptoOptions">
+                                <option value="bitcoin" data-rate="1750">Bitcoin (BTC)</option>
+                                <option value="ethereum" data-rate="580">Ethereum (ETH)</option>
+                                <option value="usdt" data-rate="1620">USDT (TRC20)</option>
+                                <option value="usdc" data-rate="1615">USDC</option>
+                                <option value="litecoin" data-rate="150">Litecoin (LTC)</option>
+                                <option value="bnb" data-rate="685">BNB</option>
+                                <option value="doge" data-rate="0.25">Dogecoin (DOGE)</option>
+                                <option value="xrp" data-rate="3.2">XRP</option>
+                            </optgroup>
+                            <!-- Giftcard options -->
+                            <optgroup label="Gift Cards" id="giftcardOptions" style="display: none;">
+                                <option value="itunes" data-rate="800">iTunes</option>
+                                <option value="amazon" data-rate="750">Amazon</option>
+                                <option value="steam" data-rate="680">Steam</option>
+                                <option value="google-play" data-rate="720">Google Play</option>
+                                <option value="ebay" data-rate="700">eBay</option>
+                                <option value="walmart" data-rate="690">Walmart</option>
+                                <option value="visa" data-rate="770">Visa</option>
+                                <option value="amex" data-rate="760">American Express</option>
+                            </optgroup>
+                        </select>
+                        <button class="favorite-btn" id="favoriteBtn" title="Add to favorites">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Amount Input -->
+                    <div class="form-group">
+                        <label for="amountInput">Amount (USD)</label>
+                        <input type="number" id="amountInput" placeholder="Enter amount" value="100" min="0"
+                            step="0.01">
+                    </div>
+
+                    <!-- Calculator Result -->
+                    <div class="calculator-result">
+                        <div class="amount" id="resultAmount">₦ 175,000.00</div>
+                        <div class="label">Naira Value</div>
+                        <div class="rate-indicator">
+                            Rate: <span id="currentRate">₦1,750/USD</span>
+                            <span class="rate-change positive" id="rateChange">+2.5%</span>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="calculator-actions">
+                        <button class="action-btn" id="swapBtn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <polyline points="17 1 21 5 17 9"></polyline>
+                                <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+                                <polyline points="7 23 3 19 7 15"></polyline>
+                                <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+                            </svg>
+                            Swap
+                        </button>
+                        <button class="action-btn" id="setAlertBtn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                            </svg>
+                            Set Alert
+                        </button>
+                    </div>
+                </div>
+
+                <p
+                    style="text-align: center; margin-top: 1rem; color: var(--color-gray-600); font-size: var(--text-sm);">
+                    Rates updated every 5 minutes. Actual rates may vary slightly at time of transaction.
+                </p>
+            </div>
+
+            <!-- Favorite Pairs -->
+            <div class="favorites-section" id="favoritesSection" style="display: none;">
+                <h4>Favorite Pairs</h4>
+                <div class="favorites-grid" id="favoritesGrid"></div>
+            </div>
+
+            <!-- Rate Comparison Table -->
+            <div class="rate-comparison-table">
+                <h4>Rate Comparison</h4>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Asset</th>
+                            <th>Current Rate (₦/USD)</th>
+                            <th>24h Change</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="comparisonTableBody">
+                        <!-- Will be populated by JS -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Historical Rate Chart -->
+            <div class="rate-chart-container">
+                <div class="chart-header">
+                    <h4>Rate History (Last 7 Days)</h4>
+                    <div class="chart-controls">
+                        <button class="chart-period-btn active" data-period="7d">7D</button>
+                        <button class="chart-period-btn" data-period="30d">30D</button>
+                        <button class="chart-period-btn" data-period="90d">90D</button>
+                    </div>
+                </div>
+                <canvas id="rateChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rate Alert Modal -->
+    <div class="modal-overlay" id="rateAlertModal" style="display: none;">
+        <div class="modal-content">
+            <h3>Set Rate Alert</h3>
+            <div class="modal-body">
+                <p style="margin-bottom: 1rem; color: #64748b;">Get notified when the rate reaches your target</p>
+                <div class="form-group">
+                    <label for="alertAsset">Asset</label>
+                    <input type="text" id="alertAsset" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="alertTargetRate">Target Rate (₦/USD)</label>
+                    <input type="number" id="alertTargetRate" placeholder="Enter target rate" step="0.01">
+                </div>
+                <div class="form-group">
+                    <label for="alertEmail">Email for Notification</label>
+                    <input type="email" id="alertEmail" placeholder="your@email.com">
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-secondary" id="cancelAlertBtn">Cancel</button>
+                <button class="btn btn-primary" id="saveAlertBtn">Set Alert</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <section style="background: var(--color-gray-100);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="faq-section">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How do I start selling on Baricoin?</h3>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>To start selling, you have to create an account on the Baricoin web or Mobile
+                                applications.
+                            </p>
+                            <p>Sign up with these easy steps:</p>
+                            <ol>
+                                <li>Register with your email and phone number</li>
+                                <li>Verify the same mail with the OTP sent to it.</li>
+                                <li>Set your password and PIN (we advise you to use a strong password that you will
+                                    remember).</li>
+                                <li>Start selling.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How do I sell Crypto on Baricoin?</h3>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Selling Crypto on Baricoin is easy. These simple steps will have your bank account
+                                buzzing:
+                            </p>
+                            <ol>
+                                <li>Register with your email and phone number</li>
+                                <li>Verify the same mail with the OTP sent to it.</li>
+                                <li>Set your password and PIN (we advise you to use a strong password that you will
+                                    remember).</li>
+                                <li>Start selling.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Get Started On Baricoin Today.</h2>
+            <p style="font-size: 1.125rem; margin-bottom: 2rem;">Join our Newsletter for special perks & updates</p>
+
+            <form class="newsletter-form" id="newsletterForm">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Baricoin</h4>
+                    <p>The Best Site and App to Trade Giftcards & Convert Crypto to Naira at the Highest Rates.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="support.html">Support</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="terms.html">Terms & Agreement</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="ambassador.html">Ambassador</a></li>
+                        <li><a href="rate-calculator.html">Rate Calculator</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>2025, Baricoin. All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/i18n.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/calculator.js"></script>
+    <script src="js/faq.js"></script>
+    <script src="/js/pwa.js"></script>
+</body>
+
+</html>

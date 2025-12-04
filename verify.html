@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Verify your email to continue">
+    <title>Verify Email | Baricoin</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon-new.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/additional.css">
+    <!-- PWA Meta Tags -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#d4a574">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f5f5f5">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Baricoin">
+    <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/icons/icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/images/icons/icon-512.png">
+</head>
+
+<body>
+
+    <!-- Auth Page -->
+    <div class="auth-page">
+        <div class="auth-card">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <div style="font-size: 4rem; margin-bottom: 1rem;">📧</div>
+                <h2>Verify Your Email</h2>
+                <p style="color: var(--color-gray-600); margin-top: 1rem;">
+                    We've sent a verification code to<br>
+                    <strong id="userEmail">your@email.com</strong>
+                </p>
+            </div>
+
+            <form class="auth-form" id="verifyForm">
+                <div class="form-group">
+                    <label for="code">Enter 6-Digit Code</label>
+                    <input type="text" id="code" placeholder="000000" maxlength="6" pattern="[0-9]{6}" required
+                        style="text-align: center; font-size: 1.5rem; letter-spacing: 0.5rem;">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Verify Email</button>
+            </form>
+
+            <p class="auth-link" style="text-align: center;">
+                Didn't receive the code? <a href="#" id="resendBtn">Resend Code</a>
+            </p>
+
+            <p class="auth-link" id="timerText"
+                style="text-align: center; color: var(--color-gray-500); font-size: 0.875rem;">
+                You can resend code in <span id="timer">60</span>s
+            </p>
+
+            <p class="auth-link" style="margin-top: 2rem; text-align: center;">
+                <a href="signup.html">← Back to Signup</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/i18n.js"></script>
+    <script src="js/auth.js"></script>
+    <script>
+        // Display user email from URL or localStorage
+        const urlParams = new URLSearchParams(window.location.search);
+        const email = urlParams.get('email') || localStorage.getItem('tempSignupEmail') || 'your@email.com';
+        document.getElementById('userEmail').textContent = email;
+
+        // Resend timer
+        let timeLeft = 60;
+        const timerEl = document.getElementById('timer');
+        const resendBtn = document.getElementById('resendBtn');
+        const timerText = document.getElementById('timerText');
+
+        const countdown = setInterval(() => {
+            timeLeft--;
+            timerEl.textContent = timeLeft;
+
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
+                resendBtn.style.pointerEvents = 'auto';
+                resendBtn.style.opacity = '1';
+                timerText.style.display = 'none';
+            }
+        }, 1000);
+
+        // Disable resend initially
+        resendBtn.style.pointerEvents = 'none';
+        resendBtn.style.opacity = '0.5';
+
+        // Resend code handler
+        resendBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            alert('Verification code resent! (This is a demo - check console for code)');
+            const newCode = Math.floor(100000 + Math.random() * 900000);
+            console.log('New verification code:', newCode);
+            localStorage.setItem('verificationCode', newCode.toString());
+
+            // Reset timer
+            timeLeft = 60;
+            resendBtn.style.pointerEvents = 'none';
+            resendBtn.style.opacity = '0.5';
+            timerText.style.display = 'block';
+            countdown;
+        });
+
+        // Auto-focus code input
+        document.getElementById('code').focus();
+    </script>
+    <script src="/js/pwa.js"></script>
+</body>
+
+</html>

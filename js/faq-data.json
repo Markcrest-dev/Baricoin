@@ -1,0 +1,246 @@
+{
+    "categories": [
+        {
+            "id": "account",
+            "name": "Account & Registration",
+            "icon": "👤"
+        },
+        {
+            "id": "transactions",
+            "name": "Transactions",
+            "icon": "💸"
+        },
+        {
+            "id": "giftcards",
+            "name": "Gift Cards",
+            "icon": "🎁"
+        },
+        {
+            "id": "crypto",
+            "name": "Cryptocurrency",
+            "icon": "₿"
+        },
+        {
+            "id": "bills",
+            "name": "Bill Payments",
+            "icon": "📱"
+        },
+        {
+            "id": "security",
+            "name": "Security & Privacy",
+            "icon": "🔒"
+        }
+    ],
+    "faqs": [
+        {
+            "id": 1,
+            "category": "account",
+            "question": "How do I create a Baricoin account?",
+            "answer": "Creating a Baricoin account is simple and takes less than 2 minutes. Follow these steps: <ol><li>Visit baricoin.com or download the mobile app</li><li>Click on 'Sign Up'</li><li>Enter your email address and phone number</li><li>Verify your email with the OTP sent to your inbox</li><li>Create a strong password and 6-digit PIN</li><li>Complete your profile and start trading</li></ol> You'll need a valid email address and Nigerian phone number to register.",
+            "helpful": 245
+        },
+        {
+            "id": 2,
+            "category": "account",
+            "question": "I forgot my password. How do I reset it?",
+            "answer": "To reset your password: <ol><li>Go to the login page and click 'Forgot Password'</li><li>Enter your registered email address</li><li>Check your email for a password reset link</li><li>Click the link and create a new password</li><li>Log in with your new password</li></ol> If you don't receive the email within 5 minutes, check your spam folder or contact support.",
+            "helpful": 198
+        },
+        {
+            "id": 3,
+            "category": "account",
+            "question": "How do I verify my account (KYC)?",
+            "answer": "Account verification helps protect you and enables higher transaction limits. To verify: <ol><li>Log into your dashboard</li><li>Go to Settings > Account Verification</li><li>Upload a clear photo of a valid government ID (National ID, Driver's License, or International Passport)</li><li>Take a selfie holding your ID</li><li>Submit for review</li></ol> Verification typically takes 24-48 hours. You'll receive an email once approved.",
+            "helpful": 167
+        },
+        {
+            "id": 4,
+            "category": "account",
+            "question": "Can I change my registered email or phone number?",
+            "answer": "Yes, you can update your contact information. For security reasons: <ol><li>Go to Settings > Account Information</li><li>Click 'Change Email' or 'Change Phone Number'</li><li>Enter your current password for verification</li><li>Enter the new email/phone number</li><li>Verify with OTP sent to the new contact</li></ol> Note: You'll need access to both old and new contact methods for security verification.",
+            "helpful": 134
+        },
+        {
+            "id": 5,
+            "category": "account",
+            "question": "How do I delete my Baricoin account?",
+            "answer": "We're sorry to see you go! To delete your account: <ol><li>Ensure you've withdrawn all funds from your wallets</li><li>Contact our support team via email or live chat</li><li>Provide your account details for verification</li><li>Confirm deletion request</li></ol> Account deletion is permanent and irreversible. All your transaction history and data will be permanently deleted after 30 days.",
+            "helpful": 89
+        },
+        {
+            "id": 6,
+            "category": "account",
+            "question": "Why is my account suspended?",
+            "answer": "Accounts may be suspended for security reasons or policy violations. Common causes include: <ul><li>Multiple failed login attempts</li><li>Suspicious activity detected</li><li>Terms of Service violations</li><li>Incomplete KYC verification</li></ul> Contact our support team immediately if your account is suspended. We'll review your case and help restore access if appropriate.",
+            "helpful": 156
+        },
+        {
+            "id": 7,
+            "category": "transactions",
+            "question": "How long does it take to receive payment?",
+            "answer": "Baricoin processes payments instantly! <ul><li><strong>Gift Cards:</strong> 5-15 minutes after approval</li><li><strong>Crypto:</strong> Credited within 30 minutes of blockchain confirmation</li><li><strong>Withdrawals:</strong> Instant to your bank account</li></ul> Payments are credited to your Naira wallet first, then you can withdraw to your bank account anytime.",
+            "helpful": 312
+        },
+        {
+            "id": 8,
+            "category": "transactions",
+            "question": "What are the transaction limits?",
+            "answer": "Transaction limits depend on your verification status: <p><strong>Unverified Accounts:</strong></p><ul><li>Daily limit: ₦50,000</li><li>Single transaction: ₦10,000</li></ul><p><strong>Verified Accounts:</strong></p><ul><li>Daily limit: ₦10,000,000</li><li>Single transaction: ₦2,000,000</li></ul> Complete KYC verification to enjoy higher limits and faster processing.",
+            "helpful": 289
+        },
+        {
+            "id": 9,
+            "category": "transactions",
+            "question": "Can I cancel a transaction?",
+            "answer": "Transaction cancellation depends on the status: <ul><li><strong>Pending:</strong> Can be cancelled before admin review</li><li><strong>Processing:</strong> Cannot be cancelled</li><li><strong>Completed:</strong> Irreversible</li></ul> To cancel a pending transaction, go to Transactions > Click on the transaction > Cancel Request. Funds or cards will be returned to you if applicable.",
+            "helpful": 178
+        },
+        {
+            "id": 10,
+            "category": "transactions",
+            "question": "Why was my transaction declined?",
+            "answer": "Transact ions may be declined for several reasons: <ul><li>Invalid or already-used gift card codes</li><li>Poor image quality of cards</li><li>Card not matching description</li><li>Insufficient blockchain confirmations (crypto)</li><li>Suspected fraudulent activity</li></ul> You'll receive a detailed reason in your transaction history. Contact support if you need clarification.",
+            "helpful": 234
+        },
+        {
+            "id": 11,
+            "category": "transactions",
+            "question": "How do I check my transaction history?",
+            "answer": "To view your transactions: <ol><li>Log into your dashboard</li><li>Click on 'Transactions' in the menu</li><li>Use filters to sort by type, status, or date</li><li>Click any transaction for full details</li><li>Download transaction receipts as PDF</li></ol> You can also export your complete transaction history as CSV for record-keeping.",
+            "helpful": 145
+        },
+        {
+            "id": 12,
+            "category": "transactions",
+            "question": "How do I withdraw money to my bank account?",
+            "answer": "Withdrawing funds is simple: <ol><li>Go to your Naira Wallet and click 'Withdraw'</li><li>Select your verified bank account (or add a new one)</li><li>Enter withdrawal amount (min: ₦1,000)</li><li>Enter your transaction PIN</li><li>Confirm withdrawal</li></ol> Funds arrive in your bank account instantly. There are no withdrawal fees!",
+            "helpful": 298
+        },
+        {
+            "id": 13,
+            "category": "giftcards",
+            "question": "What gift cards do you accept?",
+            "answer": "We accept over 50 types of gift cards including: <ul><li>iTunes/Apple Store</li><li>Amazon (US, UK, CA)</li><li>Google Play</li><li>Steam</li><li>eBay</li><li>Walmart</li><li>Visa & Mastercard prepaid</li><li>Xbox & PlayStation</li><li>And many more!</li></ul> Check our Rate Calculator for current rates and supported card types.",
+            "helpful": 267
+        },
+        {
+            "id": 14,
+            "category": "giftcards",
+            "question": "How do I sell gift cards on Baricoin?",
+            "answer": "Selling gift cards is easy: <ol><li>Log into your account</li><li>Go to 'Sell Gift Cards'</li><li>Select card type and country</li><li>Enter card denomination</li><li>Upload clear photos of both card sides</li><li>Submit for review</li></ol> Our team reviews submissions within 5-10 minutes. Payment is instant upon approval!",
+            "helpful": 321
+        },
+        {
+            "id": 15,
+            "category": "giftcards",
+            "question": "Can I sell partial/used gift cards?",
+            "answer": "No, we only accept unused gift cards with their full original value. Partially used or redeemed cards will be declined. Ensure your cards are: <ul><li>Unused and unredeemed</li><li>Have clear, unscratched codes</li><li>Are within validity period</li><li>Match the denomination you entered</li></ul>",
+            "helpful": 189
+        },
+        {
+            "id": 16,
+            "category": "giftcards",
+            "question": "Why are gift card rates different?",
+            "answer": "Gift card rates vary based on several factors: <ul><li><strong>Card Type:</strong> Popular cards like iTunes rate higher</li><li><strong>Country:</strong> US cards typically have better rates</li><li><strong>Denomination:</strong> Higher amounts may get premium rates</li><li><strong>Physical vs Digital:</strong> Physical cards often rate higher</li><li><strong>Market Demand:</strong> Rates fluctuate with demand</li></ul> Check our Rate Calculator for current rates.",
+            "helpful": 256
+        },
+        {
+            "id": 17,
+            "category": "giftcards",
+            "question": "How should I photograph my gift cards?",
+            "answer": "Good photos ensure faster approval: <ul><li>Take photos in good lighting</li><li>Ensure all codes are clearly visible</li><li>Don't scratch the card before uploading</li><li>Capture the entire card in the frame</li><li>Avoid blurry or dark images</li><li>Show both front and back</li></ul> Poor quality images lead to delays or rejection.",
+            "helpful": 198
+        },
+        {
+            "id": 18,
+            "category": "giftcards",
+            "question": "Can I sell international gift cards?",
+            "answer": "Yes! We accept gift cards from multiple countries including USA, UK, Canada, Australia, and more. Rates may vary by country. US gift cards generally have the highest rates. Always select the correct country when submitting to get accurate rates.",
+            "helpful": 167
+        },
+        {
+            "id": 19,
+            "category": "crypto",
+            "question": "What cryptocurrencies can I sell?",
+            "answer": "We support major cryptocurrencies: <ul><li>Bitcoin (BTC)</li><li>Ethereum (ETH)</li><li>USDT (Tether) - TRC20 & ERC20</li><li>USDC</li><li>Litecoin (LTC)</li><li>Bitcoin Cash (BCH)</li></ul> More coins are added regularly based on demand and market stability.",
+            "helpful": 234
+        },
+        {
+            "id": 20,
+            "category": "crypto",
+            "question": "How do I sell cryptocurrency?",
+            "answer": "Selling crypto on Baricoin: <ol><li>Log into your account</li><li>Go to 'Sell Crypto'</li><li>Select cryptocurrency type</li><li>Enter amount to sell</li><li>See the Naira equivalent</li><li>Send crypto to the provided wallet address</li><li>Wait for blockchain confirmation</li><li>Receive Naira payment</li></ol> Always double-check the wallet address before sending!",
+            "helpful": 298
+        },
+        {
+            "id": 21,
+            "category": "crypto",
+            "question": "How long do crypto transactions take?",
+            "answer": "Crypto transaction time depends on blockchain confirmations: <ul><li><strong>Bitcoin:</strong> 2-3 confirmations (~30-60 minutes)</li><li><strong>Ethereum:</strong> 12 confirmations (~3-5 minutes)</li><li><strong>USDT (TRC20):</strong> 19 confirmations (~1-2 minutes)</li><li><strong>USDT (ERC20):</strong> 12 confirmations (~3-5 minutes)</li></ul> Payment is instant once confirmations are complete.",
+            "helpful": 276
+        },
+        {
+            "id": 22,
+            "category": "crypto",
+            "question": "What is the minimum crypto amount I can sell?",
+            "answer": "Minimum amounts vary by cryptocurrency: <ul><li>Bitcoin: 0.001 BTC</li><li>Ethereum: 0.01 ETH</li><li>USDT: $10</li><li>USDC: $10</li><li>Litecoin: 0.1 LTC</li></ul> There's no maximum limit for verified accounts. Unverified accounts have daily limits.",
+            "helpful": 189
+        },
+        {
+            "id": 23,
+            "category": "crypto",
+            "question": "Are crypto rates fixed or variable?",
+            "answer": "Our crypto rates are variable and update in real-time based on global market prices. The rate you see when initiating a transaction is locked for 15 minutes. If blockchain confirmation takes longer, you'll receive payment at the locked rate. This protects you from market volatility during transaction processing.",
+            "helpful": 245
+        },
+        {
+            "id": 24,
+            "category": "bills",
+            "question": "What bill payments can I make?",
+            "answer": "You can pay for essential services: <ul><li><strong>Airtime:</strong> All Nigerian networks (MTN, Glo, Airtel, 9mobile)</li><li><strong>Data Bundles:</strong> All networks with various plans</li><li><strong>Cable TV:</strong> DSTV, GOtv, Startimes</li><li><strong>Electricity:</strong> IKEDC, EKEDC, AEDC, and more</li></ul> Payments are instant and delivered immediately after successful transaction.",
+            "helpful": 212
+        },
+        {
+            "id": 25,
+            "category": "bills",
+            "question": "How do I buy airtime or data?",
+            "answer": "Buying airtime/data is quick: <ol><li>Go to 'Bari Services' in dashboard</li><li>Select Airtime or Data</li><li>Choose your network provider</li><li>Enter phone number</li><li>Select amount or data plan</li><li>Enter transaction PIN</li><li>Confirm purchase</li></ol> Airtime/data is delivered instantly to the phone number.",
+            "helpful": 198
+        },
+        {
+            "id": 26,
+            "category": "bills",
+            "question": "Can I pay bills for others?",
+            "answer": "Yes! You can pay bills for any Nigerian number or meter. You're not restricted to your own accounts. This makes it easy to help family and friends. Just enter their phone number, smart card number, or meter number when making the payment.",
+            "helpful": 167
+        },
+        {
+            "id": 27,
+            "category": "bills",
+            "question": "Do bill payments have fees?",
+            "answer": "Most bill payments on Baricoin have ZERO fees! You pay exactly what you see. <ul><li>Airtime: No fees</li><li>Data: No fees</li><li>Cable TV: No fees</li><li>Electricity: No fees</li></ul> Some providers may have small service charges that will be clearly displayed before confirmation.",
+            "helpful": 234
+        },
+        {
+            "id": 28,
+            "category": "security",
+            "question": "How secure is my money on Baricoin?",
+            "answer": "Your security is our top priority: <ul><li>256-bit SSL encryption for all data</li><li>Two-factor authentication (2FA)</li><li>Transaction PIN protection</li><li>Regular security audits</li><li>Cold storage for crypto assets</li><li>24/7 fraud monitoring</li><li>Insurance protection</li></ul> We never store your card PINs or sensitive financial information.",
+            "helpful": 289
+        },
+        {
+            "id": 29,
+            "category": "security",
+            "question": "What is 2FA and how do I enable it?",
+            "answer": "Two-Factor Authentication adds extra security to your account. To enable: <ol><li>Go to Settings > Security</li><li>Click 'Enable 2FA'</li><li>Download an authenticator app (Google Authenticator, Authy)</li><li>Scan the QR code shown</li><li>Enter the 6-digit code from your app</li><li>Save backup codes securely</li></ol> You'll need the code from your authenticator app every time you log in.",
+            "helpful": 198
+        },
+        {
+            "id": 30,
+            "category": "security",
+            "question": "What should I do if I suspect unauthorized access?",
+            "answer": "If you suspect your account has been compromised: <ol><li>Change your password immediately</li><li>Enable or reset 2FA</li><li>Check recent login history</li><li>Review all transactions</li><li>Contact support immediately</li><li>Report suspicious activity</li></ol> We'll investigate and help secure your account. Never share your password, PIN, or 2FA codes with anyone.",
+            "helpful": 156
+        }
+    ]
+}

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en" class="light-theme">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your Baricoin Dashboard">
+    <title>Dashboard | Baricoin</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon-new.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/modals.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <!-- PWA Meta Tags -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#d4a574">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f5f5f5">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Baricoin">
+    <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/icons/icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/images/icons/icon-512.png">
+</head>
+
+<body class="dashboard-body">
+
+    <!-- Dashboard Layout -->
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-logo">
+                <img src="images/baricoin-logo-new.png" alt="Baricoin" style="height: 35px;">
+            </div>
+
+            <nav class="sidebar-menu">
+                <a href="dashboard.html" class="menu-item active">
+                    <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    </svg>
+                    <span>Dashboard</span>
+                </a>
+                <a href="giftcards.html" class="menu-item">
+                    <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                        <line x1="1" y1="10" x2="23" y2="10"></line>
+                    </svg>
+                    <span>Giftcards</span>
+                </a>
+                <a href="crypto.html" class="menu-item">
+                    <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <line x1="12" y1="1" x2="12" y2="23"></line>
+                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                    </svg>
+                    <span>Crypto</span>
+                </a>
+                <a href="transactions.html" class="menu-item">
+                    <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <line x1="12" y1="1" x2="12" y2="23"></line>
+                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                    </svg>
+                    <span>Transactions</span>
+                </a>
+                <a href="referral.html" class="menu-item">
+                    <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                    <span>Referrals</span>
+                </a>
+                <a href="profile.html" class="menu-item">
+                    <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span>Profile</span>
+                </a>
+                <a href="settings.html" class="menu-item">
+                    <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path
+                            d="M12 1v6m0 6v6m5.66-13.66l-4.25 4.25m0 6l-4.25 4.25M23 12h-6m-6 0H1m18.66 5.66l-4.25-4.25m0-6l-4.25-4.25">
+                        </path>
+                    </svg>
+                    <span>Settings</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <div class="bari-services-section">
+                    <p class="services-label">Bari services</p>
+                    <div class="services-submenu">
+                        <a href="airtime.html" class="submenu-item">Airtime</a>
+                        <a href="data.html" class="submenu-item">Data</a>
+                        <a href="cable.html" class="submenu-item">Cable</a>
+                        <a href="electricity.html" class="submenu-item">Electricity</a>
+                    </div>
+                </div>
+                <a href="#" id="logoutBtn" class="menu-item logout-item">
+                    <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                        <polyline points="16 17 21 12 16 7"></polyline>
+                        <line x1="21" y1="12" x2="9" y2="12"></line>
+                    </svg>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Live Ticker -->
+        <div class="live-ticker-wrapper">
+            <div id="liveTicker" class="live-ticker">
+                <!-- Populated by rates.js -->
+            </div>
+        </div>
+
+        <!-- Main Dashboard Content -->
+        <main class="dashboard-main">
+            <!-- Top Header -->
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <h1 class="greeting" id="greeting" data-i18n="dashboard.greeting.afternoon">Good Afternoon</h1>
+                    <p class="username" id="userName">username</p>
+                </div>
+                <div class="header-right">
+                    <div class="search-bar">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                        <input type="text" id="dashboardSearch" placeholder="Search transactions, wallets..."
+                            data-i18n-placeholder="common.search">
+                    </div>
+                    <button class="notification-btn" id="notificationBtn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <span class="notification-badge" id="notificationBadge" style="display: none;"></span>
+                    </button>
+                    <div class="user-avatar-btn">
+                        <span id="userInitial">U</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Wallets Grid -->
+            <div class="wallets-container">
+                <!-- Naira Wallet -->
+                <div class="wallet-box naira-box">
+                    <div class="wallet-title-row">
+                        <h2 class="wallet-title" data-i18n="dashboard.nairaWallet">Naira Wallet</h2>
+                        <div class="currency-badge">NGN</div>
+                    </div>
+                    <div class="wallet-balance-row">
+                        <div class="balance-display">
+                            <span class="currency-symbol">₦</span>
+                            <span class="balance-amount" id="nairaBalance">*******</span>
+                        </div>
+                        <button class="toggle-visibility" onclick="toggleBalance('naira')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="wallet-info">
+                        <p><span data-i18n="dashboard.bonus">Bonus</span>: <span id="bonusBalance">₦ 2,000.00</span></p>
+                    </div>
+                    <div class="wallet-actions-row">
+                        <button class="action-btn secondary-btn" onclick="window.location.href='transfer.html'"
+                            data-i18n="dashboard.transfer">Transfer</button>
+                        <button class="action-btn primary-btn" onclick="window.location.href='withdraw.html'"
+                            data-i18n="dashboard.withdraw">Withdraw</button>
+                    </div>
+                </div>
+
+                <!-- Crypto Wallet -->
+                <div class="wallet-box crypto-box">
+                    <div class="wallet-title-row">
+                        <h2 class="wallet-title" data-i18n="dashboard.cryptoWallet">Crypto Wallet</h2>
+                        <div class="currency-badge">USD</div>
+                    </div>
+                    <div class="wallet-balance-row">
+                        <div class="balance-display">
+                            <span class="currency-symbol">$</span>
+                            <span class="balance-amount" id="cryptoBalance">*******</span>
+                        </div>
+                        <button class="toggle-visibility" onclick="toggleBalance('crypto')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="wallet-info crypto-breakdown">
+                        <div class="crypto-item-small">
+                            <span>BTC:</span> <span id="btcBalance">₦ 0.00</span>
+                        </div>
+                        <div class="crypto-item-small">
+                            <span>ETH:</span> <span id="ethBalance">₦ 0.00</span>
+                        </div>
+                        <div class="crypto-item-small">
+                            <span>USDT:</span> <span id="usdtBalance">₦ 0.00</span>
+                        </div>
+                    </div>
+                    <div class="wallet-actions-row">
+                        <button class="action-btn secondary-btn" id="depositCryptoBtn"
+                            data-i18n="dashboard.depositCrypto">Deposit crypto</button>
+                        <button class="action-btn primary-btn" id="sellCryptoBtn"
+                            data-i18n="dashboard.sellAllCrypto">Sell all crypto</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="quick-actions-container">
+                <div class="quick-actions-header">
+                    <h2 data-i18n="dashboard.quickActions">Quick Actions</h2>
+                    <p class="quick-actions-subtitle" data-i18n="dashboard.quickActionsSubtitle">Shortcuts to your most
+                        used features</p>
+                </div>
+                <div class="quick-actions-grid">
+                    <a href="airtime.html" class="quick-action-card" data-shortcut="A">
+                        <div class="quick-action-icon airtime-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                                <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                            </svg>
+                        </div>
+                        <div class="quick-action-content">
+                            <h3 data-i18n="dashboard.buyAirtime">Buy Airtime</h3>
+                            <p>Recharge your phone</p>
+                        </div>
+                    </a>
+
+                    <a href="cable.html" class="quick-action-card" data-shortcut="B">
+                        <div class="quick-action-icon bills-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <rect x="2" y="7" width="20" height="15" rx="2" ry="2"></rect>
+                                <polyline points="17 2 12 7 7 2"></polyline>
+                            </svg>
+                        </div>
+                        <div class="quick-action-content">
+                            <h3 data-i18n="dashboard.payBills">Pay Bills</h3>
+                            <p>Cable, data, electricity</p>
+                        </div>
+                    </a>
+
+                    <a href="giftcards.html" class="quick-action-card" data-shortcut="G">
+                        <div class="quick-action-icon giftcard-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                                <line x1="1" y1="10" x2="23" y2="10"></line>
+                            </svg>
+                        </div>
+                        <div class="quick-action-content">
+                            <h3 data-i18n="dashboard.sellGiftCard">Sell Gift Card</h3>
+                            <p>Convert cards to cash</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+    </div>
+    </div>
+
+    <!-- Recent Transactions -->
+    <div class="transactions-container">
+        <div class="transactions-header">
+            <h2 data-i18n="dashboard.recentTransactions">Recent Transactions</h2>
+        </div>
+        <div class="transactions-table-container">
+            <table class="transactions-table-new">
+                <thead>
+                    <tr>
+                        <th>Transaction Type</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="transactionsBody">
+                    <tr class="empty-state">
+                        <td colspan="3">
+                            <div class="empty-transactions">
+                                <p data-i18n="dashboard.noTransactions">No transactions yet</p>
+                                <span data-i18n="dashboard.transactionHistory">Your transaction history will
+                                    appear here</span>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </main>
+    </div>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <button class="chat-toggle-btn" id="chatToggleBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Global Search Modal -->
+    <div id="globalSearchModal" class="">
+        <div class="search-modal-container">
+            <div class="search-modal-header">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+                <input type="text" id="globalSearchInput" placeholder="Search transactions, pages, features..."
+                    autocomplete="off">
+                <div class="search-shortcut-hint">
+                    <span class="search-shortcut-key">ESC</span>
+                    <span>to close</span>
+                </div>
+                <button id="closeSearchModal" aria-label="Close search">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="search-modal-body" id="searchResults">
+                <!-- Search results will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/i18n.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/rates.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/chat.js"></script>
+    <script src="/js/pwa.js"></script>
+</body>
+
+</html>
+```

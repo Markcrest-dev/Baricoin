@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Transfer Funds - Baricoin">
+    <title>Transfer | Baricoin</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon-new.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/additional.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/modals.css">
+    <!-- PWA Meta Tags -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#d4a574">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f5f5f5">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Baricoin">
+    <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/icons/icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/images/icons/icon-512.png">
+</head>
+
+<body class="dashboard-body">
+
+    <!-- Dashboard Layout -->
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-logo">
+                <img src="images/baricoin-logo-new.png" alt="Baricoin" style="height: 35px;">
+            </div>
+
+            <nav class="sidebar-menu">
+                <a href="dashboard.html" class="menu-item">
+                    <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    </svg>
+                    <span>Dashboard</span>
+                </a>
+                <a href="giftcards.html" class="menu-item">
+                    <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                        <line x1="1" y1="10" x2="23" y2="10"></line>
+                    </svg>
+                    <span>Giftcards</span>
+                </a>
+                <a href="crypto.html" class="menu-item">
+                    <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <line x1="12" y1="1" x2="12" y2="23"></line>
+                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                    </svg>
+                    <span>Crypto</span>
+                </a>
+                <a href="transactions.html" class="menu-item">
+                    <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <line x1="12" y1="1" x2="12" y2="23"></line>
+                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                    </svg>
+                    <span>Transactions</span>
+                </a>
+                <a href="settings.html" class="menu-item">
+                    <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path
+                            d="M12 1v6m0 6v6m5.66-13.66l-4.25 4.25m0 6l-4.25 4.25M23 12h-6m-6 0H1m18.66 5.66l-4.25-4.25m0-6l-4.25-4.25">
+                        </path>
+                    </svg>
+                    <span>Settings</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <div class="bari-services-section">
+                    <p class="services-label">Bari services</p>
+                    <div class="services-submenu">
+                        <a href="airtime.html" class="submenu-item">Airtime</a>
+                        <a href="data.html" class="submenu-item">Data</a>
+                        <a href="cable.html" class="submenu-item">Cable</a>
+                        <a href="electricity.html" class="submenu-item">Electricity</a>
+                    </div>
+                </div>
+                <a href="#" id="logoutBtn" class="menu-item logout-item">
+                    <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                        <polyline points="16 17 21 12 16 7"></polyline>
+                        <line x1="21" y1="12" x2="9" y2="12"></line>
+                    </svg>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-content">
+            <!-- Top Header -->
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <h1 class="greeting">Transfer Funds</h1>
+                    <p class="username">Send money to other users or bank accounts</p>
+                </div>
+                <div class="header-right">
+                    <div class="user-avatar-btn">
+                        <span id="userInitial">U</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Transfer Content -->
+            <div class="settings-container">
+                <!-- Balance Display -->
+                <div class="settings-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <p
+                                style="font-size: 0.75rem; color: #64748b; text-transform: uppercase; margin-bottom: 0.5rem;">
+                                Available Balance</p>
+                            <h2 style="font-size: 2rem; font-weight: 700; color: #1B1B1B; margin: 0;">
+                                ₦ <span id="availableBalance">0.00</span>
+                            </h2>
+                        </div>
+                        <div
+                            style="width: 60px; height: 60px; background: linear-gradient(135deg, #A97458 0%, #4A2E23 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="white" style="width: 30px; height: 30px;">
+                                <path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"></path>
+                                <path d="M3 5v14a2 2 0 0 0 2 2h16v-5"></path>
+                                <path d="M18 12a2 2 0 0 0 0 4h4v-4Z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Transfer Form -->
+                <div class="settings-card">
+                    <h2 class="settings-title">Transfer Details</h2>
+
+                    <form class="settings-form" id="transferForm">
+                        <!-- Transfer Type -->
+                        <div class="form-row">
+                            <label>Transfer To</label>
+                            <div style="display: flex; gap: 1rem;">
+                                <label class="radio-option">
+                                    <input type="radio" name="transferType" value="user" checked>
+                                    <span>Baricoin User</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="transferType" value="bank">
+                                    <span>Bank Account</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Recipient (User) -->
+                        <div class="form-row" id="userRecipient">
+                            <label for="username">Recipient Username/Email</label>
+                            <div class="search-container">
+                                <input type="text" id="username" placeholder="Enter username or email"
+                                    autocomplete="off">
+                                <div class="search-results" id="searchResults" style="display: none;"></div>
+                            </div>
+                            <div style="display: flex; align-items: center; margin-top: 0.5rem;">
+                                <label class="checkbox-option">
+                                    <input type="checkbox" id="saveRecipient">
+                                    <span>Save as frequent recipient</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Recipient (Bank) -->
+                        <div id="bankRecipient" style="display: none;">
+                            <div class="form-row">
+                                <label for="bankName">Bank Name</label>
+                                <select id="bankName">
+                                    <option value="">Select Bank</option>
+                                    <option value="access">Access Bank</option>
+                                    <option value="gtb">GTBank</option>
+                                    <option value="firstbank">First Bank</option>
+                                    <option value="uba">UBA</option>
+                                    <option value="zenith">Zenith Bank</option>
+                                    <option value="fidelity">Fidelity Bank</option>
+                                    <option value="union">Union Bank</option>
+                                    <option value="sterling">Sterling Bank</option>
+                                </select>
+                            </div>
+                            <div class="form-row">
+                                <label for="accountNumber">Account Number</label>
+                                <input type="text" id="accountNumber" placeholder="Enter 10-digit account number"
+                                    maxlength="10">
+                            </div>
+                            <div class="form-row">
+                                <label for="accountName">Account Name</label>
+                                <input type="text" id="accountName" placeholder="Account name will appear here"
+                                    disabled>
+                            </div>
+                        </div>
+
+                        <!-- Amount -->
+                        <div class="form-row">
+                            <label for="amount">Amount (₦)</label>
+                            <input type="number" id="amount" placeholder="Enter amount" min="100" step="0.01">
+                            <small style="color: #64748b; margin-top: 0.25rem;">Minimum: ₦100 | Fee: ₦10</small>
+                        </div>
+
+                        <!-- Description/Note -->
+                        <div class="form-row">
+                            <label for="description">Transfer Note (Optional)</label>
+                            <input type="text" id="description" placeholder="What's this transfer for?" maxlength="100">
+                            <small style="color: #64748b; margin-top: 0.25rem;">Add a note to help you remember this
+                                transfer</small>
+                        </div>
+
+                        <!-- Summary -->
+                        <div style="background: #F0E0CC; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span style="color: #64748b;">Amount:</span>
+                                <span style="font-weight: 600;">₦ <span id="summaryAmount">0.00</span></span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span style="color: #64748b;">Transfer Fee:</span>
+                                <span style="font-weight: 600;">₦ <span id="summaryFee">10.00</span></span>
+                            </div>
+                            <hr style="border: none; border-top: 1px solid #E8C7A3; margin: 0.75rem 0;">
+                            <div style="display: flex; justify-content: space-between;">
+                                <span style="font-weight: 600;">Total:</span>
+                                <span style="font-weight: 700; color: #1B1B1B; font-size: 1.125rem;">₦ <span
+                                        id="summaryTotal">10.00</span></span>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="save-btn" style="width: 100%; margin-top: 1rem;">
+                            Continue Transfer
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Frequent Recipients -->
+                <div class="settings-card" id="frequentRecipientsCard" style="display: none;">
+                    <h2 class="settings-title">Frequent Recipients</h2>
+                    <div id="frequentRecipients"></div>
+                </div>
+
+                <!-- Recent Transfers -->
+                <div class="settings-card">
+                    <h2 class="settings-title">Recent Transfers</h2>
+                    <div id="recentTransfers">
+                        <p style="text-align: center; color: #94a3b8; padding: 2rem;">No recent transfers</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Confirmation Modal with PIN -->
+    <div class="modal-overlay" id="confirmModal" style="display: none;">
+        <div class="modal-content">
+            <h3>Confirm Transfer</h3>
+            <div class="modal-body">
+                <p style="margin-bottom: 1rem;">Please review your transfer details:</p>
+                <div class="confirmation-details">
+                    <div class="detail-row">
+                        <span>Recipient:</span>
+                        <strong id="confirmRecipient"></strong>
+                    </div>
+                    <div class="detail-row">
+                        <span>Amount:</span>
+                        <strong>₦ <span id="confirmAmount"></span></strong>
+                    </div>
+                    <div class="detail-row">
+                        <span>Fee:</span>
+                        <strong>₦ <span id="confirmFee"></span></strong>
+                    </div>
+                    <div class="detail-row" id="confirmNoteRow" style="display: none;">
+                        <span>Note:</span>
+                        <strong id="confirmNote"></strong>
+                    </div>
+                    <div class="detail-row">
+                        <span>Total:</span>
+                        <strong style="color: #A97458;">₦ <span id="confirmTotal"></span></strong>
+                    </div>
+                </div>
+
+                <!-- PIN Input -->
+                <div class="form-row" style="margin-top: 1.5rem;">
+                    <label for="transferPin">Enter your 4-digit PIN</label>
+                    <input type="password" id="transferPin" placeholder="****" maxlength="4" inputmode="numeric"
+                        pattern="[0-9]{4}" autocomplete="off">
+                    <small style="color: #64748b; margin-top: 0.25rem;">Enter your 4-digit transaction PIN to
+                        confirm</small>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-secondary" id="cancelTransfer">Cancel</button>
+                <button class="btn btn-primary" id="confirmTransfer">Confirm Transfer</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal-overlay" id="successModal" style="display: none;">
+        <div class="modal-content">
+            <div style="text-align: center;">
+                <div
+                    style="width: 60px; height: 60px; margin: 0 auto 1rem; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="white"
+                        style="width: 30px; height: 30px; stroke-width: 3;">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </div>
+                <h3>Transfer Successful!</h3>
+                <p style="color: #64748b; margin: 1rem 0;">Your transfer of ₦<span id="successAmount"></span> has been
+                    completed successfully.</p>
+                <button class="btn btn-primary" onclick="window.location.href='dashboard.html'">Back to
+                    Dashboard</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/i18n.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/transfer.js"></script>
+    <script src="/js/pwa.js"></script>
+</body>
+
+</html>
