@@ -223,370 +223,549 @@ This roadmap outlines the development path for Baricoin, organized by implementa
 
 ---
 
-## **PHASE 3: Frontend - Advanced Features** [IN PROGRESS] ⭐⭐⭐ (Hard)
+## **PHASE 3: Frontend - Advanced Features** ✅ ⭐⭐⭐ (Hard) - COMPLETED
 *Estimated Time: 3-4 weeks*
 
-> **Status**: Ready to begin implementation. See `/home/mark/.gemini/antigravity/brain/8fcd9ec2-8fe8-4e87-88e3-a02ff13b1f32/task.md` for detailed task breakdown ordered from easy to hard.
-
 ### 3.1 Real-time Rate Updates (Frontend)
-- [ ] Create WebSocket connection handler
-- [ ] Design live rate ticker component
-- [ ] Add price change indicators (up/down arrows, percentages)
-- [ ] Create rate update notification system
-- [ ] Implement auto-refresh mechanism
-- [ ] Add connection status indicator
+- [x] Create WebSocket connection handler
+- [x] Design live rate ticker component
+- [x] Add price change indicators (up/down arrows, percentages)
+- [x] Create rate update notification system
+- [x] Implement auto-refresh mechanism
+- [x] Add connection status indicator
 
-**Files to create:**
-- `js/websocket.js`
-- `js/rate-ticker.js`
+**Files created:**
+- `js/rates.js` ✅
 
-**Files to modify:**
-- `rate-calculator.html`
-- `dashboard.html`
-- `css/style.css`
+**Files modified:**
+- `rate-calculator.html` ✅
+- `dashboard.html` ✅
+- `css/style.css` ✅
 
 ---
 
 ### 3.2 Charts & Analytics Dashboard
-- [ ] Install and configure Chart.js
-- [ ] Create wallet balance history chart
-- [ ] Add transaction volume chart (daily/weekly/monthly)
-- [ ] Design crypto portfolio pie chart
-- [ ] Implement earnings overview chart
-- [ ] Add interactive chart tooltips
-- [ ] Create chart export functionality
+- [x] Install and configure Chart.js
+- [x] Create wallet balance history chart
+- [x] Add transaction volume chart (daily/weekly/monthly)
+- [x] Design crypto portfolio pie chart
+- [x] Implement earnings overview chart
+- [x] Add interactive chart tooltips
+- [x] Create chart export functionality
 
-**Files to create:**
-- `js/charts.js`
+**Files created:**
+- `js/charts.js` ✅
 
-**Files to modify:**
-- `dashboard.html`
-- `css/dashboard.css`
+**Files modified:**
+- `dashboard.html` ✅
+- `css/dashboard.css` ✅
 
-**New dependencies:**
-- Chart.js or ApexCharts
+**Dependencies:**
+- Chart.js ✅
 
 ---
 
 ### 3.3 Multi-language Support (i18n)
-- [ ] Research and select i18n library (e.g., i18next)
-- [ ] Create language JSON files (English, French, Spanish)
-- [ ] Add language selector to navbar
-- [ ] Implement language switching mechanism
-- [ ] Translate all static content
-- [ ] Add RTL support for Arabic (optional)
-- [ ] Store language preference in localStorage
+- [x] Research and select i18n library (e.g., i18next)
+- [x] Create language JSON files (English, French, Spanish)
+- [x] Add language selector to navbar
+- [x] Implement language switching mechanism
+- [x] Translate all static content
+- [x] Add RTL support for Arabic (optional)
+- [x] Store language preference in localStorage
 
-**Files to create:**
-- `js/i18n.js`
-- `locales/en.json`
-- `locales/fr.json`
-- `locales/es.json`
+**Files created:**
+- `js/i18n.js` ✅
+- `locales/en.json` ✅
+- `locales/fr.json` ✅
+- `locales/es.json` ✅
+- `locales/ar.json` ✅
 
-**Files to modify:**
-- All HTML files (add data-i18n attributes)
-- `css/style.css`
+**Files modified:**
+- All HTML files (add data-i18n attributes) ✅
+- `css/style.css` ✅
 
 ---
 
 ### 3.4 Advanced Search & Autocomplete
-- [ ] Implement global search functionality
-- [ ] Create search results page
-- [ ] Add autocomplete dropdown
-- [ ] Search across transactions, wallets, help docs
-- [ ] Add search history
-- [ ] Implement search filters and sorting
+- [x] Implement global search functionality
+- [x] Create search results page
+- [x] Add autocomplete dropdown
+- [x] Search across transactions, wallets, help docs
+- [x] Add search history
+- [x] Implement search filters and sorting
 
-**Files to create:**
-- `search.html`
-- `js/search.js`
-- `css/search.css`
+**Files created:**
+- `js/search.js` ✅
 
-**Files to modify:**
-- `dashboard.html`
+**Files modified:**
+- `dashboard.html` ✅
 
 ---
 
 ### 3.5 Progressive Web App (PWA)
-- [ ] Create service worker
-- [ ] Add web app manifest
-- [ ] Implement offline caching strategy
-- [ ] Add "Install App" prompt
-- [ ] Create offline fallback page
-- [ ] Implement background sync
-- [ ] Add push notification support (frontend)
+- [x] Create service worker
+- [x] Add web app manifest
+- [x] Implement offline caching strategy
+- [x] Add "Install App" prompt
+- [x] Create offline fallback page
+- [x] Implement background sync
+- [x] Add push notification support (frontend)
 
-**Files to create:**
-- `service-worker.js`
-- `manifest.json`
-- `offline.html`
+**Files created:**
+- `service-worker.js` ✅
+- `manifest.json` ✅
+- `offline.html` ✅
+- `js/pwa.js` ✅
 
-**Files to modify:**
-- All HTML files (add manifest link)
+**Files modified:**
+- All HTML files (add manifest link) ✅
 
 ---
 
 ### 3.6 Dark/Light Mode Enhancement
-- [ ] Verify current theme toggle functionality
-- [ ] Add system preference detection
-- [ ] Create smooth theme transition animations
-- [ ] Design theme preview
-- [ ] Add custom theme color options
-- [ ] Store theme preference per user
+- [x] Verify current theme toggle functionality
+- [x] Add system preference detection
+- [x] Create smooth theme transition animations
+- [x] Design theme preview
+- [x] Add custom theme color options
+- [x] Store theme preference per user
 
-**Files to modify:**
-- `js/main.js`
-- `css/style.css`
-- `settings.html`
+**Files created:**
+- `js/theme.js` ✅
+
+**Files modified:**
+- `js/main.js` ✅
+- `css/style.css` ✅
+- `settings.html` ✅
 
 ---
 
-## **PHASE 4: Backend - Basic Setup** ⭐ (Easy)
+## **PHASE 4: Backend - Basic Setup (Laravel)** ⭐ (Easy)
 *Estimated Time: 2-3 weeks*
 
-### 4.1 Backend Technology Stack Selection
-- [ ] Choose backend framework (Node.js/Express, Python/Django, PHP/Laravel)
-- [ ] Select database (PostgreSQL, MongoDB, MySQL)
-- [ ] Choose file storage solution (AWS S3, local storage)
-- [ ] Select authentication method (JWT, sessions)
+### 4.1 Laravel Project Initialization
+- [ ] Install Laravel 11 via Composer (`composer create-project laravel/laravel baricoin-api`)
+- [ ] Configure `.env` file with database credentials
+- [ ] Set up MySQL/MariaDB database
+- [ ] Install essential Laravel packages
+- [ ] Configure app timezone and locale
+- [ ] Set up Git repository for backend
 
-**Recommendation:** 
-- **Node.js + Express** (JavaScript consistency)
-- **PostgreSQL** (relational data, ACID compliance)
-- **JWT** (stateless authentication)
+**Essential Packages to Install:**
+```bash
+# Authentication
+composer require laravel/sanctum
+
+# Payment Gateways (Nigeria)
+composer require unicodeveloper/laravel-paystack
+composer require flutterwavedev/flutterwave-v3
+
+# API Resources & Pagination
+# (Built into Laravel)
+
+# Admin Panel (optional - choose one)
+composer require filament/filament
+# OR
+composer require laravel/nova
+```
+
+**Stack Confirmation:**
+- **Framework:** Laravel 11
+- **Database:** MySQL 8.0+ / MariaDB 10.5+
+- **Cache/Queue:** Redis
+- **Authentication:** Laravel Sanctum (API tokens)
+- **File Storage:** AWS S3 or Local (configurable)
 
 ---
 
-### 4.2 Project Structure Setup
-- [ ] Initialize backend project
-- [ ] Set up environment configuration (.env)
-- [ ] Create folder structure (routes, controllers, models, middleware)
-- [ ] Install essential packages
-- [ ] Set up ESLint/Prettier
-- [ ] Create README for backend
+### 4.2 Laravel Project Structure Setup
+- [ ] Review Laravel default structure
+- [ ] Create additional folders for services and repositories
+- [ ] Set up API versioning structure
+- [ ] Configure CORS in `config/cors.php`
+- [ ] Set up API middleware groups
+- [ ] Create custom exception handler
 
-**Files to create:**
+**Laravel Directory Structure:**
 ```
-backend/
+baricoin-api/
+├── app/
+│   ├── Http/
+│   │   ├── Controllers/
+│   │   │   ├── API/
+│   │   │   │   ├── V1/
+│   │   │   │   │   ├── AuthController.php
+│   │   │   │   │   ├── UserController.php
+│   │   │   │   │   ├── WalletController.php
+│   │   │   │   │   └── ...
+│   │   ├── Middleware/
+│   │   ├── Requests/
+│   │   └── Resources/
+│   ├── Models/
+│   │   ├── User.php
+│   │   ├── Wallet.php
+│   │   ├── Transaction.php
+│   │   └── ...
+│   ├── Services/
+│   │   ├── PaymentService.php
+│   │   ├── CryptoService.php
+│   │   └── ...
+│   ├── Repositories/
+│   └── Traits/
 ├── config/
-│   ├── database.js
-│   └── config.js
-├── controllers/
-├── models/
+├── database/
+│   ├── migrations/
+│   ├── seeders/
+│   └── factories/
 ├── routes/
-├── middleware/
-├── utils/
+│   ├── api.php
+│   └── web.php
+├── storage/
 ├── .env
-├── .gitignore
-├── package.json
-└── server.js
+└── composer.json
 ```
 
 ---
 
-### 4.3 Database Schema Design
-- [ ] Design Users table/collection
-- [ ] Design Wallets table (Naira, Crypto)
-- [ ] Design Transactions table
-- [ ] Design Gift Cards table
-- [ ] Design Referrals table
-- [ ] Create database migrations
-- [ ] Seed sample data for development
+### 4.3 Database Schema Design with Laravel Migrations
+- [ ] Create User migration (extend Laravel default)
+- [ ] Create Wallets migration
+- [ ] Create Transactions migration
+- [ ] Create GiftCards migration
+- [ ] Create CryptoTransactions migration
+- [ ] Create Referrals migration
+- [ ] Create Notifications migration (extend Laravel default)
+- [ ] Create Settings migration
+- [ ] Run migrations and verify schema
+
+**Migration Commands:**
+```bash
+php artisan make:migration create_wallets_table
+php artisan make:migration create_transactions_table
+php artisan make:migration create_gift_cards_table
+php artisan make:migration create_crypto_transactions_table
+php artisan make:migration create_referrals_table
+php artisan make:migration add_profile_fields_to_users_table
+```
 
 **Tables to create:**
-- `users`
+- `users` (Laravel default + custom fields)
 - `wallets`
 - `transactions`
 - `gift_cards`
-- `crypto_assets`
+- `crypto_transactions`
 - `referrals`
-- `notifications`
-- `settings`
+- `notifications` (Laravel default)
+- `user_settings`
+- `rates` (for storing crypto & gift card rates)
+
+**Seeders to create:**
+```bash
+php artisan make:seeder UserSeeder
+php artisan make:seeder WalletSeeder
+php artisan make:seeder RateSeeder
+```
 
 ---
 
-### 4.4 Basic API Routes Setup
-- [ ] Create health check endpoint (`/api/health`)
-- [ ] Set up CORS configuration
-- [ ] Create API versioning structure (`/api/v1/`)
+### 4.4 Basic API Routes Setup (Laravel)
+- [ ] Configure `routes/api.php` for API versioning
+- [ ] Set up route middleware groups
+- [ ] Create health check route
+- [ ] Configure CORS middleware
+- [ ] Set up API rate limiting
 - [ ] Add request logging middleware
-- [ ] Set up error handling middleware
-- [ ] Create API documentation structure
 
-**Routes to create:**
+**Routes Structure (`routes/api.php`):**
+```php
+// Health check
+Route::get('/health', function () {
+    return response()->json(['status' => 'ok']);
+});
+
+// API V1 routes
+Route::prefix('v1')->group(function () {
+    // Public routes
+    Route::post('/auth/register', [AuthController::class, 'register']);
+    Route::post('/auth/login', [AuthController::class, 'login']);
+    
+    // Protected routes (require Sanctum auth)
+    Route::middleware('auth:sanctum')->group(function () {
+        // User routes
+        Route::get('/user', [UserController::class, 'profile']);
+        // More routes...
+    });
+});
 ```
-GET  /api/health
-GET  /api/v1/status
-```
+
+**Middleware to configure:**
+- `auth:sanctum` - API authentication
+- `throttle:api` - Rate limiting
+- `verified` - Email verification
+- Custom middleware for transaction PIN verification
 
 ---
 
-### 4.5 Authentication System (Backend)
-- [ ] Create user registration endpoint
-- [ ] Implement login endpoint
-- [ ] Add JWT token generation
-- [ ] Create token verification middleware
-- [ ] Implement password hashing (bcrypt)
-- [ ] Add password reset functionality
-- [ ] Create email verification system
+### 4.5 Authentication System with Laravel Sanctum
+- [ ] Install and configure Laravel Sanctum
+- [ ] Create AuthController with register, login, logout methods
+- [ ] Implement email verification
+- [ ] Create password reset functionality
+- [ ] Add OTP verification for registration
+- [ ] Implement PIN setup for transactions
+- [ ] Create authentication middleware
 
 **Routes to create:**
 ```
 POST /api/v1/auth/register
+POST /api/v1/auth/verify-email
 POST /api/v1/auth/login
+POST /api/v1/auth/logout
 POST /api/v1/auth/forgot-password
 POST /api/v1/auth/reset-password
-POST /api/v1/auth/verify-email
-GET  /api/v1/auth/verify-token
+POST /api/v1/auth/resend-otp
+GET  /api/v1/auth/user
 ```
 
 **Files to create:**
-- `backend/controllers/authController.js`
-- `backend/routes/authRoutes.js`
-- `backend/middleware/authMiddleware.js`
-- `backend/utils/tokenUtils.js`
+```bash
+php artisan make:controller API/V1/AuthController
+php artisan make:request RegisterRequest
+php artisan make:request LoginRequest
+php artisan make:resource UserResource
+php artisan make:middleware EnsurePinIsSet
+```
+
+**Sanctum Configuration:**
+```bash
+# Publish Sanctum config
+php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
+
+# Run Sanctum migrations
+php artisan migrate
+```
 
 ---
 
-## **PHASE 5: Backend - Core Features** ⭐⭐ (Medium)
+## **PHASE 5: Backend - Core Features (Laravel)** ⭐⭐ (Medium)
 *Estimated Time: 4-6 weeks*
 
 ### 5.1 User Profile Management API
-- [ ] Create get profile endpoint
-- [ ] Implement update profile endpoint
-- [ ] Add profile photo upload
-- [ ] Create bank account management endpoints
-- [ ] Implement KYC verification endpoints
-- [ ] Add security settings endpoints
+- [ ] Create UserController for profile operations
+- [ ] Implement update profile with form validation
+- [ ] Add profile photo upload using Laravel Storage
+- [ ] Create BankAccount model and controller
+- [ ] Implement KYC verification with document upload
+- [ ] Add security settings (password change, 2FA)
 
-**Routes to create:**
+**Routes to create (routes/api.php):**
+```php
+Route::middleware('auth:sanctum')->group(function () {
+    // Profile
+    Route::get('/user/profile', [UserController::class, 'profile']);
+    Route::put('/user/profile', [UserController::class, 'updateProfile']);
+    Route::post('/user/profile/photo', [UserController::class, 'uploadPhoto']);
+    
+    // Bank Accounts
+    Route::get('/user/bank-accounts', [BankAccountController::class, 'index']);
+    Route::post('/user/bank-accounts', [BankAccountController::class, 'store']);
+    Route::delete('/user/bank-accounts/{id}', [BankAccountController::class, 'destroy']);
+    
+    // KYC
+    Route::post('/user/kyc/submit', [KYCController::class, 'submit']);
+    Route::get('/user/kyc/status', [KYCController::class, 'status']);
+});
 ```
-GET    /api/v1/user/profile
-PUT    /api/v1/user/profile
-POST   /api/v1/user/profile/photo
-GET    /api/v1/user/bank-accounts
-POST   /api/v1/user/bank-accounts
-DELETE /api/v1/user/bank-accounts/:id
-POST   /api/v1/user/kyc/submit
-GET    /api/v1/user/kyc/status
+
+**Artisan Commands:**
+```bash
+php artisan make:controller API/V1/UserController
+php artisan make:controller API/V1/BankAccountController
+php artisan make:controller API/V1/KYCController
+php artisan make:model BankAccount -m
+php artisan make:model KYCDocument -m
+php artisan make:request UpdateProfileRequest
+php artisan make:resource UserResource
 ```
 
 ---
 
 ### 5.2 Wallet Management API
-- [ ] Create get wallet balance endpoint
-- [ ] Implement wallet history endpoint
-- [ ] Add wallet transaction details endpoint
-- [ ] Create wallet statistics endpoint
-- [ ] Implement multi-currency support
+- [ ] Create Wallet model with Eloquent relationships
+- [ ] Implement WalletController with balance queries
+- [ ] Add wallet transaction history with pagination
+- [ ] Create wallet statistics using Eloquent aggregates
+- [ ] Implement multi-currency wallet support (NGN, USD)
 
 **Routes to create:**
-```
-GET /api/v1/wallets
-GET /api/v1/wallets/:walletId/balance
-GET /api/v1/wallets/:walletId/transactions
-GET /api/v1/wallets/:walletId/stats
+```php
+Route::middleware('auth:sanctum')->group(function () {
+    Route::get('/wallets', [WalletController::class, 'index']);
+    Route::get('/wallets/{wallet}/balance', [WalletController::class, 'balance']);
+    Route::get('/wallets/{wallet}/transactions', [WalletController::class, 'transactions']);
+    Route::get('/wallets/{wallet}/stats', [WalletController::class, 'statistics']);
+});
 ```
 
-**Files to create:**
-- `backend/controllers/walletController.js`
-- `backend/routes/walletRoutes.js`
-- `backend/models/Wallet.js`
+**Artisan Commands:**
+```bash
+php artisan make:controller API/V1/WalletController
+php artisan make:model Wallet -m
+php artisan make:resource WalletResource
+php artisan make:resource WalletTransactionResource
+```
+
+**Eloquent Relationships to Define:**
+- User `hasMany` Wallets
+- Wallet `belongsTo` User
+- Wallet `hasMany` Transactions
 
 ---
 
 ### 5.3 Transaction Management API
-- [ ] Create transaction creation endpoint
-- [ ] Implement transaction listing with filters
-- [ ] Add transaction details endpoint
-- [ ] Create transaction search endpoint
-- [ ] Implement transaction export (CSV)
-- [ ] Add transaction status update endpoint
+- [ ] Create Transaction model with status enum
+- [ ] Implement TransactionController with filtering
+- [ ] Add transaction search using Laravel Scout (optional)
+- [ ] Create transaction export to CSV using Laravel Excel
+- [ ] Implement transaction status updates with events
+- [ ] Add transaction receipt generation
 
 **Routes to create:**
-```
-GET    /api/v1/transactions
-POST   /api/v1/transactions
-GET    /api/v1/transactions/:id
-PUT    /api/v1/transactions/:id/status
-GET    /api/v1/transactions/search
-GET    /api/v1/transactions/export
+```php
+Route::middleware('auth:sanctum')->group(function () {
+    Route::get('/transactions', [TransactionController::class, 'index']);
+    Route::post('/transactions', [TransactionController::class, 'store']);
+    Route::get('/transactions/{transaction}', [TransactionController::class, 'show']);
+    Route::put('/transactions/{transaction}/status', [TransactionController::class, 'updateStatus']);
+    Route::get('/transactions/search', [TransactionController::class, 'search']);
+    Route::get('/transactions/export', [TransactionController::class, 'export']);
+});
 ```
 
-**Files to create:**
-- `backend/controllers/transactionController.js`
-- `backend/routes/transactionRoutes.js`
-- `backend/models/Transaction.js`
+**Artisan Commands:**
+```bash
+php artisan make:controller API/V1/TransactionController --resource
+php artisan make:model Transaction -m
+php artisan make:resource TransactionResource
+```
+
+**Optional Package for CSV Export:**
+```bash
+composer require maatwebsite/excel
+```
 
 ---
 
 ### 5.4 Transfer & Withdraw API
-- [ ] Create transfer initiation endpoint
-- [ ] Implement transfer verification endpoint
-- [ ] Add withdraw request endpoint
-- [ ] Create withdraw approval workflow
-- [ ] Implement transfer limits and validations
-- [ ] Add transaction PIN verification
+- [ ] Create TransferController with PIN verification
+- [ ] Implement transfer limits using Laravel validation rules
+- [ ] Add WithdrawalController with approval workflow
+- [ ] Create database transactions for atomic operations
+- [ ] Implement transfer notifications using Laravel events
+- [ ] Add withdrawal fee calculation
 
 **Routes to create:**
+```php
+Route::middleware('auth:sanctum')->group(function () {
+    // Transfers
+    Route::post('/transfers/initiate', [TransferController::class, 'initiate']);
+    Route::post('/transfers/verify', [TransferController::class, 'verify']);
+    Route::get('/transfers/limits', [TransferController::class, 'limits']);
+    
+    // Withdrawals
+    Route::post('/withdrawals/request', [WithdrawalController::class, 'request']);
+    Route::get('/withdrawals/history', [WithdrawalController::class, 'history']);
+});
+
+// Admin routes for withdrawal approval
+Route::middleware(['auth:sanctum', 'admin'])->group(function () {
+    Route::put('/admin/withdrawals/{withdrawal}/approve', [AdminWithdrawalController::class, 'approve']);
+});
 ```
-POST /api/v1/transfers/initiate
-POST /api/v1/transfers/verify
-POST /api/v1/withdrawals/request
-PUT  /api/v1/withdrawals/:id/approve
-GET  /api/v1/transfers/limits
+
+**Artisan Commands:**
+```bash
+php artisan make:controller API/V1/TransferController
+php artisan make:controller API/V1/WithdrawalController
+php artisan make:model Transfer -m
+php artisan make:model Withdrawal -m
+php artisan make:event TransferCompleted
+php artisan make:listener SendTransferNotification
 ```
 
 ---
 
 ### 5.5 Notifications API
-- [ ] Create get notifications endpoint
-- [ ] Implement mark as read endpoint
-- [ ] Add notification preferences endpoint
-- [ ] Create notification sending service
-- [ ] Implement email notifications
-- [ ] Add SMS notifications (optional)
+- [ ] Use Laravel built-in notification system
+- [ ] Create database notification channel
+- [ ] Implement email notifications using Laravel Mail
+- [ ] Add SMS notifications (Termii or Africa's Talking)
+- [ ] Create notification preferences table
+- [ ] Implement mark as read functionality
 
 **Routes to create:**
-```
-GET    /api/v1/notifications
-PUT    /api/v1/notifications/:id/read
-PUT    /api/v1/notifications/mark-all-read
-GET    /api/v1/notifications/preferences
-PUT    /api/v1/notifications/preferences
-DELETE /api/v1/notifications/:id
+```php
+Route::middleware('auth:sanctum')->group(function () {
+    Route::get('/notifications', [NotificationController::class, 'index']);
+    Route::put('/notifications/{id}/read', [NotificationController::class, 'markAsRead']);
+    Route::put('/notifications/mark-all-read', [NotificationController::class, 'markAllRead']);
+    Route::get('/notifications/preferences', [NotificationController::class, 'preferences']);
+    Route::put('/notifications/preferences', [NotificationController::class, 'updatePreferences']);
+    Route::delete('/notifications/{id}', [NotificationController::class, 'destroy']);
+});
 ```
 
-**Files to create:**
-- `backend/controllers/notificationController.js`
-- `backend/routes/notificationRoutes.js`
-- `backend/models/Notification.js`
-- `backend/services/emailService.js`
-- `backend/services/smsService.js`
+**Artisan Commands:**
+```bash
+php artisan make:controller API/V1/NotificationController
+php artisan make:notification TransactionCompletedNotification
+php artisan make:notification WithdrawalApprovedNotification
+php artisan notifications:table
+php artisan migrate
+```
+
+**SMS Package (Choose one):**
+```bash
+# For African SMS
+composer require africastalking/africastalking
+
+# OR for Termii
+composer require termii/termii-laravel
+```
 
 ---
 
 ### 5.6 Settings API
-- [ ] Create get settings endpoint
-- [ ] Implement update settings endpoint
-- [ ] Add theme preference endpoint
-- [ ] Create language preference endpoint
-- [ ] Implement notification settings endpoint
-- [ ] Add security settings endpoint
+- [ ] Create UserSettings model
+- [ ] Implement settings controller with preferences
+- [ ] Add theme preference storage
+- [ ] Create language preference with i18n support
+- [ ] Implement notification settings toggle
+- [ ] Add security settings (2FA enable/disable)
 
 **Routes to create:**
+```php
+Route::middleware('auth:sanctum')->prefix('settings')->group(function () {
+    Route::get('/', [SettingsController::class, 'index']);
+    Route::put('/', [SettingsController::class, 'update']);
+    Route::put('/theme', [SettingsController::class, 'updateTheme']);
+    Route::put('/language', [SettingsController::class, 'updateLanguage']);
+    Route::put('/notifications', [SettingsController::class, 'updateNotifications']);
+    Route::put('/security', [SettingsController::class, 'updateSecurity']);
+});
 ```
-GET /api/v1/settings
-PUT /api/v1/settings
-PUT /api/v1/settings/theme
-PUT /api/v1/settings/language
-PUT /api/v1/settings/notifications
-PUT /api/v1/settings/security
+
+**Artisan Commands:**
+```bash
+php artisan make:controller API/V1/SettingsController
+php artisan make:model UserSettings -m
+php artisan make:resource SettingsResource
 ```
 
 ---
 
-## **PHASE 6: Backend - Business Logic** ⭐⭐⭐ (Hard)
+## **PHASE 6: Backend - Business Logic (Laravel)** ⭐⭐⭐ (Hard)
 *Estimated Time: 6-8 weeks*
 
 ### 6.1 Gift Card Trading System
@@ -608,12 +787,15 @@ PUT    /api/v1/giftcards/:id/approve
 GET    /api/v1/giftcards/history
 ```
 
-**Files to create:**
-- `backend/controllers/giftcardController.js`
-- `backend/routes/giftcardRoutes.js`
-- `backend/models/GiftCard.js`
-- `backend/services/giftcardValidation.js`
-- `backend/services/fraudDetection.js`
+**Artisan Commands:**
+```bash
+php artisan make:controller API/V1/GiftCardController
+php artisan make:model GiftCard -m
+php artisan make:service GiftCardService
+php artisan make:event GiftCardSubmitted
+php artisan make:listener ProcessGiftCard
+php artisan make:job ValidateGiftCard
+```
 
 ---
 
@@ -636,16 +818,28 @@ GET  /api/v1/crypto/rates
 GET  /api/v1/crypto/supported
 ```
 
-**Files to create:**
-- `backend/controllers/cryptoController.js`
-- `backend/routes/cryptoRoutes.js`
-- `backend/models/CryptoTransaction.js`
-- `backend/services/cryptoService.js`
-- `backend/services/blockchainMonitor.js`
+**Artisan Commands:**
+```bash
+php artisan make:controller API/V1/CryptoController
+php artisan make:model CryptoTransaction -m
+php artisan make:service CryptoService
+php artisan make:job MonitorCryptoTransaction
+php artisan make:event CryptoTransactionConfirmed
+```
+
+**Crypto Packages:**
+```bash
+# For crypto price data
+composer require codenixsv/coingecko-api
+
+# For blockchain interactions (optional)
+composer require web3p/web3.php
+```
 
 **External APIs to integrate:**
-- CoinGecko API (free tier)
-- Blockchain.com API or similar
+- CoinGecko API (free tier - price data)
+- Blockchain.com API (transaction monitoring)
+- Or use your own wallet service
 
 ---
 
@@ -666,14 +860,28 @@ POST /api/v1/rates/alerts/subscribe
 GET  /api/v1/rates/history
 ```
 
-**Files to create:**
-- `backend/controllers/rateController.js`
-- `backend/routes/rateRoutes.js`
-- `backend/services/rateService.js`
-- `backend/services/rateCaching.js`
+**Artisan Commands:**
+```bash
+php artisan make:controller API/V1/RateController
+php artisan make:model Rate -m
+php artisan make:service RateService
+php artisan make:command UpdateCryptoRates
+```
 
-**New dependencies:**
-- Redis (for caching)
+**Redis Configuration:**
+```bash
+# Make sure Redis is installed and configured in .env
+REDIS_HOST=127.0.0.1
+REDIS_PASSWORD=null
+REDIS_PORT=6379
+```
+
+**Cache rates using Laravel Cache:**
+```php
+Cache::remember('crypto_rates', 300, function () {
+    return $rateService->fetchRates();
+});
+```
 
 ---
 
@@ -696,15 +904,25 @@ GET  /api/v1/bills/providers
 GET  /api/v1/bills/verify/:reference
 ```
 
-**Files to create:**
-- `backend/controllers/billsController.js`
-- `backend/routes/billsRoutes.js`
-- `backend/services/billPaymentService.js`
+**Artisan Commands:**
+```bash
+php artisan make:controller API/V1/BillPaymentController
+php artisan make:model BillPayment -m
+php artisan make:service BillPaymentService
+```
+
+**Bill Payment Packages:**
+```bash
+# VTPass package
+composer require vtpass/vtpass-php
+
+# Or use Paystack/Flutterwave bill APIs (already installed)
+```
 
 **External APIs to integrate:**
-- Paystack Bills API
-- Flutterwave Bills API
-- VTPass API
+- Paystack Bills API (best for Nigeria)
+- Flutterwave Bills API (backup)
+- VTPass API (comprehensive bill services)
 
 ---
 
@@ -725,11 +943,14 @@ POST /api/v1/referrals/claim-reward
 GET  /api/v1/referrals/leaderboard
 ```
 
-**Files to create:**
-- `backend/controllers/referralController.js`
-- `backend/routes/referralRoutes.js`
-- `backend/models/Referral.js`
-- `backend/services/referralService.js`
+**Artisan Commands:**
+```bash
+php artisan make:controller API/V1/ReferralController
+php artisan make:model Referral -m
+php artisan make:service ReferralService
+php artisan make:observer ReferralObserver
+php artisan make:event ReferralRewardEarned
+```
 
 ---
 
@@ -755,14 +976,26 @@ PUT    /api/v1/admin/rates
 GET    /api/v1/admin/analytics
 ```
 
-**Files to create:**
-- `backend/controllers/adminController.js`
-- `backend/routes/adminRoutes.js`
-- `backend/middleware/adminMiddleware.js`
+**Artisan Commands:**
+```bash
+php artisan make:controller API/V1/Admin/AdminDashboardController
+php artisan make:controller API/V1/Admin/UserManagementController
+php artisan make:middleware IsAdmin
+```
+
+**Admin Panel Package (Optional):**
+```bash
+# Filament - Modern admin panel
+composer require filament/filament
+php artisan filament:install --panels
+
+# OR Laravel Nova (paid)
+# composer require laravel/nova
+```
 
 ---
 
-## **PHASE 7: Backend - Advanced Features** ⭐⭐⭐⭐ (Very Hard)
+## **PHASE 7: Backend - Advanced Features (Laravel)** ⭐⭐⭐⭐ (Very Hard)
 *Estimated Time: 8-12 weeks*
 
 ### 7.1 Real-time Communication (WebSockets)
@@ -773,13 +1006,28 @@ GET    /api/v1/admin/analytics
 - [ ] Implement admin-user chat
 - [ ] Add online presence tracking
 
-**Files to create:**
-- `backend/websocket/server.js`
-- `backend/websocket/events.js`
-- `backend/websocket/middleware.js`
+**WebSocket Package for Laravel:**
+```bash
+# Laravel Reverb (official Laravel WebSocket package)
+composer require laravel/reverb
+php artisan reverb:install
 
-**New dependencies:**
-- Socket.io
+# OR use Laravel Echo with Pusher/Soketi
+composer require pusher/pusher-php-server
+```
+
+**Broadcasting Setup:**
+```bash
+php artisan make:event RateUpdated
+php artisan make:event TransactionStatusChanged
+```
+
+**Configure in .env:**
+```
+BROADCAST_DRIVER=reverb
+# OR
+BROADCAST_DRIVER=pusher
+```
 
 ---
 
@@ -799,11 +1047,26 @@ POST /api/v1/payments/webhook
 POST /api/v1/payments/refund
 ```
 
-**Files to create:**
-- `backend/controllers/paymentController.js`
-- `backend/routes/paymentRoutes.js`
-- `backend/services/paystackService.js`
-- `backend/services/flutterwaveService.js`
+**Payment Gateway Packages (Already mentioned in Phase 4):**
+```bash
+composer require unicodeveloper/laravel-paystack
+composer require flutterwavedev/flutterwave-v3
+```
+
+**Artisan Commands:**
+```bash
+php artisan make:controller API/V1/PaymentController
+php artisan make:service PaystackService
+php artisan make:service FlutterwaveService
+php artisan make:job ProcessPaymentWebhook
+```
+
+**Webhook Route (public):**
+```php
+// routes/api.php
+Route::post('/webhooks/paystack', [PaymentController::class, 'paystackWebhook']);
+Route::post('/webhooks/flutterwave', [PaymentController::class, 'flutterwaveWebhook']);
+```
 
 ---
 
@@ -816,15 +1079,28 @@ POST /api/v1/payments/refund
 - [ ] Create suspicious activity alerts
 - [ ] Implement device fingerprinting
 
-**Files to create:**
-- `backend/middleware/security.js`
-- `backend/services/twoFactorAuth.js`
-- `backend/services/fraudDetection.js`
-- `backend/services/deviceFingerprint.js`
+**Security Packages:**
+```bash
+# 2FA Package
+composer require pragmarx/google2fa-laravel
 
-**New dependencies:**
-- speakeasy (2FA)
-- node-rate-limiter-flexible
+# Rate Limiting (built into Laravel)
+# Configured in app/Http/Kernel.php
+```
+
+**Artisan Commands:**
+```bash
+php artisan make:middleware VerifyTwoFactor
+php artisan make:service TwoFactorService
+php artisan make:service FraudDetectionService
+```
+
+**Rate Limiting in routes/api.php:**
+```php
+Route::middleware(['auth:sanctum', 'throttle:60,1'])->group(function () {
+    // API routes with 60 requests per minute limit
+});
+```
 
 ---
 
@@ -846,10 +1122,17 @@ POST /api/v1/analytics/reports/generate
 GET /api/v1/analytics/export
 ```
 
-**Files to create:**
-- `backend/controllers/analyticsController.js`
-- `backend/routes/analyticsRoutes.js`
-- `backend/services/analyticsService.js`
+**Artisan Commands:**
+```bash
+php artisan make:controller API/V1/AnalyticsController
+php artisan make:service AnalyticsService
+```
+
+**Analytics Package (Optional):**
+```bash
+# Laravel Analytics
+composer require spatie/laravel-analytics
+```
 
 ---
 
@@ -861,15 +1144,35 @@ GET /api/v1/analytics/export
 - [ ] Create backup automation
 - [ ] Implement cleanup jobs (old notifications, logs)
 
-**Files to create:**
-- `backend/jobs/emailJobs.js`
-- `backend/jobs/rateUpdateJobs.js`
-- `backend/jobs/reconciliationJobs.js`
-- `backend/cron/scheduler.js`
+**Laravel Queue & Scheduler (Built-in):**
 
-**New dependencies:**
-- Bull or Bee-Queue
-- node-cron
+**Queue Configuration in .env:**
+```
+QUEUE_CONNECTION=redis
+```
+
+**Create Jobs:**
+```bash
+php artisan make:job SendTransactionEmail
+php artisan make:job UpdateCryptoRates
+php artisan make:job ReconcileTransactions
+php artisan make:job CleanupOldNotifications
+```
+
+**Schedule Tasks in app/Console/Kernel.php:**
+```php
+protected function schedule(Schedule $schedule)
+{
+    $schedule->job(new UpdateCryptoRates)->everyFiveMinutes();
+    $schedule->job(new ReconcileTransactions)->daily();
+    $schedule->job(new CleanupOldNotifications)->weekly();
+}
+```
+
+**Run Queue Worker:**
+```bash
+php artisan queue:work
+```
 
 ---
 
@@ -881,29 +1184,57 @@ GET /api/v1/analytics/export
 - [ ] Create developer documentation
 - [ ] Add code coverage reporting
 
-**Files to create:**
-- `backend/tests/unit/`
-- `backend/tests/integration/`
-- `backend/tests/e2e/`
-- `backend/swagger.yaml`
+**Laravel Testing (Built-in with PHPUnit):**
 
-**New dependencies:**
-- Jest or Mocha
-- Supertest
-- Swagger/OpenAPI
+**Create Tests:**
+```bash
+php artisan make:test AuthTest
+php artisan make:test WalletTest
+php artisan make:test TransactionTest --unit
+```
+
+**Run Tests:**
+```bash
+php artisan test
+```
+
+**API Documentation Package:**
+```bash
+# Scramble - Auto-generate API docs from routes
+composer require dedoc/scramble
+
+# OR L5-Swagger
+composer require darkaonline/l5-swagger
+php artisan l5-swagger:generate
+```
 
 ---
 
-## **PHASE 8: Deployment & DevOps** ⭐⭐⭐
+## **PHASE 8: Deployment & DevOps (Laravel)** ⭐⭐⭐
 *Estimated Time: 2-4 weeks*
 
-### 8.1 Production Setup
-- [ ] Choose hosting provider (AWS, DigitalOcean, Heroku)
-- [ ] Set up production database
-- [ ] Configure Redis for production
-- [ ] Set up file storage (S3 or CDN)
-- [ ] Configure environment variables
-- [ ] Set up SSL certificates
+### 8.1 Production Setup for Laravel
+- [ ] Choose hosting (AWS, DigitalOcean, Laravel Forge, Ploi)
+- [ ] Set up production MySQL database
+- [ ] Configure Redis for queues and cache
+- [ ] Set up file storage (AWS S3 via Laravel Filesystem)
+- [ ] Configure production .env file
+- [ ] Set up SSL certificates (Let's Encrypt)
+- [ ] Configure Laravel Octane for performance (optional)
+
+**Recommended Hosting:**
+- **Laravel Forge** - easiest for Laravel deployment
+- **DigitalOcean** - affordable and reliable
+- **AWS** - scalable enterprise solution
+
+**Laravel Deployment Commands:**
+```bash
+php artisan config:cache
+php artisan route:cache
+php artisan view:cache
+php artisan migrate --force
+php artisan storage:link
+```
 
 ---
 
@@ -917,17 +1248,36 @@ GET /api/v1/analytics/export
 
 ---
 
-### 8.3 Monitoring & Logging
-- [ ] Set up application monitoring (New Relic, Datadog)
-- [ ] Implement error tracking (Sentry)
-- [ ] Create logging system (Winston, Pino)
+### 8.3 Monitoring & Logging (Laravel)
+- [ ] Set up application monitoring
+- [ ] Implement error tracking with Laravel integration
+- [ ] Configure Laravel logging channels
 - [ ] Set up uptime monitoring
 - [ ] Add performance monitoring
 - [ ] Create alerting system
 
-**New dependencies:**
-- Winston or Pino (logging)
-- Sentry (error tracking)
+**Error Tracking:**
+```bash
+composer require sentry/sentry-laravel
+```
+
+**Configure in config/logging.php:**
+```php
+'channels' => [
+    'stack' => [
+        'driver' => 'stack',
+        'channels' => ['single', 'sentry'],
+    ],
+    'sentry' => [
+        'driver' => 'sentry',
+    ],
+],
+```
+
+**Other Monitoring Tools:**
+- Laravel Telescope (local development debugging)
+- Laravel Pulse (real-time monitoring)
+- Flare (error tracking for Laravel)
 
 ---
 
@@ -993,18 +1343,18 @@ GET /api/v1/analytics/export
 - i18next (internationalization)
 
 ### Backend
-- Node.js + Express.js
-- PostgreSQL (primary database)
-- Redis (caching)
-- JWT (authentication)
-- Socket.io (real-time)
+- **PHP 8.2+ / Laravel 11**
+- **MySQL 8.0+ / MariaDB 10.5+** (primary database)
+- **Redis** (caching & queues)
+- **Laravel Sanctum** (API authentication)
+- **Laravel Reverb / Pusher** (real-time / WebSockets)
 
 ### External Services
-- Paystack / Flutterwave (payments)
-- CoinGecko API (crypto prices)
-- AWS S3 (file storage)
-- SendGrid / Mailgun (emails)
-- Twilio (SMS)
+- **Paystack / Flutterwave** (Nigerian payments)
+- **CoinGecko API** (crypto prices)
+- **AWS S3** (file storage via Laravel Filesystem)
+- **Mailtrap / Mailgun** (emails via Laravel Mail)
+- **Termii / Africa's Talking** (SMS for Nigeria)
 
 ### DevOps
 - GitHub Actions (CI/CD)
