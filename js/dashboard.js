@@ -118,7 +118,47 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error('Error loading user data:', e);
         }
     }
+
+    // Mobile menu toggle functionality
+    initMobileMenu();
 });
+
+// ============================================
+// MOBILE MENU TOGGLE
+// ============================================
+function initMobileMenu() {
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const sidebar = document.querySelector('.dashboard-sidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+    if (!mobileMenuToggle || !sidebar || !sidebarOverlay) return;
+
+    // Toggle sidebar on button click
+    mobileMenuToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('mobile-open');
+        sidebarOverlay.classList.toggle('active');
+        mobileMenuToggle.classList.toggle('active');
+    });
+
+    // Close sidebar when clicking overlay
+    sidebarOverlay.addEventListener('click', () => {
+        sidebar.classList.remove('mobile-open');
+        sidebarOverlay.classList.remove('active');
+        mobileMenuToggle.classList.remove('active');
+    });
+
+    // Close sidebar when clicking a menu item on mobile
+    const menuItems = sidebar.querySelectorAll('.menu-item, .submenu-item');
+    menuItems.forEach(item => {
+        item.addEventListener('click', () => {
+            if (window.innerWidth <= 480) {
+                sidebar.classList.remove('mobile-open');
+                sidebarOverlay.classList.remove('active');
+                mobileMenuToggle.classList.remove('active');
+            }
+        });
+    });
+}
 
 // ============================================
 // SEARCH FUNCTIONALITY
