@@ -166,8 +166,9 @@ if (newsletterForm) {
 }
 
 // ============================================
-// PARALLAX EFFECT (Optional Enhancement)
+// PARALLAX EFFECT (Optional Enhancement) - DISABLED
 // ============================================
+/*
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     const parallaxElements = document.querySelectorAll('.hero');
@@ -177,6 +178,7 @@ window.addEventListener('scroll', () => {
         element.style.transform = `translateY(${scrolled * speed}px)`;
     });
 });
+*/
 
 // ============================================
 // PRELOADER (Optional)

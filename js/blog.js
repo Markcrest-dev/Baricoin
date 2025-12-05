@@ -43,17 +43,15 @@ class BlogSystem {
             });
         }
 
-        // Category filtering
-        const categoryButtons = document.querySelectorAll('.category-btn');
-        categoryButtons.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                categoryButtons.forEach(b => b.classList.remove('active'));
-                e.target.classList.add('active');
-                this.currentCategory = e.target.dataset.category;
+        // Category filtering with dropdown
+        const categorySelect = document.getElementById('blog-category-select'); // Assuming an ID for the select element
+        if (categorySelect) {
+            categorySelect.addEventListener('change', (e) => {
+                this.currentCategory = e.target.value;
                 this.currentPage = 1;
                 this.renderPosts();
             });
-        });
+        }
     }
 
     getFilteredPosts() {

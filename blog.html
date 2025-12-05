@@ -48,7 +48,6 @@
                     <a href="about.html">About</a>
                     <a href="blog.html">Blog</a>
                     <a href="products.html">Products</a>
-                    <a href="ambassador.html">Ambassador</a>
                     <a href="rate-calculator.html">Rate Calculator</a>
                     <a href="support.html">Support</a>
                 </div>
@@ -67,35 +66,33 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" style="min-height: 60vh;">
+    <!-- Blog Hero Section -->
+    <section class="blog-hero-section">
         <div class="container">
-            <div class="hero-content">
-                <h1>Baricoin Blog</h1>
-                <p>Stay updated with the latest insights, tips, and news about gift card trading
-                    and cryptocurrency</p>
+            <div class="blog-hero-controls">
+                <div class="blog-search-wrapper">
+                    <input type="text" id="blog-search" class="blog-hero-search" placeholder="Search">
+                    <span class="blog-search-icon">🔍</span>
+                </div>
+
+                <div class="blog-category-dropdown">
+                    <select id="blog-category-select" class="blog-category-select">
+                        <option value="all">Select Categories</option>
+                        <option value="gift cards">Gift Cards</option>
+                        <option value="crypto news">Crypto News</option>
+                        <option value="tips">Tips</option>
+                        <option value="updates">Updates</option>
+                    </select>
+                </div>
             </div>
+
+            <h1 class="blog-hero-title">News and Articles from Baricoin.</h1>
         </div>
     </section>
 
     <!-- Blog Section -->
-    <section>
+    <section style="padding-top: 4rem;">
         <div class="container">
-            <!-- Search and Filter -->
-            <div class="blog-controls">
-                <div class="blog-search-container">
-                    <input type="text" id="blog-search" class="blog-search-input" placeholder="Search blog posts...">
-                    <span class="search-icon">🔍</span>
-                </div>
-
-                <div class="blog-categories">
-                    <button class="category-btn active" data-category="all">All Posts</button>
-                    <button class="category-btn" data-category="gift cards">Gift Cards</button>
-                    <button class="category-btn" data-category="crypto news">Crypto News</button>
-                    <button class="category-btn" data-category="tips">Tips</button>
-                    <button class="category-btn" data-category="updates">Updates</button>
-                </div>
-            </div>
 
             <!-- Blog Posts Grid -->
             <div class="blog-grid" id="blog-posts-container">
@@ -153,7 +150,6 @@
                 <div class="footer-section">
                     <h4>Connect</h4>
                     <ul>
-                        <li><a href="ambassador.html">Ambassador</a></li>
                         <li><a href="rate-calculator.html">Rate Calculator</a></li>
                     </ul>
                 </div>

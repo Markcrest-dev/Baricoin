@@ -48,7 +48,6 @@
                     <a href="about.html">About</a>
                     <a href="blog.html">Blog</a>
                     <a href="products.html">Products</a>
-                    <a href="ambassador.html">Ambassador</a>
                     <a href="rate-calculator.html">Rate Calculator</a>
                     <a href="support.html">Support</a>
                 </div>
@@ -68,9 +67,9 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="support-hero">
+    <section class="support-hero support-hero-left">
         <div class="container">
-            <div style="max-width: 800px; margin: 0 auto;">
+            <div style="max-width: 70%; margin: 0;">
                 <h1 style="font-size: 3rem; font-weight: 800; margin-bottom: 1rem;">Need Help? We are Available 24/7 to
                     Help you enjoy Gift Card and Crypto bliss</h1>
                 <p style="font-size: 1.25rem; opacity: 0.95;">Get the Best Experience on the Baricoin App with our super
@@ -80,6 +79,7 @@
     </section>
 
     <!-- FAQ Section -->
+    <!-- FAQ Section -->
     <section>
         <div class="container">
             <div class="section-header">
@@ -87,255 +87,193 @@
                 <p class="section-subtitle">Find quick answers to common questions</p>
             </div>
 
-            <!-- FAQ Search -->
-            <div class="faq-search-container">
-                <input type="text" id="faq-search" class="faq-search-input" placeholder="Search FAQs...">
-                <span class="search-icon">🔍</span>
-            </div>
-
-            <!-- FAQ Categories -->
-            <div class="faq-categories" id="faq-categories">
-                <!-- Categories will be dynamically loaded -->
-            </div>
-
-            <!-- FAQ Container -->
-            <div class="faq-section" id="faq-container">
-                <!-- FAQs will be dynamically loaded -->
-                <p style="text-align: center; padding: 3rem; color: var(--color-gray-600);">Loading FAQs...</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Help Documentation -->
-    <section style="background: var(--color-gray-50);">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Help Documentation</h2>
-                <p class="section-subtitle">Comprehensive guides to help you get the most out of Baricoin</p>
-            </div>
-
-            <div class="help-docs-grid">
-                <div class="help-doc-card">
-                    <div class="help-doc-icon">📚</div>
-                    <h3>Getting Started Guide</h3>
-                    <p>Learn the basics of using Baricoin, from account creation to your first transaction.</p>
-                    <a href="#" class="doc-link">Read Guide →</a>
-                </div>
-
-                <div class="help-doc-card">
-                    <div class="help-doc-icon">🎁</div>
-                    <h3>Gift Card Trading Guide</h3>
-                    <p>Complete guide on selling gift cards, taking photos, and getting the best rates.</p>
-                    <a href="#" class="doc-link">Read Guide →</a>
-                </div>
-
-                <div class="help-doc-card">
-                    <div class="help-doc-icon">₿</div>
-                    <h3>Cryptocurrency Guide</h3>
-                    <p>Learn how to sell crypto, understand wallet addresses, and track confirmations.</p>
-                    <a href="#" class="doc-link">Read Guide →</a>
-                </div>
-
-                <div class="help-doc-card">
-                    <div class="help-doc-icon">💸</div>
-                    <h3>Withdrawal Guide</h3>
-                    <p>Step-by-step instructions for withdrawing funds to your Nigerian bank account.</p>
-                    <a href="#" class="doc-link">Read Guide →</a>
-                </div>
-
-                <div class="help-doc-card">
-                    <div class="help-doc-icon">📱</div>
-                    <h3>Bill Payment Guide</h3>
-                    <p>Learn how to pay for airtime, data, cable TV, and electricity bills.</p>
-                    <a href="#" class="doc-link">Read Guide →</a>
-                </div>
-
-                <div class="help-doc-card">
-                    <div class="help-doc-icon">🔒</div>
-                    <h3>Security Best Practices</h3>
-                    <p>Essential tips to keep your account and funds secure on Baricoin.</p>
-                    <a href="#" class="doc-link">Read Guide →</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Video Tutorials -->
-    <section>
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Video Tutorials</h2>
-                <p class="section-subtitle">Watch step-by-step video guides</p>
-            </div>
-
-            <div class="video-grid">
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <span class="play-icon">▶️</span>
-                        <span class="video-duration">3:45</span>
+            <!-- FAQ Accordion -->
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>How do I start selling on Baricoin?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>To start selling, you have to create an account on the Baricoin web or mobile applications.
+                        </p>
+                        <p>Sign up with these easy steps:</p>
+                        <ol>
+                            <li>Register with your email and phone number</li>
+                            <li>Verify your email with the OTP sent to it</li>
+                            <li>Set your password and PIN (use a strong password you'll remember)</li>
+                            <li>Start selling!</li>
+                        </ol>
                     </div>
-                    <h4>How to Sell Gift Cards</h4>
-                    <p>Complete walkthrough of selling gift cards on Baricoin</p>
                 </div>
 
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <span class="play-icon">▶️</span>
-                        <span class="video-duration">5:12</span>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>How do I sell gift cards on Baricoin?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Selling gift cards is simple:</p>
+                        <ol>
+                            <li>Log in to your Baricoin account</li>
+                            <li>Select "Giftcard" from the menu</li>
+                            <li>Choose the card type and currency</li>
+                            <li>Upload clear photos of your card</li>
+                            <li>Enter the card details and submit</li>
+                            <li>Wait for verification and receive payment instantly</li>
+                        </ol>
                     </div>
-                    <h4>Cryptocurrency Trading Basics</h4>
-                    <p>Learn how to sell crypto and receive payment</p>
                 </div>
 
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <span class="play-icon">▶️</span>
-                        <span class="video-duration">2:30</span>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>How do I sell cryptocurrency on Baricoin?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Selling crypto on Baricoin is easy:</p>
+                        <ol>
+                            <li>Log in to your account</li>
+                            <li>Select "Crypto" from the menu</li>
+                            <li>Choose the cryptocurrency you want to sell</li>
+                            <li>Enter the amount in USD</li>
+                            <li>Copy the wallet address provided</li>
+                            <li>Send crypto to the address</li>
+                            <li>Receive payment after confirmation</li>
+                        </ol>
                     </div>
-                    <h4>Quick Bill Payments</h4>
-                    <p>Pay for airtime, data, and bills in seconds</p>
                 </div>
 
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <span class="play-icon">▶️</span>
-                        <span class="video-duration">4:20</span>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>How long does it take to receive payment?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Payment times vary by transaction type:</p>
+                        <ul>
+                            <li><strong>Gift Cards:</strong> Usually within 5-15 minutes after verification</li>
+                            <li><strong>Cryptocurrency:</strong> After blockchain confirmation (typically 10-30 minutes)
+                            </li>
+                            <li><strong>Withdrawals:</strong> Instant to your bank account</li>
+                        </ul>
                     </div>
-                    <h4>Account Security Setup</h4>
-                    <p>Enable 2FA and secure your Baricoin account</p>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>What payment methods do you support?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We support direct bank transfers to all Nigerian banks. Payments are made instantly to your
+                            registered bank account once your transaction is verified.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Is my account secure?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! We take security very seriously. Your account is protected with:</p>
+                        <ul>
+                            <li>Multi-factor authentication (2FA)</li>
+                            <li>Encrypted data transmission</li>
+                            <li>Secure transaction PIN</li>
+                            <li>Regular security audits</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Support Ticket Form Section -->
-    <section style="background: var(--color-gray-100);">
+    <!-- Contact Support Section -->
+    <section class="contact-support-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Submit a Support Ticket</h2>
-                <p class="section-subtitle">Need personalized assistance? Our support team will respond within 24 hours
-                </p>
+                <h2 class="section-title">Get in Touch</h2>
+                <p class="section-subtitle">Choose your preferred way to reach us</p>
             </div>
 
-            <div class="ticket-form-container">
-                <form id="ticketForm" class="ticket-form">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="ticket-name">Full Name *</label>
-                            <input type="text" id="ticket-name" placeholder="Your full name" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="ticket-email">Email *</label>
-                            <input type="email" id="ticket-email" placeholder="your.email@example.com" required>
-                        </div>
+            <div class="contact-grid">
+                <!-- Contact Methods -->
+                <div class="contact-cards">
+                    <div class="contact-card">
+                        <div class="contact-card-icon">💬</div>
+                        <h3>Live Chat</h3>
+                        <p>Chat with our support team</p>
+                        <p class="contact-detail">Available 24/7</p>
+                        <button class="btn btn-primary btn-sm" onclick="alert('Live chat coming soon!')">Start
+                            Chat</button>
                     </div>
 
-                    <div class="form-row">
+                    <div class="contact-card">
+                        <div class="contact-card-icon">📧</div>
+                        <h3>Email Support</h3>
+                        <p>Send us a detailed message</p>
+                        <p class="contact-detail">support@baricoin.com</p>
+                        <a href="mailto:support@baricoin.com" class="btn btn-secondary btn-sm">Send Email</a>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-card-icon">📱</div>
+                        <h3>WhatsApp</h3>
+                        <p>Quick messaging support</p>
+                        <p class="contact-detail">+234 XXX XXX XXXX</p>
+                        <button class="btn btn-secondary btn-sm">Message Us</button>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-card-icon">🐦</div>
+                        <h3>Twitter</h3>
+                        <p>Follow us for updates</p>
+                        <p class="contact-detail">@BaricoinNG</p>
+                        <a href="https://twitter.com/BaricoinNG" target="_blank"
+                            class="btn btn-secondary btn-sm">Follow</a>
+                    </div>
+                </div>
+
+                <!-- Quick Contact Form -->
+                <div class="quick-contact-form">
+                    <h3>Quick Contact Form</h3>
+                    <p>We'll get back to you within 24 hours</p>
+
+                    <form id="quickContactForm">
                         <div class="form-group">
-                            <label for="ticket-category">Category *</label>
-                            <select id="ticket-category" required>
-                                <option value="">Select category</option>
-                                <option value="account">Account & Login Issues</option>
+                            <input type="text" placeholder="Your Name *" required>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email *" required>
+                        </div>
+
+                        <div class="form-group">
+                            <select required>
+                                <option value="">Select Issue Type *</option>
+                                <option value="account">Account Issues</option>
                                 <option value="transaction">Transaction Support</option>
-                                <option value="giftcard">Gift Card Issues</option>
-                                <option value="crypto">Cryptocurrency Help</option>
+                                <option value="gift-card">Gift Card Help</option>
+                                <option value="crypto">Crypto Support</option>
                                 <option value="payment">Payment & Withdrawal</option>
-                                <option value="technical">Technical Support</option>
                                 <option value="other">Other</option>
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <label for="ticket-priority">Priority *</label>
-                            <select id="ticket-priority" required>
-                                <option value="low">Low - General inquiry</option>
-                                <option value="medium" selected>Medium - Need assistance</option>
-                                <option value="high">High - Urgent issue</option>
-                                <option value="critical">Critical - Account security</option>
-                            </select>
+                            <textarea rows="5" placeholder="Your Message *" required></textarea>
                         </div>
-                    </div>
 
-                    <div class="form-group">
-                        <label for="ticket-subject">Subject *</label>
-                        <input type="text" id="ticket-subject" placeholder="Brief description of your issue" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="ticket-message">Detailed Message *</label>
-                        <textarea id="ticket-message" rows="6"
-                            placeholder="Provide as much detail as possible to help us assist you better..."
-                            required></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="ticket-attachment">Attachment (Optional)</label>
-                        <input type="file" id="ticket-attachment" accept="image/*,.pdf,.doc,.docx">
-                        <small>Supported formats: JPG, PNG, PDF, DOC (Max 5MB)</small>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">Submit Ticket</button>
-                </form>
-            </div>
-
-            <!-- Live Chat Widget -->
-            <div class="chat-widget-section">
-                <div class="chat-widget-card">
-                    <div class="chat-widget-icon">💬</div>
-                    <h3>Live Chat Support</h3>
-                    <p>Get instant help from our support team</p>
-                    <ul class="chat-features">
-                        <li>✓ Average response time: &lt;2 minutes</li>
-                        <li>✓ Available 24/7</li>
-                        <li>✓ Real-time assistance</li>
-                        <li>✓ Screen sharing support</li>
-                    </ul>
-                    <button class="btn btn-primary chat-launch-btn" onclick="alert('Live chat feature coming soon!')">
-                        Start Live Chat
-                    </button>
-                </div>
-
-                <div class="contact-methods">
-                    <h4>Other Ways to Reach Us</h4>
-                    <div class="contact-method">
-                        <span class="contact-icon">📧</span>
-                        <div>
-                            <strong>Email Support</strong>
-                            <p>support@baricoin.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-method">
-                        <span class="contact-icon">📱</span>
-                        <div>
-                            <strong>WhatsApp</strong>
-                            <p>+234 XXX XXX XXXX</p>
-                        </div>
-                    </div>
-                    <div class="contact-method">
-                        <span class="contact-icon">🐦</span>
-                        <div>
-                            <strong>Twitter</strong>
-                            <p>@BaricoinNG</p>
-                        </div>
-                    </div>
+                        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Send Message</button>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Newsletter -->
-    <section class="newsletter">
-        <div class="container">
-            <h2 class="section-title" style="color: white;">Get Started On Baricoin Today.</h2>
-            <p style="font-size: 1.125rem; margin-bottom: 2rem;">Join our Newsletter for special perks & updates</p>
-
-            <form class="newsletter-form" id="newsletterForm">
-                <input type="email" placeholder="Enter your email address" required>
-                <button type="submit">Subscribe</button>
-            </form>
-        </div>
-    </section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -367,7 +305,6 @@
                 <div class="footer-section">
                     <h4>Connect</h4>
                     <ul>
-                        <li><a href="ambassador.html">Ambassador</a></li>
                         <li><a href="rate-calculator.html">Rate Calculator</a></li>
                     </ul>
                 </div>
@@ -382,16 +319,32 @@
     <!-- JavaScript -->
     <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/support.js"></script>
     <script>
-        // Ticket form submission
-        document.getElementById('ticketForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-            const category = document.getElementById('ticket-category').value;
-            const priority = document.getElementById('ticket-priority').value;
-            alert(`Thank you for submitting your ${priority} priority ticket about "${category}"! Our support team will get back to you within 24 hours.`);
-            this.reset();
-        });
+        // FAQ Toggle Function
+        function toggleFaq(button) {
+            const faqItem = button.parentElement;
+            const isActive = faqItem.classList.contains('active');
+
+            // Close all FAQs
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // Open clicked FAQ if it wasn't active
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        }
+
+        // Quick Contact Form Submission
+        const contactForm = document.getElementById('quickContactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                alert('Thank you for your message! Our support team will respond within 24 hours.');
+                this.reset();
+            });
+        }
     </script>
     <script src="/js/pwa.js"></script>
 </body>

@@ -48,7 +48,6 @@
                     <a href="about.html">About</a>
                     <a href="blog.html">Blog</a>
                     <a href="products.html">Products</a>
-                    <a href="ambassador.html">Ambassador</a>
                     <a href="rate-calculator.html">Rate Calculator</a>
                     <a href="support.html">Support</a>
                 </div>
@@ -67,146 +66,80 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Check out our Highest Gift Card and Crypto Rates</h1>
-                <p>Get real-time rates for your cryptocurrencies and gift cards. Updated hourly
-                    for maximum accuracy.</p>
-            </div>
-        </div>
-    </section>
-
     <!-- Rate Calculator -->
-    <section>
+    <!-- Rate Calculator Hero -->
+    <section class="rate-calculator-hero">
         <div class="container">
-            <div class="calculator-widget">
-                <h3 style="text-align: center; margin-bottom: 1.5rem; font-family: var(--font-heading);">Enhanced Rate
-                    Calculator
-                </h3>
+            <h1 class="rate-calculator-title">Check out our Highest Gift Card<br>and Crypto Rates</h1>
 
-                <div class="calculator-tabs">
-                    <button class="calculator-tab active" data-tab="crypto">Crypto</button>
-                    <button class="calculator-tab" data-tab="giftcard">Giftcard</button>
-                </div>
+            <div class="rate-calculator-box">
+                <h2 class="calculator-heading">Rate Calculator</h2>
 
-                <div class="calculator-form">
-                    <!-- Asset Selection -->
-                    <div class="form-group">
-                        <label for="assetSelect">Select Asset</label>
-                        <select id="assetSelect">
-                            <!-- Crypto options -->
-                            <optgroup label="Cryptocurrencies" id="cryptoOptions">
-                                <option value="bitcoin" data-rate="1750">Bitcoin (BTC)</option>
-                                <option value="ethereum" data-rate="580">Ethereum (ETH)</option>
-                                <option value="usdt" data-rate="1620">USDT (TRC20)</option>
-                                <option value="usdc" data-rate="1615">USDC</option>
-                                <option value="litecoin" data-rate="150">Litecoin (LTC)</option>
-                                <option value="bnb" data-rate="685">BNB</option>
-                                <option value="doge" data-rate="0.25">Dogecoin (DOGE)</option>
-                                <option value="xrp" data-rate="3.2">XRP</option>
-                            </optgroup>
-                            <!-- Giftcard options -->
-                            <optgroup label="Gift Cards" id="giftcardOptions" style="display: none;">
-                                <option value="itunes" data-rate="800">iTunes</option>
-                                <option value="amazon" data-rate="750">Amazon</option>
-                                <option value="steam" data-rate="680">Steam</option>
-                                <option value="google-play" data-rate="720">Google Play</option>
-                                <option value="ebay" data-rate="700">eBay</option>
-                                <option value="walmart" data-rate="690">Walmart</option>
-                                <option value="visa" data-rate="770">Visa</option>
-                                <option value="amex" data-rate="760">American Express</option>
-                            </optgroup>
-                        </select>
-                        <button class="favorite-btn" id="favoriteBtn" title="Add to favorites">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                <path
-                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
-                                </path>
-                            </svg>
-                        </button>
-                    </div>
+                <div class="calculator-grid">
+                    <div class="calculator-row">
+                        <div class="form-group">
+                            <select id="selectCard" class="calculator-select">
+                                <option value="">Select card</option>
+                                <option value="itunes">iTunes</option>
+                                <option value="amazon">Amazon</option>
+                                <option value="steam">Steam</option>
+                                <option value="google-play">Google Play</option>
+                                <option value="ebay">eBay</option>
+                                <option value="walmart">Walmart</option>
+                                <option value="visa">Visa</option>
+                                <option value="amex">American Express</option>
+                            </select>
+                        </div>
 
-                    <!-- Amount Input -->
-                    <div class="form-group">
-                        <label for="amountInput">Amount (USD)</label>
-                        <input type="number" id="amountInput" placeholder="Enter amount" value="100" min="0"
-                            step="0.01">
-                    </div>
-
-                    <!-- Calculator Result -->
-                    <div class="calculator-result">
-                        <div class="amount" id="resultAmount">₦ 175,000.00</div>
-                        <div class="label">Naira Value</div>
-                        <div class="rate-indicator">
-                            Rate: <span id="currentRate">₦1,750/USD</span>
-                            <span class="rate-change positive" id="rateChange">+2.5%</span>
+                        <div class="form-group">
+                            <select id="selectCurrency" class="calculator-select">
+                                <option value="">Select currency</option>
+                                <option value="usd">USD</option>
+                                <option value="eur">EUR</option>
+                                <option value="gbp">GBP</option>
+                                <option value="cad">CAD</option>
+                                <option value="aud">AUD</option>
+                            </select>
                         </div>
                     </div>
 
-                    <!-- Quick Actions -->
-                    <div class="calculator-actions">
-                        <button class="action-btn" id="swapBtn">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                <polyline points="17 1 21 5 17 9"></polyline>
-                                <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
-                                <polyline points="7 23 3 19 7 15"></polyline>
-                                <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
-                            </svg>
-                            Swap
-                        </button>
-                        <button class="action-btn" id="setAlertBtn">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-                                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-                            </svg>
-                            Set Alert
-                        </button>
+                    <div class="calculator-row">
+                        <div class="form-group">
+                            <select id="selectCardType" class="calculator-select">
+                                <option value="">Select card type</option>
+                                <option value="physical">Physical Card</option>
+                                <option value="ecode">E-Code</option>
+                                <option value="receipt">Receipt</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <select id="selectDenomination" class="calculator-select">
+                                <option value="">Select denomination</option>
+                                <option value="25">$25</option>
+                                <option value="50">$50</option>
+                                <option value="100">$100</option>
+                                <option value="200">$200</option>
+                                <option value="500">$500</option>
+                                <option value="custom">Custom Amount</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="calculator-result-section" id="calculatorResult" style="display: none;">
+                        <div class="result-display">
+                            <div class="result-label">You will receive:</div>
+                            <div class="result-amount" id="resultAmount">₦ 0.00</div>
+                            <div class="result-rate" id="resultRate">Rate: ₦0/USD</div>
+                        </div>
                     </div>
                 </div>
 
-                <p
-                    style="text-align: center; margin-top: 1rem; color: var(--color-gray-600); font-size: var(--text-sm);">
-                    Rates updated every 5 minutes. Actual rates may vary slightly at time of transaction.
+                <button class="btn btn-primary btn-lg calculator-submit" id="calculateBtn">Calculate Rate</button>
+
+                <p class="calculator-note">
+                    Rates are updated every 5 minutes. Final rates may vary at time of transaction.
                 </p>
-            </div>
-
-            <!-- Favorite Pairs -->
-            <div class="favorites-section" id="favoritesSection" style="display: none;">
-                <h4>Favorite Pairs</h4>
-                <div class="favorites-grid" id="favoritesGrid"></div>
-            </div>
-
-            <!-- Rate Comparison Table -->
-            <div class="rate-comparison-table">
-                <h4>Rate Comparison</h4>
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th>Asset</th>
-                            <th>Current Rate (₦/USD)</th>
-                            <th>24h Change</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody id="comparisonTableBody">
-                        <!-- Will be populated by JS -->
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- Historical Rate Chart -->
-            <div class="rate-chart-container">
-                <div class="chart-header">
-                    <h4>Rate History (Last 7 Days)</h4>
-                    <div class="chart-controls">
-                        <button class="chart-period-btn active" data-period="7d">7D</button>
-                        <button class="chart-period-btn" data-period="30d">30D</button>
-                        <button class="chart-period-btn" data-period="90d">90D</button>
-                    </div>
-                </div>
-                <canvas id="rateChart"></canvas>
             </div>
         </div>
     </section>
@@ -236,74 +169,7 @@
             </div>
         </div>
     </div>
-
-    <!-- FAQ Section -->
-    <section style="background: var(--color-gray-100);">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Frequently Asked Questions</h2>
-            </div>
-
-            <div class="faq-section">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>How do I start selling on Baricoin?</h3>
-                        <div class="faq-icon">+</div>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>To start selling, you have to create an account on the Baricoin web or Mobile
-                                applications.
-                            </p>
-                            <p>Sign up with these easy steps:</p>
-                            <ol>
-                                <li>Register with your email and phone number</li>
-                                <li>Verify the same mail with the OTP sent to it.</li>
-                                <li>Set your password and PIN (we advise you to use a strong password that you will
-                                    remember).</li>
-                                <li>Start selling.</li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>How do I sell Crypto on Baricoin?</h3>
-                        <div class="faq-icon">+</div>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>Selling Crypto on Baricoin is easy. These simple steps will have your bank account
-                                buzzing:
-                            </p>
-                            <ol>
-                                <li>Register with your email and phone number</li>
-                                <li>Verify the same mail with the OTP sent to it.</li>
-                                <li>Set your password and PIN (we advise you to use a strong password that you will
-                                    remember).</li>
-                                <li>Start selling.</li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter -->
-    <section class="newsletter">
-        <div class="container">
-            <h2 class="section-title" style="color: white;">Get Started On Baricoin Today.</h2>
-            <p style="font-size: 1.125rem; margin-bottom: 2rem;">Join our Newsletter for special perks & updates</p>
-
-            <form class="newsletter-form" id="newsletterForm">
-                <input type="email" placeholder="Enter your email address" required>
-                <button type="submit">Subscribe</button>
-            </form>
-        </div>
-    </section>
-
+    
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -334,7 +200,6 @@
                 <div class="footer-section">
                     <h4>Connect</h4>
                     <ul>
-                        <li><a href="ambassador.html">Ambassador</a></li>
                         <li><a href="rate-calculator.html">Rate Calculator</a></li>
                     </ul>
                 </div>
