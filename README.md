@@ -1,96 +1,62 @@
-# Baricoin - Frontend Implementation
+# Baricoin 🪙
 
-Baricoin is a modern platform for trading gift cards, cryptocurrencies, and paying bills. This repository contains the frontend implementation of the Baricoin web application.
+Baricoin is a premium, full-stack platform for trading cryptocurrencies, gift cards, and managing digital assets. This repository follows a monorepo structure, containing the backend API, a modern web dashboard, and a cross-platform mobile application.
 
-## 🚀 Phase 1: Content & UI Polish (Completed)
+## 🏗️ Architecture Overview
 
-Phase 1 focused on enhancing the user interface, adding rich content, and implementing key frontend features.
+The Baricoin ecosystem consists of three main components:
 
-### Key Features Implemented
+- **[Backend API](./backend)**: Built with **NestJS**, **Prisma**, and **SQLite**. Handles authentication, trading logic, and database management.
+- **[Web Dashboard](./web)**: A high-performance **React** application built with **Vite**, **Tailwind CSS**, and **Zustand** for state management.
+- **[Mobile App](./mobile)**: A cross-platform **React Native** application powered by **Expo**, featuring a seamless user experience across iOS and Android.
 
-#### 1. Mobile App Download Section
-- **Location**: Landing Page (`index.html`)
-- **Features**:
-  - Professional mobile app mockups
-  - Direct links to App Store and Google Play
-  - QR code for quick mobile access
-  - Feature highlights
+## 🚀 Quick Start
 
-#### 2. "Coming Soon" Features
-- **Location**: Products Page (`products.html`)
-- **Features**:
-  - Glassmorphism card design
-  - "Daily Tasks" feature preview
-  - "Convert" (Swap) feature preview
-  - Interactive lock animations
+To get the entire platform up and running locally, follow these steps in order:
 
-#### 3. Blog System
-- **Location**: Blog (`blog.html`) & Blog Post (`blog-post.html`)
-- **Features**:
-  - Comprehensive blog management system (`js/blog.js`)
-  - 5 detailed sample blog posts
-  - Real-time search and category filtering
-  - Pagination and related posts logic
-  - Social sharing integration
+### 1. Start the Backend
+Navigate to the backend directory and initialize the server:
+```bash
+cd backend
+npm install
+npx prisma generate
+npm run start:dev
+```
 
-#### 4. Enhanced Support Center
-- **Location**: Support (`support.html`)
-- **Features**:
-  - 30+ FAQs across 6 categories
-  - Real-time FAQ search and filtering
-  - Support ticket form with priority selection
-  - Live chat widget UI
-  - Help documentation and video tutorial sections
+### 2. Start the Web Client
+In a new terminal, launch the web application:
+```bash
+cd web
+npm install
+npm run dev
+```
 
-#### 5. Smart Notifications
-- **Location**: Notifications (`notifications.html`)
-- **Features**:
-  - 4 Notification types: Success, Warning, Error, Info
-  - Category filtering (Transactions, Account, System)
-  - "Mark all as read" functionality
-  - Granular notification settings in `settings.html`
+### 3. Start the Mobile App
+In another terminal, start the Expo development server:
+```bash
+cd mobile
+npm install
+npm run start
+```
 
 ## 🛠️ Technology Stack
 
-- **HTML5**: Semantic markup
-- **CSS3**: Custom properties (variables), Flexbox, Grid, Glassmorphism
-- **JavaScript**: ES6+ modules, Object-Oriented design
-- **Assets**: Optimized WebP and PNG images
+| Component | Key Technologies |
+| :--- | :--- |
+| **Backend** | NestJS, Prisma ORM, SQLite, Passport.js (JWT) |
+| **Web** | React 19, Vite, Tailwind CSS 4, Zustand, Axios |
+| **Mobile** | React Native, Expo, NativeWind, Expo Router |
 
 ## 📂 Project Structure
 
-```
+```text
 Baricoin/
-├── css/
-│   ├── style.css           # Global styles
-│   ├── additional.css      # Component-specific styles
-│   ├── dashboard.css       # Dashboard layout styles
-│   └── notifications.css   # Notification system styles
-├── js/
-│   ├── main.js            # Core functionality
-│   ├── blog.js            # Blog system logic
-│   ├── support.js         # Support/FAQ system logic
-│   ├── notifications.js   # Notification system logic
-│   ├── blog-data.json     # Blog content data
-│   └── faq-data.json      # FAQ content data
-├── images/                 # Image assets
-└── *.html                  # Page templates
+├── backend/    # NestJS API & Database
+├── web/        # React Web Application
+├── mobile/     # Expo Mobile Application
+└── ...         # Project documentation and configuration
 ```
-
-## 🚦 Getting Started
-
-1. Clone the repository
-2. Open `index.html` in your browser
-3. Navigate through the application using the menu links
-
-## 📱 Responsiveness
-
-The application is fully responsive and optimized for:
-- Desktop (1920px+)
-- Laptop (1366px)
-- Tablet (768px)
-- Mobile (375px+)
 
 ## 📄 License
 
-Proprietary - Baricoin
+Proprietary - Baricoin Platform
