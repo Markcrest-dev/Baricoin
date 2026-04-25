@@ -1,0 +1,62 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model User {
+  id            String   @id @default(uuid())
+  email         String   @unique
+  name          String?
+  username      String   @unique
+  phone         String?
+  password      String
+  isVerified    Boolean  @default(false)
+  kycStatus     String   @default("unverified")
+  memberSince   DateTime @default(now())
+  wallets       Wallet[]
+  transactions  Transaction[]
+  referrals     Referral[] @relation("UserReferrer")
+  referredBy    Referral?  @relation("UserReferred")
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model Wallet {
+  id        String   @id @default(uuid())
+  currency  String
+  balance   Float    @default(0)
+  label     String
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Transaction {
+  id          String   @id @default(uuid())
+  type        String
+  amount      Float
+  currency    String
+  status      String   @default("pending")
+  description String?
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+  createdAt   DateTime @default(now())
+}
+
+model Referral {
+  id          String   @id @default(uuid())
+  referrerId  String
+  referrer    User     @relation("UserReferrer", fields: [referrerId], references: [id])
+  referredId  String   @unique
+  referred    User     @relation("UserReferred", fields: [referredId], references: [id])
+  reward      Float    @default(0)
+  status      String   @default("pending")
+  createdAt   DateTime @default(now())
+}

@@ -8,6 +8,7 @@ const SignupPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [form, setForm] = useState({
     fullName: '',
+    username: '',
     email: '',
     phone: '',
     password: '',
@@ -19,10 +20,19 @@ const SignupPage = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    setTimeout(() => {
+    try {
+      await authService.register({ 
+        name: form.fullName, 
+        username: form.username,
+        email: form.email, 
+        password: form.password 
+      });
+      navigate('/login');
+    } catch (error: any) {
+      alert(error.response?.data?.message || 'Registration failed');
+    } finally {
       setIsLoading(false);
-      window.location.href = '/verify';
-    }, 1500);
+    }
   };
 
   const fields = [
@@ -31,6 +41,13 @@ const SignupPage = () => {
       label: 'Full Name',
       type: 'text',
       placeholder: 'John Doe',
+      icon: <User size={18} />,
+    },
+    {
+      id: 'username',
+      label: 'Username',
+      type: 'text',
+      placeholder: 'johndoe123',
       icon: <User size={18} />,
     },
     {

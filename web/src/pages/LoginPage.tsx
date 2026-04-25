@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import { authService } from '../services/authService';
 import { Gift, Bitcoin, Zap, CreditCard, Lock, Eye, EyeOff } from 'lucide-react';
 import logo from '../assets/images/baricoin-logo-new.png';
 
@@ -16,15 +17,19 @@ const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    // TODO: Connect to backend
-    setTimeout(() => {
+    try {
+      await authService.login({ email, password });
+      navigate('/dashboard');
+    } catch (error: any) {
+      alert(error.response?.data?.message || 'Login failed');
+    } finally {
       setIsLoading(false);
-      window.location.href = '/dashboard';
-    }, 1500);
+    }
   };
 
   return (

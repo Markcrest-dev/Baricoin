@@ -41,11 +41,12 @@ const quickActions = [
 
 const DashboardPage = () => {
   const { user } = useAuthStore();
-  const { wallets, isLoading, fetchWallets } = useWalletStore();
+  const { wallets, recentTransactions, isLoading, fetchWallets, fetchTransactions } = useWalletStore();
 
   useEffect(() => {
     fetchWallets();
-  }, [fetchWallets]);
+    fetchTransactions({ limit: 5 });
+  }, []);
 
   const userName = user?.name || 'User';
   const [showNairaBalance, setShowNairaBalance] = useState(false);
@@ -67,7 +68,7 @@ const DashboardPage = () => {
             </div>
             <div className="flex items-center gap-3 mb-2">
               <span className="text-3xl font-extrabold">
-                ₦ {showNairaBalance ? '0.00' : '*******'}
+                ₦ {showNairaBalance ? (wallets.find(w => w.currency === 'NGN')?.balance?.toLocaleString() || '0.00') : '*******'}
               </span>
               <button
                 onClick={() => setShowNairaBalance(!showNairaBalance)}
@@ -111,7 +112,7 @@ const DashboardPage = () => {
             </div>
             <div className="flex items-center gap-3 mb-2">
               <span className="text-3xl font-extrabold text-brown-900">
-                $ {showCryptoBalance ? '0.00' : '*******'}
+                $ {showCryptoBalance ? (wallets.find(w => w.currency === 'BTC')?.balance || '0.0000') : '*******'}
               </span>
               <button
                 onClick={() => setShowCryptoBalance(!showCryptoBalance)}
@@ -196,21 +197,39 @@ const DashboardPage = () => {
                 </th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td colSpan={3} className="px-6 py-12 text-center">
-                  <div className="text-brown-400">
-                    <ArrowLeftRight
-                      size={40}
-                      className="mx-auto mb-3 opacity-30"
-                    />
-                    <p className="font-medium">No transactions yet</p>
-                    <p className="text-sm mt-1">
-                      Your transaction history will appear here
-                    </p>
-                  </div>
-                </td>
-              </tr>
+            <tbody className="divide-y divide-cream-100">
+              {recentTransactions.length > 0 ? (
+                recentTransactions.map((tx) => (
+                  <tr key={tx.id} className="hover:bg-cream-50/50 transition-colors">
+                    <td className="px-6 py-4">
+                      <div>
+                        <p className="font-medium text-brown-900">{tx.description}</p>
+                        <p className="text-[10px] text-brown-400 uppercase font-bold tracking-tighter">{tx.date}</p>
+                      </div>
+                    </td>
+                    <td className="px-6 py-4">
+                      <p className={`font-bold text-sm ${tx.type === 'deposit' ? 'text-success' : 'text-danger'}`}>
+                        {tx.type === 'deposit' ? '+' : '-'} {tx.amount.toLocaleString()} {tx.currency}
+                      </p>
+                    </td>
+                    <td className="px-6 py-4">
+                      <span className={`px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider ${
+                        tx.status === 'completed' ? 'bg-success/10 text-success' :
+                        tx.status === 'pending' ? 'bg-warning/10 text-warning' :
+                        'bg-danger/10 text-danger'
+                      }`}>
+                        {tx.status}
+                      </span>
+                    </td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td colSpan={3} className="px-6 py-12 text-center text-brown-400 italic">
+                    No transactions yet
+                  </td>
+                </tr>
+              )}
             </tbody>
           </table>
         </div>
