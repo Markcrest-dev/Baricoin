@@ -2,15 +2,14 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
   CreditCard,
-  ArrowLeftRight,
   Eye,
   EyeOff,
   Smartphone,
   Tv,
 } from 'lucide-react';
 import DashboardLayout from '../components/layout/DashboardLayout';
-import { useAuthStore } from '../store/useAuthStore';
 import { useWalletStore } from '../store/useWalletStore';
+import { walletService } from '../services/walletService';
 
 const quickActions = [
   {
@@ -40,15 +39,13 @@ const quickActions = [
 ];
 
 const DashboardPage = () => {
-  const { user } = useAuthStore();
-  const { wallets, recentTransactions, isLoading, fetchWallets, fetchTransactions } = useWalletStore();
+  const { wallets, recentTransactions } = useWalletStore();
 
   useEffect(() => {
-    fetchWallets();
-    fetchTransactions({ limit: 5 });
+    walletService.fetchWallets();
+    walletService.fetchTransactions({ limit: 5 });
   }, []);
 
-  const userName = user?.name || 'User';
   const [showNairaBalance, setShowNairaBalance] = useState(false);
   const [showCryptoBalance, setShowCryptoBalance] = useState(false);
 

@@ -23,7 +23,7 @@ const SettingsPage = () => {
     transactions: true,
   });
 
-  const [language, setLanguage] = useState('English');
+  const [language] = useState('English');
   const [theme, setTheme] = useState('Light');
 
   const toggleNotification = (key: keyof typeof notifications) => {

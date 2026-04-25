@@ -1,9 +1,11 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Eye, EyeOff, User, Mail, Phone, Lock } from 'lucide-react';
+import { authService } from '../services/authService';
 import logo from '../assets/images/baricoin-logo-new.png';
 
 const SignupPage = () => {
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [form, setForm] = useState({

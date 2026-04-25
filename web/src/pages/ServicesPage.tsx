@@ -6,10 +6,8 @@ import {
   Tv, 
   Zap, 
   CheckCircle2, 
-  Smartphone,
   Wifi,
   CreditCard,
-  Building,
   Info
 } from 'lucide-react';
 import DashboardLayout from '../components/layout/DashboardLayout';
@@ -66,7 +64,7 @@ const ServicesPage = () => {
   const location = useLocation();
   const config = serviceConfigs[location.pathname] || serviceConfigs['/airtime'];
   
-  const [formData, setFormData] = useState<Record<string, string>>({});
+  const [, setFormData] = useState<Record<string, string>>({});
   const [isSuccess, setIsSuccess] = useState(false);
 
   useEffect(() => {
