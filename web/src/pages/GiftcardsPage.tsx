@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Upload, Info, CheckCircle2 } from 'lucide-react';
 import DashboardLayout from '../components/layout/DashboardLayout';
+import { tradeService } from '../services/tradeService';
 
 const GiftcardsPage = () => {
   const [formData, setFormData] = useState({
@@ -9,20 +10,36 @@ const GiftcardsPage = () => {
     currency: '',
     amount: '',
   });
-
+  const [images, setImages] = useState<FileList | null>(null);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>) => {
     const { id, value } = e.target;
     setFormData((prev) => ({ ...prev, [id]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate API call
-    console.log('Selling giftcard:', formData);
-    setIsSuccess(true);
-    setTimeout(() => setIsSuccess(false), 5000);
+    setLoading(true);
+    try {
+      const data = new FormData();
+      data.append('category', formData.category);
+      data.append('type', formData.type);
+      data.append('currency', formData.currency);
+      data.append('amount', formData.amount);
+      data.append('rate', '1250'); // Mock rate for now
+      if (images?.[0]) {
+        data.append('image', images[0]);
+      }
+      
+      await tradeService.submitGiftCard(data);
+      setIsSuccess(true);
+    } catch (error: any) {
+      alert(error.response?.data?.message || 'Submission failed');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const calculateTotal = () => {
@@ -148,6 +165,7 @@ const GiftcardsPage = () => {
                       <input
                         type="file"
                         multiple
+                        onChange={(e) => setImages(e.target.files)}
                         className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
                         accept="image/*"
                       />
@@ -155,7 +173,9 @@ const GiftcardsPage = () => {
                         <div className="w-12 h-12 bg-cream-100 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-primary/20 transition-colors">
                           <Upload size={24} className="text-brown-600 group-hover:text-primary" />
                         </div>
-                        <p className="text-brown-700 font-medium">Click or drag images to upload</p>
+                        <p className="text-brown-700 font-medium">
+                          {images && images.length > 0 ? `${images.length} image(s) selected` : 'Click or drag images to upload'}
+                        </p>
                         <p className="text-xs text-brown-400 mt-1">PNG, JPG, JPEG (Max 10MB per file)</p>
                       </div>
                     </div>
@@ -178,9 +198,10 @@ const GiftcardsPage = () => {
 
                   <button
                     type="submit"
-                    className="w-full py-4 bg-gradient-to-r from-primary to-primary-dark text-white rounded-2xl font-bold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all text-lg"
+                    disabled={loading}
+                    className="w-full py-4 bg-gradient-to-r from-primary to-primary-dark text-white rounded-2xl font-bold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all text-lg disabled:opacity-50"
                   >
-                    Proceed with Trade
+                    {loading ? 'Processing...' : 'Proceed with Trade'}
                   </button>
                 </form>
               )}
