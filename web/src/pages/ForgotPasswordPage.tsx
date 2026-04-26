@@ -62,6 +62,7 @@ const ForgotPasswordPage = () => {
 
       {/* Right – Form */}
       <div className="w-full lg:w-1/2 flex items-center justify-center p-8 bg-surface-50">
+        <div className="w-full max-w-md">
           {/* Logo */}
           <div className="mb-12">
             <Link to="/" className="inline-block hover:scale-105 transition-transform">
