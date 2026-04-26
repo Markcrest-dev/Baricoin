@@ -31,8 +31,8 @@ const Navbar = () => {
       <nav
         className={`pointer-events-auto transition-all duration-700 flex items-center justify-between px-6 lg:px-8 group ${
           isScrolled
-            ? 'w-[92%] lg:w-[85%] max-w-6xl bg-white/80 backdrop-blur-2xl rounded-[3rem] py-3 shadow-2xl border border-white/50 ring-1 ring-brand-900/5'
-            : 'w-[95%] max-w-7xl bg-white/10 backdrop-blur-md rounded-[2rem] py-4 border border-white/20'
+            ? 'w-[92%] lg:w-[85%] max-w-6xl bg-white/90 backdrop-blur-2xl rounded-[3rem] py-3 shadow-2xl border border-white/50 ring-1 ring-brand-900/5'
+            : 'w-[95%] max-w-7xl bg-white/40 backdrop-blur-xl rounded-[2.5rem] py-4 border border-brand-900/10 shadow-lg'
         }`}
       >
         {/* Logo Section */}
@@ -46,9 +46,7 @@ const Navbar = () => {
             <Link
               key={item.path}
               to={item.path}
-              className={`flex items-center gap-2 px-4 py-2 rounded-full font-bold text-sm transition-all duration-300 hover:bg-primary/10 hover:text-primary group/item ${
-                isScrolled ? 'text-brand-800' : 'text-white'
-              }`}
+              className={`flex items-center gap-2 px-4 py-2 rounded-full font-bold text-sm transition-all duration-300 hover:bg-primary/10 hover:text-primary group/item text-brand-900`}
             >
               <span className="opacity-0 group-hover/item:opacity-100 transition-opacity duration-300 scale-75 group-hover/item:scale-100">
                 {item.icon}
@@ -62,9 +60,7 @@ const Navbar = () => {
         <div className="hidden lg:flex items-center gap-4">
           <Link
             to="/login"
-            className={`font-black text-sm uppercase tracking-widest transition-all duration-300 hover:text-primary ${
-              isScrolled ? 'text-brand-900' : 'text-white'
-            }`}
+            className={`font-black text-sm uppercase tracking-widest transition-all duration-300 hover:text-primary text-brand-900`}
           >
             Log In
           </Link>
