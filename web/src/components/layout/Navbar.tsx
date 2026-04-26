@@ -27,12 +27,12 @@ const Navbar = () => {
   ];
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 pointer-events-none flex justify-center py-4 lg:py-6`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 pointer-events-none flex justify-center ${isScrolled ? 'py-4 lg:py-6' : 'py-0'}`}>
       <nav
-        className={`pointer-events-auto transition-all duration-700 flex items-center justify-between px-6 lg:px-8 group ${
+        className={`pointer-events-auto transition-all duration-700 flex items-center justify-between px-6 lg:px-12 group ${
           isScrolled
             ? 'w-[92%] lg:w-[85%] max-w-6xl bg-white/90 backdrop-blur-2xl rounded-[3rem] py-3 shadow-2xl border border-white/50 ring-1 ring-brand-900/5'
-            : 'w-[95%] max-w-7xl bg-white/40 backdrop-blur-xl rounded-[2.5rem] py-4 border border-brand-900/10 shadow-lg'
+            : 'w-full bg-white/60 backdrop-blur-xl py-5 border-b border-brand-900/5'
         }`}
       >
         {/* Logo Section */}
