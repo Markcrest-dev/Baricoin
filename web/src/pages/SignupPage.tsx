@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Eye, EyeOff, User, Mail, Phone, ShieldCheck, ArrowRight } from 'lucide-react';
+import { Eye, EyeOff, User, Mail, Phone, ShieldCheck, ArrowRight, ArrowLeft } from 'lucide-react';
 import { authService } from '../services/authService';
-import logo from '../assets/images/icon.png';
+
 
 const SignupPage = () => {
   const navigate = useNavigate();
@@ -103,10 +103,14 @@ const SignupPage = () => {
       {/* Right – Form */}
       <div className="w-full lg:w-1/2 flex items-center justify-center p-8 bg-surface-50 overflow-y-auto">
         <div className="w-full max-w-md py-12">
-          {/* Logo */}
+          {/* Back Button */}
           <div className="mb-10">
-            <Link to="/" className="inline-block hover:scale-105 transition-transform">
-              <img src={logo} alt="Baricoin" className="h-10" />
+            <Link 
+              to="/" 
+              className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-xl border border-surface-200 text-brand-500 font-bold text-sm hover:text-primary hover:border-primary/30 transition-all shadow-sm hover:shadow-md group"
+            >
+              <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
+              Back to Home
             </Link>
           </div>
 

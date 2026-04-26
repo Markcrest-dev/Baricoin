@@ -71,7 +71,7 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
         {/* Logo */}
         <div className="px-8 py-8">
           <Link to="/" className="flex items-center hover:scale-105 transition-transform">
-            <img src={logo} alt="Baricoin" className="h-10" />
+            <img src={logo} alt="Baricoin" className="h-12" />
           </Link>
         </div>
 

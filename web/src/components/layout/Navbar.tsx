@@ -37,7 +37,7 @@ const Navbar = () => {
       >
         {/* Logo Section */}
         <Link to="/" className="flex items-center hover:scale-105 transition-transform duration-300">
-          <img src={logo} alt="Baricoin" className={`transition-all duration-500 ${isScrolled ? 'h-9 lg:h-10' : 'h-11 lg:h-12'}`} />
+          <img src={logo} alt="Baricoin" className={`transition-all duration-500 ${isScrolled ? 'h-11 lg:h-12' : 'h-14 lg:h-16'}`} />
         </Link>
 
         {/* Desktop Navigation Links */}
