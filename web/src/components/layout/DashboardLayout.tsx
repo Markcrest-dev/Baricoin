@@ -61,36 +61,36 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
   }, [location.pathname]);
 
   return (
-    <div className="flex min-h-screen bg-cream-50">
+    <div className="flex min-h-screen bg-surface-50">
       {/* ═══ SIDEBAR ═══ */}
       <aside
-        className={`fixed lg:sticky top-0 left-0 h-screen w-64 bg-white shadow-xl z-40 flex flex-col transition-transform duration-300 ${
+        className={`fixed lg:sticky top-0 left-0 h-screen w-72 bg-white shadow-premium z-40 flex flex-col transition-transform duration-500 border-r border-surface-200 ${
           sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
         }`}
       >
         {/* Logo */}
-        <div className="px-6 py-5 border-b border-cream-200">
-          <Link to="/">
-            <img src={logo} alt="Baricoin" className="h-9" />
+        <div className="px-8 py-8">
+          <Link to="/" className="flex items-center hover:scale-105 transition-transform">
+            <img src={logo} alt="Baricoin" className="h-10" />
           </Link>
         </div>
 
         {/* Main Menu */}
-        <nav className="flex-1 overflow-y-auto py-4 px-3">
-          <div className="flex flex-col gap-1">
+        <nav className="flex-1 overflow-y-auto py-4 px-4 scrollbar-hide">
+          <div className="flex flex-col gap-2">
             {mainMenu.map((item) => {
               const isActive = location.pathname === item.path;
               return (
                 <Link
                   key={item.path}
                   to={item.path}
-                  className={`flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 ${
+                  className={`flex items-center gap-4 px-5 py-3.5 rounded-2xl text-sm font-bold transition-all duration-300 ${
                     isActive
-                      ? 'bg-gradient-to-r from-primary to-primary-dark text-white shadow-md'
-                      : 'text-brown-600 hover:bg-cream-100 hover:text-brown-900'
+                      ? 'bg-gradient-to-r from-primary to-primary-dark text-white shadow-lg shadow-primary/30'
+                      : 'text-brand-500 hover:bg-surface-100 hover:text-brand-900'
                   }`}
                 >
-                  {item.icon}
+                  <span className={`${isActive ? 'text-white' : 'text-primary'}`}>{item.icon}</span>
                   <span>{item.label}</span>
                 </Link>
               );
@@ -98,24 +98,24 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
           </div>
 
           {/* Bari Services */}
-          <div className="mt-6 pt-4 border-t border-cream-200">
-            <p className="px-4 text-xs font-semibold text-brown-400 uppercase tracking-wider mb-2">
+          <div className="mt-10 pt-6 border-t border-surface-100">
+            <p className="px-5 text-[10px] font-black text-brand-400 uppercase tracking-[0.2em] mb-4">
               Bari Services
             </p>
-            <div className="flex flex-col gap-1">
+            <div className="flex flex-col gap-2">
               {bariServices.map((item) => {
                 const isActive = location.pathname === item.path;
                 return (
                   <Link
                     key={item.path}
                     to={item.path}
-                    className={`flex items-center gap-3 px-4 py-2 rounded-xl text-sm transition-all ${
+                    className={`flex items-center gap-4 px-5 py-3 rounded-2xl text-sm font-bold transition-all duration-300 ${
                       isActive
-                        ? 'bg-cream-200 text-brown-900 font-bold'
-                        : 'text-brown-600 hover:bg-cream-100 hover:text-brown-900'
+                        ? 'bg-primary/10 text-primary shadow-sm'
+                        : 'text-brand-500 hover:bg-surface-100 hover:text-brand-900'
                     }`}
                   >
-                    {item.icon}
+                    <span className="text-brand-400group-hover:text-primary transition-colors">{item.icon}</span>
                     <span>{item.label}</span>
                   </Link>
                 );
@@ -125,10 +125,10 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
         </nav>
 
         {/* Logout */}
-        <div className="p-3 border-t border-cream-200">
-          <button className="flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-medium text-red-500 hover:bg-red-50 w-full transition-colors">
+        <div className="p-6 border-t border-surface-100">
+          <button className="flex items-center gap-4 px-5 py-3.5 rounded-2xl text-sm font-bold text-red-500 hover:bg-red-50 w-full transition-all duration-300">
             <LogOut size={20} />
-            <span>Logout</span>
+            <span>Logout Account</span>
           </button>
         </div>
       </aside>
@@ -136,7 +136,7 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
       {/* Overlay for mobile */}
       {sidebarOpen && (
         <div
-          className="fixed inset-0 bg-black/40 z-30 lg:hidden"
+          className="fixed inset-0 bg-brand-900/40 backdrop-blur-sm z-30 lg:hidden"
           onClick={() => setSidebarOpen(false)}
         />
       )}
@@ -144,60 +144,60 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
       {/* ═══ MAIN CONTENT ═══ */}
       <main className="flex-1 min-h-screen">
         {/* ─── Top Header ─── */}
-        <header className="sticky top-0 z-20 bg-white/80 backdrop-blur-xl border-b border-cream-200 px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
+        <header className="sticky top-0 z-20 bg-white/80 backdrop-blur-2xl border-b border-surface-100 px-8 py-5">
+          <div className="flex items-center justify-between max-w-7xl mx-auto">
+            <div className="flex items-center gap-5">
               <button
                 onClick={() => setSidebarOpen(!sidebarOpen)}
-                className="lg:hidden p-2 rounded-lg hover:bg-cream-100 text-brown-700"
+                className="lg:hidden p-2.5 rounded-xl bg-surface-100 text-brand-900"
                 aria-label="Toggle sidebar"
               >
                 {sidebarOpen ? <X size={22} /> : <Menu size={22} />}
               </button>
               <div>
-                <h1 className="font-heading text-lg font-bold text-brown-900">
-                  {greeting}
+                <h1 className="font-heading text-xl font-black text-brand-900 leading-tight">
+                  {greeting}, <span className="text-primary">Mark</span>
                 </h1>
-                <p className="text-sm text-brown-500">username</p>
+                <p className="text-xs text-brand-400 font-bold uppercase tracking-wider">Dashboard Overview</p>
               </div>
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-4">
               {/* Search */}
-              <div className="hidden sm:flex items-center bg-cream-50 rounded-xl px-3 py-2 gap-2 border border-cream-200">
-                <Search size={16} className="text-brown-400" />
+              <div className="hidden md:flex items-center bg-surface-50 rounded-2xl px-4 py-2.5 gap-3 border border-surface-100 focus-within:border-primary/40 focus-within:bg-white transition-all">
+                <Search size={18} className="text-brand-400" />
                 <input
                   type="text"
-                  placeholder="Search..."
-                  className="bg-transparent border-none outline-none text-sm w-40 text-brown-900 placeholder:text-brown-400"
+                  placeholder="Search transactions..."
+                  className="bg-transparent border-none outline-none text-sm w-48 text-brand-900 placeholder:text-brand-400 font-medium"
                 />
               </div>
 
               {/* Notification */}
-              <button className="relative p-2.5 rounded-xl hover:bg-cream-100 text-brown-600 transition-colors" aria-label="Notifications">
+              <button className="relative p-3 rounded-2xl bg-surface-50 border border-surface-100 hover:bg-white hover:shadow-md text-brand-600 transition-all" aria-label="Notifications">
                 <Bell size={20} />
-                <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-danger rounded-full" />
+                <span className="absolute top-2 right-2 w-2.5 h-2.5 bg-danger border-2 border-white rounded-full" />
               </button>
 
               {/* Avatar */}
-              <div className="w-9 h-9 rounded-full bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center text-white font-bold text-sm">
-                U
+              <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-primary to-primary-dark shadow-lg shadow-primary/20 flex items-center justify-center text-white font-black text-sm hover:scale-105 transition-transform cursor-pointer">
+                M
               </div>
             </div>
           </div>
         </header>
 
-        <div className="p-6 max-w-6xl mx-auto">
+        <div className="p-8 max-w-7xl mx-auto">
           {children}
         </div>
       </main>
 
       {/* ═══ CHAT WIDGET ═══ */}
       <button
-        className="fixed bottom-6 right-6 w-14 h-14 bg-gradient-to-br from-primary to-primary-dark rounded-full shadow-2xl flex items-center justify-center text-white hover:scale-110 transition-transform z-30"
+        className="fixed bottom-8 right-8 w-16 h-16 bg-gradient-to-br from-primary to-primary-dark rounded-2xl shadow-2xl shadow-primary/30 flex items-center justify-center text-white hover:scale-110 active:scale-95 transition-all z-30"
         aria-label="Open chat"
       >
-        <MessageCircle size={24} />
+        <MessageCircle size={28} />
       </button>
     </div>
   );

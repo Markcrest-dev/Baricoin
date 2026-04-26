@@ -2,36 +2,35 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <footer className="bg-brown-900 text-cream-100 pt-16 pb-8">
+    <footer className="bg-brand-900 text-surface-100 pt-24 pb-12">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
-          <div>
-            <h4 className="font-heading text-xl font-bold text-white mb-4">
+          <div className="flex flex-col gap-6">
+            <h4 className="font-heading text-2xl font-bold text-white">
               Baricoin
             </h4>
-            <p className="text-cream-300 leading-relaxed text-sm">
-              The Best Site and App to Trade Giftcards & Convert Crypto to Naira
-              at the Highest Rates.
+            <p className="text-brand-400 leading-relaxed">
+              The premium platform for trading gift cards and converting crypto to Naira. Experience the highest rates and instant payments.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-heading text-lg font-bold text-white mb-4">
-              Quick Links
+            <h4 className="font-heading text-lg font-bold text-white mb-6 uppercase tracking-wider">
+              Explore
             </h4>
-            <ul className="flex flex-col gap-2.5">
+            <ul className="flex flex-col gap-4">
               {[
-                { label: 'About', path: '/about' },
-                { label: 'Products', path: '/products' },
-                { label: 'Blog', path: '/blog' },
-                { label: 'Support', path: '/support' },
+                { label: 'About Us', path: '/about' },
+                { label: 'Our Products', path: '/products' },
+                { label: 'Read Blog', path: '/blog' },
+                { label: 'Help & Support', path: '/support' },
               ].map((item) => (
                 <li key={item.path}>
                   <Link
                     to={item.path}
-                    className="text-cream-300 hover:text-primary transition-colors text-sm"
+                    className="text-brand-400 hover:text-primary transition-all duration-200"
                   >
                     {item.label}
                   </Link>
@@ -42,22 +41,22 @@ const Footer = () => {
 
           {/* Legal */}
           <div>
-            <h4 className="font-heading text-lg font-bold text-white mb-4">
+            <h4 className="font-heading text-lg font-bold text-white mb-6 uppercase tracking-wider">
               Legal
             </h4>
-            <ul className="flex flex-col gap-2.5">
+            <ul className="flex flex-col gap-4">
               <li>
                 <Link
                   to="/terms"
-                  className="text-cream-300 hover:text-primary transition-colors text-sm"
+                  className="text-brand-400 hover:text-primary transition-all duration-200"
                 >
-                  Terms & Agreement
+                  Terms of Service
                 </Link>
               </li>
               <li>
                 <Link
                   to="/privacy-policy"
-                  className="text-cream-300 hover:text-primary transition-colors text-sm"
+                  className="text-brand-400 hover:text-primary transition-all duration-200"
                 >
                   Privacy Policy
                 </Link>
@@ -67,14 +66,14 @@ const Footer = () => {
 
           {/* Connect */}
           <div>
-            <h4 className="font-heading text-lg font-bold text-white mb-4">
-              Connect
+            <h4 className="font-heading text-lg font-bold text-white mb-6 uppercase tracking-wider">
+              Utilities
             </h4>
-            <ul className="flex flex-col gap-2.5">
+            <ul className="flex flex-col gap-4">
               <li>
                 <Link
                   to="/rate-calculator"
-                  className="text-cream-300 hover:text-primary transition-colors text-sm"
+                  className="text-brand-400 hover:text-primary transition-all duration-200"
                 >
                   Rate Calculator
                 </Link>
@@ -84,10 +83,13 @@ const Footer = () => {
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-brown-700 pt-6 text-center">
-          <p className="text-cream-300 text-sm">
-            © {new Date().getFullYear()}, Baricoin. All Rights Reserved
+        <div className="border-t border-brand-800 pt-10 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-brand-500 text-sm">
+            © {new Date().getFullYear()} Baricoin Technologies. All Rights Reserved.
           </p>
+          <div className="flex gap-6">
+            {/* Social icons could go here */}
+          </div>
         </div>
       </div>
     </footer>

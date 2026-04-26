@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Eye, EyeOff, User, Mail, Phone, Lock } from 'lucide-react';
+import { Eye, EyeOff, User, Mail, Phone, ShieldCheck, ArrowRight } from 'lucide-react';
 import { authService } from '../services/authService';
 import logo from '../assets/images/baricoin-logo-new.png';
 
@@ -42,21 +42,21 @@ const SignupPage = () => {
       id: 'fullName',
       label: 'Full Name',
       type: 'text',
-      placeholder: 'John Doe',
+      placeholder: 'Mark Spencer',
       icon: <User size={18} />,
     },
     {
       id: 'username',
       label: 'Username',
       type: 'text',
-      placeholder: 'johndoe123',
+      placeholder: 'marky_trades',
       icon: <User size={18} />,
     },
     {
       id: 'email',
       label: 'Email Address',
       type: 'email',
-      placeholder: 'your.email@example.com',
+      placeholder: 'mark@trades.com',
       icon: <Mail size={18} />,
     },
     {
@@ -69,33 +69,31 @@ const SignupPage = () => {
   ];
 
   return (
-    <div className="min-h-screen flex">
-      {/* Left – Branding */}
-      <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-primary via-primary-dark to-secondary relative items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-32 right-32 w-80 h-80 bg-white/5 rounded-full blur-3xl animate-[float_9s_ease-in-out_infinite]" />
-          <div className="absolute bottom-32 left-32 w-72 h-72 bg-white/5 rounded-full blur-3xl animate-[float_7s_ease-in-out_infinite_2s]" />
-        </div>
+    <div className="min-h-screen flex bg-white">
+      {/* Left – Visual Showcase */}
+      <div className="hidden lg:flex lg:w-1/2 bg-brand-900 relative items-center justify-center overflow-hidden p-20">
+        <div className="absolute top-0 right-0 w-[80%] h-[80%] bg-primary/20 rounded-full blur-[120px] -mr-[40%] -mt-[40%]" />
+        <div className="absolute bottom-0 left-0 w-[60%] h-[60%] bg-secondary/10 rounded-full blur-[100px] -ml-[30%] -mb-[30%]" />
 
-        <div className="relative z-10 text-center px-12 text-white max-w-md">
-          <div className="w-24 h-24 bg-white/10 backdrop-blur-lg rounded-3xl flex items-center justify-center mx-auto mb-8">
-            <span className="text-5xl">🚀</span>
+        <div className="relative z-10 w-full max-w-md text-white text-center">
+          <div className="w-24 h-24 bg-white/10 backdrop-blur-xl rounded-[2.5rem] flex items-center justify-center mx-auto mb-10 border border-white/10 shadow-2xl">
+            <ShieldCheck size={48} className="text-primary" />
           </div>
-          <h2 className="font-heading text-3xl font-bold mb-4">
-            Join Baricoin Today
-          </h2>
-          <p className="text-white/80 leading-relaxed text-lg">
-            Create your account and start trading gift cards, converting crypto,
-            and paying bills — all in one place.
+          <h2 className="text-5xl font-black mb-6 leading-tight">Start Your <span className="text-primary">Premium</span> Journey.</h2>
+          <p className="text-white/60 text-lg leading-relaxed mb-12">
+            Join thousands of traders enjoying instant payouts and the highest rates in the market.
           </p>
 
-          <div className="mt-10 grid grid-cols-3 gap-4">
-            {['10K+ Users', 'Instant Pay', 'Best Rates'].map((stat) => (
-              <div
-                key={stat}
-                className="bg-white/10 backdrop-blur-md rounded-xl py-3 px-2"
-              >
-                <p className="font-bold text-sm">{stat}</p>
+          <div className="grid grid-cols-2 gap-4">
+            {[
+              { label: 'Fast Payout', sub: 'Under 5 mins' },
+              { label: 'Highest Rates', sub: 'Market Leader' },
+              { label: 'Secure', sub: 'Bank Grade' },
+              { label: '24/7 Help', sub: 'Priority Chat' },
+            ].map((stat) => (
+              <div key={stat.label} className="p-4 rounded-2xl bg-white/5 border border-white/5 text-left">
+                <div className="font-black text-white text-base">{stat.label}</div>
+                <div className="text-white/40 text-xs font-bold uppercase tracking-widest">{stat.sub}</div>
               </div>
             ))}
           </div>
@@ -103,119 +101,107 @@ const SignupPage = () => {
       </div>
 
       {/* Right – Form */}
-      <div className="w-full lg:w-1/2 flex items-center justify-center px-6 py-12 bg-cream-50">
-        <div className="w-full max-w-md">
-          <Link to="/" className="flex items-center gap-2 mb-8">
-            <img src={logo} alt="Baricoin" className="h-10" />
-          </Link>
+      <div className="w-full lg:w-1/2 flex items-center justify-center p-8 bg-surface-50 overflow-y-auto">
+        <div className="w-full max-w-md py-12">
+          {/* Logo */}
+          <div className="mb-10">
+            <Link to="/" className="inline-block hover:scale-105 transition-transform">
+              <img src={logo} alt="Baricoin" className="h-10" />
+            </Link>
+          </div>
 
-          <h2 className="font-heading text-3xl font-bold text-brown-900 mb-2">
-            Create Account
-          </h2>
-          <p className="text-brown-600 mb-8">
-            Start your journey with Baricoin
-          </p>
+          <div className="mb-10">
+            <h1 className="text-4xl font-black text-brand-900 mb-3">Create Free Account.</h1>
+            <p className="text-brand-500 font-medium">Join the most reliable trading community.</p>
+          </div>
 
-          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-            {fields.map((f) => (
-              <div key={f.id} className="flex flex-col gap-1.5">
-                <label
-                  htmlFor={`signup-${f.id}`}
-                  className="text-sm font-medium text-brown-700"
-                >
-                  {f.label}
-                </label>
-                <div className="relative">
-                  <div className="absolute left-3.5 top-1/2 -translate-y-1/2 text-brown-400">
-                    {f.icon}
+          <form onSubmit={handleSubmit} className="space-y-5">
+            <div className="grid grid-cols-2 gap-4">
+               {fields.slice(0, 2).map((f) => (
+                  <div key={f.id} className="space-y-2">
+                    <label htmlFor={f.id} className="text-[10px] font-black text-brand-700 uppercase tracking-[0.2em]">{f.label}</label>
+                    <input
+                      id={f.id}
+                      type={f.type}
+                      required
+                      placeholder={f.placeholder}
+                      value={form[f.id as keyof typeof form]}
+                      onChange={(e) => update(f.id, e.target.value)}
+                      className="w-full px-5 py-4 rounded-2xl border-2 border-surface-200 bg-white focus:border-primary/40 focus:outline-none focus:ring-4 focus:ring-primary/5 transition-all text-brand-900 font-medium text-sm"
+                    />
                   </div>
-                  <input
-                    id={`signup-${f.id}`}
-                    type={f.type}
-                    placeholder={f.placeholder}
-                    required
-                    value={form[f.id as keyof typeof form]}
-                    onChange={(e) => update(f.id, e.target.value)}
-                    className="w-full pl-11 pr-4 py-3 rounded-xl border border-cream-300 bg-white focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all text-brown-900 placeholder:text-brown-400"
-                  />
-                </div>
+               ))}
+            </div>
+
+            {fields.slice(2).map((f) => (
+              <div key={f.id} className="space-y-2">
+                <label htmlFor={f.id} className="text-[10px] font-black text-brand-700 uppercase tracking-[0.2em]">{f.label}</label>
+                <input
+                  id={f.id}
+                  type={f.type}
+                  required
+                  placeholder={f.placeholder}
+                  value={form[f.id as keyof typeof form]}
+                  onChange={(e) => update(f.id, e.target.value)}
+                  className="w-full px-5 py-4 rounded-2xl border-2 border-surface-200 bg-white focus:border-primary/40 focus:outline-none focus:ring-4 focus:ring-primary/5 transition-all text-brand-900 font-medium text-sm"
+                />
               </div>
             ))}
 
             {/* Password */}
-            <div className="flex flex-col gap-1.5">
-              <label
-                htmlFor="signup-password"
-                className="text-sm font-medium text-brown-700"
-              >
-                Password
-              </label>
+            <div className="space-y-2">
+              <label htmlFor="password" className="text-[10px] font-black text-brand-700 uppercase tracking-[0.2em]">Password</label>
               <div className="relative">
-                <div className="absolute left-3.5 top-1/2 -translate-y-1/2 text-brown-400">
-                  <Lock size={18} />
-                </div>
                 <input
-                  id="signup-password"
+                  id="password"
                   type={showPassword ? 'text' : 'password'}
-                  placeholder="Create a strong password"
                   required
+                  placeholder="••••••••"
                   value={form.password}
                   onChange={(e) => update('password', e.target.value)}
-                  className="w-full pl-11 pr-12 py-3 rounded-xl border border-cream-300 bg-white focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all text-brown-900 placeholder:text-brown-400"
+                  className="w-full px-5 py-4 pr-14 rounded-2xl border-2 border-surface-200 bg-white focus:border-primary/40 focus:outline-none focus:ring-4 focus:ring-primary/5 transition-all text-brand-900 font-medium text-sm"
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-brown-400 hover:text-brown-700 transition-colors"
-                  aria-label="Toggle password visibility"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-brand-400 p-1"
                 >
-                  {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                  {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                 </button>
               </div>
             </div>
 
             {/* Terms */}
-            <div className="flex items-start gap-2 mt-1">
+            <div className="flex items-start gap-3 py-2">
               <input
                 id="terms"
                 type="checkbox"
                 required
-                className="mt-1 accent-primary"
+                className="mt-1 w-5 h-5 rounded-lg border-2 border-surface-300 text-primary focus:ring-primary/20"
               />
-              <label htmlFor="terms" className="text-sm text-brown-600">
-                I agree to the{' '}
-                <Link to="/terms" className="text-primary font-medium hover:underline">
-                  Terms & Agreement
-                </Link>{' '}
-                and{' '}
-                <Link to="/privacy-policy" className="text-primary font-medium hover:underline">
-                  Privacy Policy
-                </Link>
+              <label htmlFor="terms" className="text-xs text-brand-500 font-medium leading-relaxed">
+                By signing up, I agree to the <Link to="/terms" className="text-primary font-bold hover:underline">Terms of Service</Link> and <Link to="/privacy-policy" className="text-primary font-bold hover:underline">Privacy Policy</Link>.
               </label>
             </div>
 
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full py-3.5 mt-2 bg-gradient-to-r from-primary to-primary-dark text-white font-bold rounded-xl shadow-lg hover:-translate-y-0.5 hover:shadow-xl transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              className="w-full py-5 bg-gradient-to-r from-primary to-primary-dark text-white font-black rounded-2xl shadow-xl shadow-primary/20 hover:scale-[1.01] hover:shadow-primary/30 active:scale-95 transition-all disabled:opacity-70 flex items-center justify-center gap-3 text-lg"
             >
               {isLoading ? (
-                <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                <div className="w-6 h-6 border-3 border-white/20 border-t-white rounded-full animate-spin" />
               ) : (
-                'Create Account'
+                <>Create Free Account <ArrowRight size={20} /></>
               )}
             </button>
           </form>
 
-          <p className="mt-8 text-center text-brown-600">
-            Already have an account?{' '}
-            <Link
-              to="/login"
-              className="text-primary font-semibold hover:text-primary-dark transition-colors"
-            >
-              Sign in
-            </Link>
-          </p>
+          <div className="mt-10 pt-8 border-t border-surface-200 text-center">
+            <p className="text-brand-500 font-bold">
+              Already have an account? <Link to="/login" className="text-primary font-black hover:underline underline-offset-4">Sign In</Link>
+            </p>
+          </div>
         </div>
       </div>
     </div>

@@ -1,15 +1,14 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { authService } from '../services/authService';
-import { Gift, Bitcoin, Zap, CreditCard, Lock, Eye, EyeOff } from 'lucide-react';
+import { Gift, Bitcoin, Zap, Lock, Eye, EyeOff, ShieldCheck, ArrowRight } from 'lucide-react';
 import logo from '../assets/images/baricoin-logo-new.png';
 
-const cubeContent = [
-  { icon: <Gift size={36} />, title: 'Trade Gift Cards', desc: 'Sell gift cards at the best rates instantly' },
-  { icon: <Bitcoin size={36} />, title: 'Convert Crypto', desc: 'Exchange crypto to Naira securely' },
-  { icon: <Zap size={36} />, title: 'Instant Payments', desc: 'Get paid immediately to your account' },
-  { icon: <CreditCard size={36} />, title: 'Bill Payments', desc: 'Pay for airtime, data, and utilities' },
-  { icon: <Lock size={36} />, title: 'Secure Platform', desc: 'Your transactions are safe with us' },
+const showcaseItems = [
+  { icon: <Gift size={28} />, title: 'High Rate Giftcards', desc: 'Get the best value for your cards instantly.' },
+  { icon: <Bitcoin size={28} />, title: 'Secure Crypto', desc: 'Safe and swift crypto to Naira conversions.' },
+  { icon: <Zap size={28} />, title: 'Instant Payouts', desc: 'Withdraw your funds in less than 5 minutes.' },
+  { icon: <ShieldCheck size={28} />, title: 'Bank Grade Security', desc: 'Your assets and data are always protected.' },
 ];
 
 const LoginPage = () => {
@@ -33,35 +32,32 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="min-h-screen flex">
-      {/* Left – Animated Showcase */}
-      <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-primary via-primary-dark to-secondary relative items-center justify-center overflow-hidden">
-        {/* Background orbs */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-20 left-20 w-64 h-64 bg-white/5 rounded-full blur-3xl animate-[float_8s_ease-in-out_infinite]" />
-          <div className="absolute bottom-20 right-20 w-72 h-72 bg-white/5 rounded-full blur-3xl animate-[float_10s_ease-in-out_infinite_1s]" />
-        </div>
+    <div className="min-h-screen flex bg-white">
+      {/* Left – Visual Showcase */}
+      <div className="hidden lg:flex lg:w-1/2 bg-brand-900 relative items-center justify-center overflow-hidden p-20">
+        {/* Background glow */}
+        <div className="absolute top-0 right-0 w-[80%] h-[80%] bg-primary/20 rounded-full blur-[120px] -mr-[40%] -mt-[40%]" />
+        <div className="absolute bottom-0 left-0 w-[60%] h-[60%] bg-secondary/10 rounded-full blur-[100px] -ml-[30%] -mb-[30%]" />
 
-        <div className="relative z-10 text-center px-12">
-          <div className="grid gap-5">
-            {cubeContent.map((item, i) => (
+        <div className="relative z-10 w-full max-w-lg text-white">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full text-xs font-bold uppercase tracking-widest mb-10 border border-white/10">
+            <Lock size={14} className="text-primary" />
+            <span>Secure Access</span>
+          </div>
+          <h2 className="text-5xl font-black mb-12 leading-tight">Welcome Back to <span className="text-primary">Baricoin.</span></h2>
+          
+          <div className="space-y-6">
+            {showcaseItems.map((item, i) => (
               <div
                 key={i}
-                className="glass-white rounded-2xl p-5 flex items-center gap-4 text-left hover:scale-[1.02] transition-transform duration-300"
-                style={{
-                  animationDelay: `${i * 0.15}s`,
-                  animation: 'slide-up 0.6s ease-out forwards',
-                  opacity: 0,
-                }}
+                className="p-6 rounded-[2rem] bg-white/5 border border-white/5 backdrop-blur-xl flex items-center gap-6 group hover:bg-white/10 transition-all duration-300"
               >
-                <div className="w-14 h-14 bg-gradient-to-br from-primary to-primary-dark rounded-xl flex items-center justify-center text-white flex-shrink-0">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center text-white shrink-0 shadow-lg group-hover:scale-110 transition-transform">
                   {item.icon}
                 </div>
                 <div>
-                  <h3 className="font-heading font-bold text-brown-900 text-sm">
-                    {item.title}
-                  </h3>
-                  <p className="text-brown-600 text-xs">{item.desc}</p>
+                  <h3 className="font-bold text-lg mb-1">{item.title}</h3>
+                  <p className="text-white/60 text-sm leading-relaxed">{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -69,100 +65,82 @@ const LoginPage = () => {
         </div>
       </div>
 
-      {/* Right – Form */}
-      <div className="w-full lg:w-1/2 flex items-center justify-center px-6 py-12 bg-cream-50">
+      {/* Right – Login Form */}
+      <div className="w-full lg:w-1/2 flex items-center justify-center p-8 bg-surface-50">
         <div className="w-full max-w-md">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 mb-10">
-            <img src={logo} alt="Baricoin" className="h-10" />
-          </Link>
+          <div className="mb-12">
+            <Link to="/" className="inline-block hover:scale-105 transition-transform">
+              <img src={logo} alt="Baricoin" className="h-12" />
+            </Link>
+          </div>
 
-          <h2 className="font-heading text-3xl font-bold text-brown-900 mb-8">
-            Sign in to Baricoin
-          </h2>
+          <div className="mb-10">
+            <h1 className="text-4xl font-black text-brand-900 mb-3">Sign In.</h1>
+            <p className="text-brand-500 font-medium">Continue your premium trading experience.</p>
+          </div>
 
-          <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-            {/* Email */}
-            <div className="flex flex-col gap-1.5">
-              <label
-                htmlFor="login-email"
-                className="text-sm font-medium text-brown-700"
-              >
-                Email Address
-              </label>
-              <input
-                id="login-email"
-                type="email"
-                placeholder="your.email@example.com"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="px-4 py-3 rounded-xl border border-cream-300 bg-white focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all text-brown-900 placeholder:text-brown-400"
-              />
-            </div>
-
-            {/* Password */}
-            <div className="flex flex-col gap-1.5">
-              <label
-                htmlFor="login-password"
-                className="text-sm font-medium text-brown-700"
-              >
-                Password
-              </label>
+          <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Email Field */}
+            <div className="space-y-2">
+              <label htmlFor="email" className="text-sm font-bold text-brand-700 uppercase tracking-wider">Email Address</label>
               <div className="relative">
                 <input
-                  id="login-password"
-                  type={showPassword ? 'text' : 'password'}
-                  placeholder="Enter your password"
+                  id="email"
+                  type="email"
                   required
+                  placeholder="name@example.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full px-5 py-4 rounded-2xl border-2 border-surface-200 bg-white focus:border-primary/40 focus:outline-none focus:ring-4 focus:ring-primary/5 transition-all text-brand-900 font-medium"
+                />
+              </div>
+            </div>
+
+            {/* Password Field */}
+            <div className="space-y-2">
+              <div className="flex justify-between items-center">
+                <label htmlFor="password" className="text-sm font-bold text-brand-700 uppercase tracking-wider">Password</label>
+                <Link to="/forgot-password" className="text-xs font-black text-primary hover:underline uppercase tracking-wide">Forgot Password?</Link>
+              </div>
+              <div className="relative">
+                <input
+                  id="password"
+                  type={showPassword ? 'text' : 'password'}
+                  required
+                  placeholder="••••••••"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full px-4 py-3 pr-12 rounded-xl border border-cream-300 bg-white focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all text-brown-900 placeholder:text-brown-400"
+                  className="w-full px-5 py-4 pr-14 rounded-2xl border-2 border-surface-200 bg-white focus:border-primary/40 focus:outline-none focus:ring-4 focus:ring-primary/5 transition-all text-brand-900 font-medium"
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-brown-400 hover:text-brown-700 transition-colors"
-                  aria-label="Toggle password visibility"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-brand-400 hover:text-brand-900 transition-colors p-1"
                 >
-                  {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                  {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                 </button>
               </div>
             </div>
 
-            {/* Forgot password */}
-            <div className="text-right">
-              <Link
-                to="/forgot-password"
-                className="text-sm text-primary hover:text-primary-dark transition-colors font-medium"
-              >
-                Forgot Password?
-              </Link>
-            </div>
-
-            {/* Submit */}
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full py-3.5 bg-gradient-to-r from-primary to-primary-dark text-white font-bold rounded-xl shadow-lg hover:-translate-y-0.5 hover:shadow-xl transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              className="w-full py-5 bg-gradient-to-r from-primary to-primary-dark text-white font-black rounded-2xl shadow-xl shadow-primary/20 hover:scale-[1.01] hover:shadow-primary/30 active:scale-95 transition-all disabled:opacity-70 flex items-center justify-center gap-3 text-lg"
             >
               {isLoading ? (
-                <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                <div className="w-6 h-6 border-3 border-white/20 border-t-white rounded-full animate-spin" />
               ) : (
-                'Sign In'
+                <>Sign In to Account <ArrowRight size={20} /></>
               )}
             </button>
           </form>
 
-          <p className="mt-8 text-center text-brown-600">
-            Don't have an account with us?{' '}
-            <Link
-              to="/signup"
-              className="text-primary font-semibold hover:text-primary-dark transition-colors"
-            >
-              Sign up here
-            </Link>
-          </p>
+          <div className="mt-12 pt-8 border-t border-surface-200 text-center">
+            <p className="text-brand-500 font-bold">
+              New here? <Link to="/signup" className="text-primary hover:underline underline-offset-4">Create a free account</Link>
+            </p>
+          </div>
         </div>
       </div>
     </div>
