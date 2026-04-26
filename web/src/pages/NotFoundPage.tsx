@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Home, Search, ArrowLeft } from 'lucide-react';
-import logo from '../assets/images/baricoin-logo-new.png';
+import logo from '../assets/images/icon.png';
 
 const NotFoundPage = () => {
   return (

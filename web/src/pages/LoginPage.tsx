@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { authService } from '../services/authService';
 import { Gift, Bitcoin, Zap, Lock, Eye, EyeOff, ShieldCheck, ArrowRight } from 'lucide-react';
-import logo from '../assets/images/baricoin-logo-new.png';
+import logo from '../assets/images/icon.png';
 
 const showcaseItems = [
   { icon: <Gift size={28} />, title: 'High Rate Giftcards', desc: 'Get the best value for your cards instantly.' },

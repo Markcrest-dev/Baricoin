@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ArrowRight, Wallet, TrendingUp, HelpCircle, BookOpen, Info } from 'lucide-react';
-import logo from '../../assets/images/baricoin-logo-new.png';
+import logo from '../../assets/images/icon.png';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);

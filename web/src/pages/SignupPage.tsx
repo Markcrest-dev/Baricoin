@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Eye, EyeOff, User, Mail, Phone, ShieldCheck, ArrowRight } from 'lucide-react';
 import { authService } from '../services/authService';
-import logo from '../assets/images/baricoin-logo-new.png';
+import logo from '../assets/images/icon.png';
 
 const SignupPage = () => {
   const navigate = useNavigate();

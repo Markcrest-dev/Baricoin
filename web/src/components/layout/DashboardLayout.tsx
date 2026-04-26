@@ -20,7 +20,7 @@ import {
   Menu,
   X,
 } from 'lucide-react';
-import logo from '../../assets/images/baricoin-logo-new.png';
+import logo from '../../assets/images/icon.png';
 
 interface DashboardLayoutProps {
   children: ReactNode;
