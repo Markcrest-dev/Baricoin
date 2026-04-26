@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { authService } from '../services/authService';
 import { Gift, Bitcoin, Zap, Lock, Eye, EyeOff, ShieldCheck, ArrowRight, ArrowLeft } from 'lucide-react';
-
+import logo from '../assets/images/icon.png';
 
 const showcaseItems = [
   { icon: <Gift size={28} />, title: 'High Rate Giftcards', desc: 'Get the best value for your cards instantly.' },
@@ -32,16 +32,7 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="min-h-screen flex bg-white relative">
-      <Link 
-        to="/" 
-        className="absolute top-8 left-8 lg:top-12 lg:left-12 z-50 inline-flex items-center gap-3 text-brand-900 lg:text-white/60 font-black text-xs uppercase tracking-[0.2em] hover:text-primary lg:hover:text-white transition-all group"
-      >
-        <div className="w-8 h-8 rounded-full bg-surface-100 lg:bg-white/10 flex items-center justify-center group-hover:bg-primary lg:group-hover:bg-primary group-hover:text-white transition-all">
-          <ArrowLeft size={16} className="group-hover:-translate-x-0.5 transition-transform" />
-        </div>
-        <span>Back to Home</span>
-      </Link>
+    <div className="min-h-screen flex bg-white">
 
 
       {/* Left – Visual Showcase */}
@@ -78,8 +69,12 @@ const LoginPage = () => {
 
       {/* Right – Login Form */}
       <div className="w-full lg:w-1/2 flex items-center justify-center p-8 bg-surface-50">
-        <div className="w-full max-w-md">
-
+          {/* Logo */}
+          <div className="mb-12">
+            <Link to="/" className="inline-block hover:scale-105 transition-transform">
+              <img src={logo} alt="Baricoin" className="h-10" />
+            </Link>
+          </div>
 
           <div className="mb-10">
             <h1 className="text-4xl font-black text-brand-900 mb-3">Sign In.</h1>
