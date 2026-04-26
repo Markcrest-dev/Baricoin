@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { 
   Bell, 
   Globe, 
@@ -42,29 +43,39 @@ const SettingsPage = () => {
     title, 
     desc, 
     action, 
-    type = 'link' 
+    type = 'link',
+    to
   }: { 
     icon: React.ReactNode; 
     title: string; 
     desc: string; 
     action?: React.ReactNode;
-    type?: 'link' | 'toggle' | 'select'
-  }) => (
-    <div className="flex items-center justify-between group">
-      <div className="flex gap-4">
-        <div className="w-10 h-10 bg-cream-50 rounded-xl flex items-center justify-center text-brown-600 transition-colors group-hover:bg-primary/10 group-hover:text-primary">
-          {icon}
+    type?: 'link' | 'toggle' | 'select';
+    to?: string;
+  }) => {
+    const content = (
+      <div className={`flex items-center justify-between group ${to ? 'cursor-pointer' : ''}`}>
+        <div className="flex gap-4">
+          <div className="w-10 h-10 bg-cream-50 rounded-xl flex items-center justify-center text-brown-600 transition-colors group-hover:bg-primary/10 group-hover:text-primary">
+            {icon}
+          </div>
+          <div>
+            <h4 className="text-sm font-bold text-brown-900">{title}</h4>
+            <p className="text-[10px] text-brown-400 font-medium">{desc}</p>
+          </div>
         </div>
-        <div>
-          <h4 className="text-sm font-bold text-brown-900">{title}</h4>
-          <p className="text-[10px] text-brown-400 font-medium">{desc}</p>
-        </div>
+        {type === 'link' && <ChevronRight size={18} className="text-brown-200 group-hover:text-primary transition-colors" />}
+        {type === 'toggle' && action}
+        {type === 'select' && action}
       </div>
-      {type === 'link' && <ChevronRight size={18} className="text-brown-200 group-hover:text-primary transition-colors" />}
-      {type === 'toggle' && action}
-      {type === 'select' && action}
-    </div>
-  );
+    );
+
+    if (to) {
+      return <Link to={to}>{content}</Link>;
+    }
+
+    return content;
+  };
 
   return (
     <DashboardLayout>
@@ -151,16 +162,19 @@ const SettingsPage = () => {
                 icon={<Shield size={18} />} 
                 title="Privacy Policy" 
                 desc="How we handle and protect your data" 
+                to="/privacy-policy"
               />
               <SettingItem 
                 icon={<FileText size={18} />} 
                 title="Terms of Service" 
                 desc="The rules for using our platform" 
+                to="/terms"
               />
               <SettingItem 
                 icon={<HelpCircle size={18} />} 
                 title="Help Center" 
                 desc="Get answers to your questions 24/7" 
+                to="/support"
               />
             </SettingSection>
 

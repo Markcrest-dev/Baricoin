@@ -10,6 +10,14 @@ import ReferralPage from './pages/ReferralPage';
 import ProfilePage from './pages/ProfilePage';
 import SettingsPage from './pages/SettingsPage';
 import ServicesPage from './pages/ServicesPage';
+import AboutPage from './pages/AboutPage';
+import ProductsPage from './pages/ProductsPage';
+import RatesPage from './pages/RatesPage';
+import BlogPage from './pages/BlogPage';
+import SupportPage from './pages/SupportPage';
+import TermsPage from './pages/TermsPage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import NotFoundPage from './pages/NotFoundPage';
 
 function App() {
   return (
@@ -26,11 +34,23 @@ function App() {
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/settings" element={<SettingsPage />} />
         
+        {/* Public Pages */}
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/products" element={<ProductsPage />} />
+        <Route path="/rate-calculator" element={<RatesPage />} />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/support" element={<SupportPage />} />
+        <Route path="/terms" element={<TermsPage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+        
         {/* Services */}
         <Route path="/airtime" element={<ServicesPage />} />
         <Route path="/data" element={<ServicesPage />} />
         <Route path="/cable" element={<ServicesPage />} />
         <Route path="/electricity" element={<ServicesPage />} />
+
+        {/* 404 */}
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Router>
   );
