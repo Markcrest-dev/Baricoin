@@ -15,8 +15,8 @@ export declare class UserController {
         email: string;
         username: string;
         name: string | null;
-        id: string;
         phone: string | null;
+        id: string;
         isVerified: boolean;
         kycStatus: string;
         memberSince: Date;
@@ -28,8 +28,8 @@ export declare class UserController {
         password: string;
         username: string;
         name: string | null;
-        id: string;
         phone: string | null;
+        id: string;
         isVerified: boolean;
         kycStatus: string;
         memberSince: Date;

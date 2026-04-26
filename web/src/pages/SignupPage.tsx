@@ -27,6 +27,7 @@ const SignupPage = () => {
         name: form.fullName, 
         username: form.username,
         email: form.email, 
+        phone: form.phone,
         password: form.password 
       });
       navigate('/login');

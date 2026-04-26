@@ -55,7 +55,7 @@ let AuthService = class AuthService {
         this.jwtService = jwtService;
     }
     async register(data) {
-        const { email, password, username, name } = data;
+        const { email, password, username, name, phone } = data;
         const existingUser = await this.prisma.user.findFirst({
             where: { OR: [{ email }, { username }] },
         });
@@ -68,6 +68,7 @@ let AuthService = class AuthService {
                 email,
                 username,
                 name,
+                phone,
                 password: hashedPassword,
             },
         });

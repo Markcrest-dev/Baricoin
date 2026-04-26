@@ -9,7 +9,7 @@ import {
   Platform,
   ScrollView
 } from 'react-native';
-import { Mail, Lock, User, Eye, EyeOff, ArrowRight } from 'lucide-react-native';
+import { Mail, Lock, User, Eye, EyeOff, ArrowRight, Phone } from 'lucide-react-native';
 import { useRouter } from 'expo-router';
 import { authService } from '../services/authService';
 
@@ -18,6 +18,7 @@ export default function SignupScreen() {
   const [name, setName] = useState('');
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -28,7 +29,7 @@ export default function SignupScreen() {
     setLoading(true);
     setError('');
     try {
-      await authService.register({ name, username, email, password });
+      await authService.register({ name, username, email, phone, password });
       router.replace('/login');
     } catch (err: any) {
       setError(err.response?.data?.message || 'Registration failed');
@@ -100,6 +101,21 @@ export default function SignupScreen() {
                   onChangeText={setEmail}
                   autoCapitalize="none"
                   keyboardType="email-address"
+                />
+              </View>
+            </View>
+
+            <View className="space-y-2 mb-4">
+              <Text className="text-[10px] font-bold text-brown-400 uppercase tracking-widest ml-1">Phone Number</Text>
+              <View className="flex-row items-center bg-brown-50 rounded-2xl px-4 py-4 border border-brown-100">
+                <Phone size={18} color="#977669" />
+                <TextInput 
+                  className="flex-1 ml-3 text-brown-900 font-bold"
+                  placeholder="+234 800 000 0000"
+                  placeholderTextColor="#d2bab0"
+                  value={phone}
+                  onChangeText={setPhone}
+                  keyboardType="phone-pad"
                 />
               </View>
             </View>
