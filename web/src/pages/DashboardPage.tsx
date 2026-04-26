@@ -21,21 +21,21 @@ const quickActions = [
     title: 'Buy Airtime',
     desc: 'Recharge instantly',
     path: '/airtime',
-    gradient: 'from-blue-500 to-indigo-600',
+    gradient: 'from-primary to-primary-dark',
   },
   {
     icon: <Tv size={24} />,
     title: 'Pay Bills',
     desc: 'Cable & Electricity',
     path: '/cable',
-    gradient: 'from-fuchsia-500 to-purple-600',
+    gradient: 'from-brand-600 to-brand-800',
   },
   {
     icon: <CreditCard size={24} />,
     title: 'Sell Cards',
     desc: 'High rates only',
     path: '/giftcards',
-    gradient: 'from-amber-400 to-orange-600',
+    gradient: 'from-secondary to-primary',
   },
 ];
 

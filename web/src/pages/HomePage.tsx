@@ -22,19 +22,19 @@ const features = [
     icon: <Gift size={32} />,
     title: 'Gift Cards',
     desc: 'Sell gift cards for Naira at industry-leading rates. Fast, secure, and reliable.',
-    color: 'from-purple-500 to-indigo-600',
+    color: 'from-primary to-primary-dark',
   },
   {
     icon: <Bitcoin size={32} />,
     title: 'Crypto Trading',
     desc: 'Convert BTC, ETH, and USDT to Naira instantly. We guarantee the best market prices.',
-    color: 'from-blue-500 to-cyan-600',
+    color: 'from-brand-600 to-brand-800',
   },
   {
     icon: <CreditCard size={32} />,
     title: 'Bill Payments',
     desc: 'Pay for utilities, airtime, and data in seconds. Convenience at your fingertips.',
-    color: 'from-emerald-500 to-teal-600',
+    color: 'from-secondary to-primary',
   },
 ];
 

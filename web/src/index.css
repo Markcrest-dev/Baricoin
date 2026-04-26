@@ -1,25 +1,25 @@
 @import "tailwindcss";
 
 /* ============================================
-   BARICOIN PREMIUM DESIGN SYSTEM (Tailwind 4)
+   BARICOIN PREMIUM DESIGN SYSTEM (Earth Tones)
    ============================================ */
 @theme {
-  /* Core Colors - Refined for "Fintech" feel */
-  --color-primary: #7C3AED;       /* Vibrant Violet */
-  --color-primary-dark: #4C1D95;  /* Deep Purple */
-  --color-secondary: #F59E0B;     /* Amber Gold */
-  --color-accent: #10B981;        /* Emerald Success */
+  /* Core Colors - Reverted to Brown/Cream Palette */
+  --color-primary: #A97458;       /* Rich Copper */
+  --color-primary-dark: #4A2E23;  /* Deep Espresso */
+  --color-secondary: #E8C7A3;     /* Golden Sand */
+  --color-accent: #A97458;
   
-  --color-brand-900: #111827;     /* Near Black/Deep Navy */
-  --color-brand-800: #1F2937;
-  --color-brand-700: #374151;
-  --color-brand-600: #4B5563;
-  --color-brand-500: #6B7280;
+  --color-brand-900: #1B1B1B;     /* True Black-Brown */
+  --color-brand-800: #2D241E;
+  --color-brand-700: #4A3F35;
+  --color-brand-600: #7A5C4B;
+  --color-brand-500: #AC9179;
   
-  --color-surface-50: #F8FAFC;    /* Sky White */
-  --color-surface-100: #F1F5F9;
-  --color-surface-200: #E2E8F0;
-  --color-surface-300: #CBD5E1;
+  --color-surface-50: #FFFDFB;    /* Warm Bone */
+  --color-surface-100: #F5E8D6;   /* Classic Cream */
+  --color-surface-200: #EADBC8;
+  --color-surface-300: #D4B595;
 
   --color-success: #10B981;
   --color-warning: #F59E0B;
@@ -31,8 +31,8 @@
   --font-heading: 'Poppins', 'Inter', sans-serif;
 
   /* Shadows */
-  --shadow-premium: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
-  --shadow-glow: 0 0 20px rgba(124, 58, 237, 0.3);
+  --shadow-premium: 0 20px 25px -5px rgba(74, 46, 35, 0.05), 0 10px 10px -5px rgba(74, 46, 35, 0.02);
+  --shadow-glow: 0 0 20px rgba(169, 116, 88, 0.3);
 }
 
 /* ============================================
@@ -62,7 +62,7 @@
   }
 
   .glass-dark {
-    @apply bg-black/40 backdrop-blur-xl border border-white/10;
+    @apply bg-brand-900/40 backdrop-blur-xl border border-white/10;
   }
 
   .glass-card {
